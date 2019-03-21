@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:stretchColumns="1">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="598dp" />
+    <TableRow android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Google Vision"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="113dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/recipeSearchHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="Recipe Search"
+
+            android:textSize="35dp" />
+    </TableRow>
+
+    <TableRow>
+
+        <EditText
+            android:id="@+id/recipeSearch"
+            android:layout_width="284dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_marginLeft="5dp"
+            android:background="#ffffff"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/recipeSearch"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#5CFFFFFF"
+            android:text="Search"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </TableRow>
+</TableLayout>

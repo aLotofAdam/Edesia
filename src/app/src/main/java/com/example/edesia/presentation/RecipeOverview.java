@@ -3,13 +3,13 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
-
+import java.util.List;
+import com.example.edesia.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,9 +28,31 @@ public class RecipeOverview extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.my_activity);
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        // specify an adapter (see also next example)
+        mAdapter = new MyAdapter(myDataset);
+        recyclerView.setAdapter(mAdapter);
+    }
+    // ...
+}
     public RecipeOverview() {
         // Required empty public constructor
     }
@@ -66,7 +88,7 @@ public class RecipeOverview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-    //    textView.setText(R.string.hello_blank_fragment);
+        textView.setText(R.string.hello_blank_fragment);
         return textView;
     }
 
@@ -108,4 +130,16 @@ public class RecipeOverview extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+//click listener
+    listView.setOnItemClickListener(new OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view,
+        int position, long id) {
+            Toast.makeText(getApplicationContext(),
+                    "Click ListItem Number " + position, Toast.LENGTH_LONG)
+                    .show();
+        }
+    });
+
+
 }

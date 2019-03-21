@@ -1,14 +1,16 @@
 package com.example.edesia.presentation;
-
+//imports needed
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
+import com.example.edesia.R;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 
 /**
@@ -20,19 +22,13 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class RecipeSearch extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String TAG = "RecipeSearch";
+    private Button btnSearch;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
-    public RecipeSearch() {
+    public RecipeSearch(String recipeNme) {
         // Required empty public constructor
+        this.recipeName = recipeName;
+
     }
 
     /**
@@ -61,17 +57,22 @@ public class RecipeSearch extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+//NEED THIS
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
         TextView textView = new TextView(getActivity());
-     //   textView.setText(R.string.hello_blank_fragment);
-        return textView;
+        textView.setText(R.string.hello_blank_fragment);
+        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.content_recipe_layout, container, false);
+        btnRecipeSearch=(Button) view.findViewById(R.id.recipeSearch);
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(View view) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
