@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/meal_randomizer"
+        android:title="Randomize" />
+    <item
+        android:id="@+id/grocery_list"
+        android:title="Grocery List" />
+</menu>
