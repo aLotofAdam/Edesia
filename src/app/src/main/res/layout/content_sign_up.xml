@@ -25,6 +25,23 @@
         android:text="Register" />
 
     <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:ems="10"
+        android:textSize="18dp"
+        android:hint="@string/Name"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="550dp"
+        android:inputType="textPersonName" />
+
+    <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="235dp"
         android:layout_height="40dp"
@@ -35,11 +52,28 @@
         android:layout_alignParentBottom="true"
         android:ems="10"
         android:textSize="18dp"
-        android:hint="Username"
+        android:hint="@string/Username"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginBottom="500dp"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:hint="@string/Email"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="450dp"
+        android:inputType="textEmailAddress"/>
+
+
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -52,7 +86,7 @@
         android:layout_alignParentBottom="true"
         android:ems="10"
         android:textSize="18dp"
-        android:hint="Password"
+        android:hint="@string/Password"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="400dp"
@@ -69,7 +103,7 @@
         android:layout_alignParentBottom="true"
         android:ems="10"
         android:textSize="18dp"
-        android:hint="Confirm Password"
+        android:hint="@string/Confirm_Password"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="350dp"
@@ -92,6 +126,21 @@
         android:textSize="35dp"
         android:fontFamily="cursive"
         android:textAlignment="center"
-        android:text="Register Account" />
+        android:text="@string/RegisterAccount" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:text="@string/Back"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="325dp"
+        android:layout_marginRight="325dp"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>
