@@ -12,9 +12,36 @@
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Back" />
+        tools:layout_editor_absoluteY="613dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Username"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="Password"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="330dp" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="403dp" />
 
 </android.support.constraint.ConstraintLayout>
