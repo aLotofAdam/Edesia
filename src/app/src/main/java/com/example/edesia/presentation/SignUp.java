@@ -3,7 +3,7 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +14,12 @@ import com.example.edesia.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link RecipeSteps.OnFragmentInteractionListener} interface
+ * {@link SignUp.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RecipeSteps#newInstance} factory method to
+ * Use the {@link SignUp#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecipeSteps extends Fragment {
+public class SignUp extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class RecipeSteps extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public RecipeSteps() {
+    public SignUp() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class RecipeSteps extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment RecipeSteps.
+     * @return A new instance of fragment SignUp.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecipeSteps newInstance(String param1, String param2) {
-        RecipeSteps fragment = new RecipeSteps();
+    public static SignUp newInstance(String param1, String param2) {
+        SignUp fragment = new SignUp();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

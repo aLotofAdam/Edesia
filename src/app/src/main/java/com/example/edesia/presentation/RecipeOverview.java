@@ -3,7 +3,7 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +14,12 @@ import com.example.edesia.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link UploadRecipe.OnFragmentInteractionListener} interface
+ * {@link RecipeOverview.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link UploadRecipe#newInstance} factory method to
+ * Use the {@link RecipeOverview#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UploadRecipe extends Fragment {
+public class RecipeOverview extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class UploadRecipe extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public UploadRecipe() {
+    public RecipeOverview() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class UploadRecipe extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment UploadRecipe.
+     * @return A new instance of fragment RecipeOverview.
      */
     // TODO: Rename and change types and number of parameters
-    public static UploadRecipe newInstance(String param1, String param2) {
-        UploadRecipe fragment = new UploadRecipe();
+    public static RecipeOverview newInstance(String param1, String param2) {
+        RecipeOverview fragment = new RecipeOverview();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

@@ -3,23 +3,22 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.edesia.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link GroceryList.OnFragmentInteractionListener} interface
+ * {@link EditMenu.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link GroceryList#newInstance} factory method to
+ * Use the {@link EditMenu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GroceryList extends Fragment {
+public class EditMenu extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +30,7 @@ public class GroceryList extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public GroceryList() {
+    public EditMenu() {
         // Required empty public constructor
     }
 
@@ -41,11 +40,11 @@ public class GroceryList extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment GroceryList.
+     * @return A new instance of fragment EditMenu.
      */
     // TODO: Rename and change types and number of parameters
-    public static GroceryList newInstance(String param1, String param2) {
-        GroceryList fragment = new GroceryList();
+    public static EditMenu newInstance(String param1, String param2) {
+        EditMenu fragment = new EditMenu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,9 +64,8 @@ public class GroceryList extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        return textView;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.edit_menu, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

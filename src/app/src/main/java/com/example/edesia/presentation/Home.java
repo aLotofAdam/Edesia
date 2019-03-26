@@ -3,23 +3,27 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.edesia.R;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Login.OnFragmentInteractionListener} interface
+ * {@link Home.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Login#newInstance} factory method to
+ * Use the {@link Home#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Login extends Fragment {
+public class Home extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,8 +35,14 @@ public class Login extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Login() {
+    public Home() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button button = view.findViewById(R.id.action_home_to_current_meal_plan);
     }
 
     /**
@@ -41,11 +51,11 @@ public class Login extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Login.
+     * @return A new instance of fragment Home.
      */
     // TODO: Rename and change types and number of parameters
-    public static Login newInstance(String param1, String param2) {
-        Login fragment = new Login();
+    public static Home newInstance(String param1, String param2) {
+        Home fragment = new Home();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

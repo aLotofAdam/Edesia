@@ -3,7 +3,7 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +14,12 @@ import com.example.edesia.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link MealRandomizer.OnFragmentInteractionListener} interface
+ * {@link GroceryList.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link MealRandomizer#newInstance} factory method to
+ * Use the {@link GroceryList#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MealRandomizer extends Fragment {
+public class GroceryList extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class MealRandomizer extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public MealRandomizer() {
+    public GroceryList() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class MealRandomizer extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MealRandomizer.
+     * @return A new instance of fragment GroceryList.
      */
     // TODO: Rename and change types and number of parameters
-    public static MealRandomizer newInstance(String param1, String param2) {
-        MealRandomizer fragment = new MealRandomizer();
+    public static GroceryList newInstance(String param1, String param2) {
+        GroceryList fragment = new GroceryList();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

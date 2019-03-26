@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- Inside each fragment:
-        android:id is used as the name to be referenced by other xmls or code
-        android:name is the reference to the java code fragment
-        android:label is just a "hint" for the user
-        tools:layout is the reference to the xml layout
-    -->
-
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi_map"
-    app:startDestination="@id/home">
-
+    app:startDestination="@id/home" >
     <fragment
         android:id="@+id/home"
         android:name="com.example.edesia.presentation.Home"
@@ -50,7 +41,6 @@
             android:id="@+id/action_Home_to_upload_recipe"
             app:destination="@id/upload_recipe" />
     </fragment>
-
     <fragment
         android:id="@+id/login"
         android:name="com.example.edesia.presentation.Login"
