@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/BackgroundLogin2"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:background="@drawable/background_login_2"
+    tools:context=".LoginActivity">
 
     <Button
         android:id="@+id/RegisterButton"
@@ -21,7 +20,7 @@
         android:layout_marginLeft="145dp"
         android:layout_marginEnd="145dp"
         android:layout_marginRight="145dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="233dp"
         android:text="@string/Register" />
 
     <EditText
@@ -33,13 +32,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:textSize="18dp"
-        android:hint="@string/Name"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="550dp"
-        android:inputType="textPersonName" />
+        android:layout_marginBottom="510dp"
+        android:ems="10"
+        android:hint="@string/Name"
+        android:inputType="textPersonName"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -50,13 +49,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:textSize="18dp"
-        android:hint="@string/Username"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="500dp"
-        android:inputType="textPersonName" />
+        android:layout_marginBottom="460dp"
+        android:ems="10"
+        android:hint="@string/Username"
+        android:inputType="textPersonName"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -67,12 +66,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:hint="@string/Email"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="450dp"
-        android:inputType="textEmailAddress"/>
-
+        android:layout_marginBottom="410dp"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress" />
 
 
     <EditText
@@ -84,13 +82,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:textSize="18dp"
-        android:hint="@string/Password"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="400dp"
-        android:inputType="textPassword"/>
+        android:layout_marginBottom="360dp"
+        android:ems="10"
+        android:hint="@string/Password"
+        android:inputType="textPassword"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/editTextConfirmPassword"
@@ -101,13 +99,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:textSize="18dp"
-        android:hint="@string/Confirm_Password"
         android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="350dp"
-        android:inputType="textPassword"/>
+        android:layout_marginRight="85dp"
+        android:layout_marginBottom="310dp"
+        android:ems="10"
+        android:hint="@string/Confirm_Password"
+        android:inputType="textPassword"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -122,11 +122,11 @@
         android:layout_marginLeft="80dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
-        android:layout_marginBottom="600dp"
-        android:textSize="35dp"
+        android:layout_marginBottom="570dp"
         android:fontFamily="cursive"
+        android:text="@string/RegisterAccount"
         android:textAlignment="center"
-        android:text="@string/RegisterAccount" />
+        android:textSize="35dp" />
 
     <Button
         android:layout_width="60dp"

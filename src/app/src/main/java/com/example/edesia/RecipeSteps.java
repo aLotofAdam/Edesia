@@ -1,4 +1,4 @@
-package com.example.edesia.presentation;
+package com.example.edesia;
 
 import android.content.Context;
 import android.net.Uri;
@@ -66,7 +66,7 @@ public class RecipeSteps extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
+    //    textView.setText(R.string.hello_blank_fragment);
         return textView;
     }
 

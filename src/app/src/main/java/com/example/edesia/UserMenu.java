@@ -1,4 +1,4 @@
-package com.example.edesia.presentation;
+package com.example.edesia;
 
 import android.content.Context;
 import android.net.Uri;

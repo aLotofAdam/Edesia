@@ -1,4 +1,4 @@
-package com.example.edesia.presentation;
+package com.example.edesia;
 
 import android.content.Context;
 import android.net.Uri;
@@ -65,7 +65,7 @@ public class RecipeSearch extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
+        TextView textView = new TextView(getActivity())
         textView.setText(R.string.hello_blank_fragment);
         return textView;
     }
