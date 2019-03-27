@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.edesia.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
