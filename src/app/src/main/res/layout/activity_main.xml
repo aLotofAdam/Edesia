@@ -4,19 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".MainActivity">
+=======
+    tools:context=".">
+>>>>>>> e417fa78dda156e1142c1566696dce3c559d1964
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:theme="@style/AppTheme.AppBarOverlay">
+=======
+        android:theme="@style/AppTheme.NoActionBar">
+>>>>>>> e417fa78dda156e1142c1566696dce3c559d1964
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+<<<<<<< HEAD
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+=======
+            app:popupTheme="@style/AppTheme.NoActionBar" />
+>>>>>>> e417fa78dda156e1142c1566696dce3c559d1964
 
     </android.support.design.widget.AppBarLayout>
 
@@ -30,5 +42,9 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+<<<<<<< HEAD
 </android.support.design.widget.CoordinatorLayout>
   
+=======
+</android.support.design.widget.CoordinatorLayout>
+>>>>>>> e417fa78dda156e1142c1566696dce3c559d1964
