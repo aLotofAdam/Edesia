@@ -133,4 +133,3 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
 */
 }
 
- 
