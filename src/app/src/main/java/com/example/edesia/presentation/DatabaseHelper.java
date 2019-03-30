@@ -16,7 +16,7 @@ public class DatabaseHelper {
         DbHelper = new dbHelper(context);
     }
 
-    static class dbHelper extends SQLiteOpenHelper
+    public class dbHelper extends SQLiteOpenHelper
     {
         private static final String DATABASE_NAME = "user.db";
         private static final String TABLE_NAME = "UserTable";
@@ -27,8 +27,8 @@ public class DatabaseHelper {
         private static final String EMAIL = "Email";
         private static final String PASSWORD = "Password";
         private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " ("+USER_ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
-                                    +USER_NAME+" VARCHAR(255),"+EMAIL+" VARCHAR(255),"
-                                    +NAME+" VARCHAR(255),"+ PASSWORD +" VARCHAR(225));";
+                +USER_NAME+" VARCHAR(255),"+EMAIL+" VARCHAR(255),"
+                +NAME+" VARCHAR(255),"+ PASSWORD +" VARCHAR(225));";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
         private Context context;
 
@@ -55,7 +55,7 @@ public class DatabaseHelper {
             }
         }
     }
-    public long insertData(String name, String username, String email, String pass, String confirmPass) throws Exception{
+    public boolean insertData(String name, String username, String email, String pass) throws Exception{
 
         SQLiteDatabase dbb = DbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -65,7 +65,11 @@ public class DatabaseHelper {
 
         contentValues.put(dbHelper.PASSWORD, pass);
         long id = dbb.insert(dbHelper.TABLE_NAME, null , contentValues);
-        return id;
+        if(id == -1){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public String getData() {

@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +21,7 @@ import androidx.fragment.app.Fragment;
  * Use the {@link ExpandedDayView#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ExpandedDayView extends Fragment {
+public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelectedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -66,7 +68,7 @@ public class ExpandedDayView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
+    //    textView.setText(R.string.hello_blank_fragment);
         return textView;
     }
 
@@ -94,6 +96,16 @@ public class ExpandedDayView extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -108,4 +120,18 @@ public class ExpandedDayView extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+/*
+    @Override
+    public void onCreate(Bundle savedInstancedState){
+        super.onCreate(savedInstancedState);
+        setContentView(R.layout.content_expanded_day_view);
+
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.Months, android.R.layout.simple_spimmer_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item-);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+    }
+*/
 }
+

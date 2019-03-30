@@ -1,17 +1,22 @@
 package com.example.edesia.presentation;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+//import androidx.appcompat.app.AppCom//tActivity;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+//import androidx.appcompat.widget.T//lbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,7 +24,32 @@ import androidx.navigation.ui.NavigationUI;
 //import androidx.navigation.ui.R;
 
 public class MainActivity extends AppCompatActivity {
-    private AppBarConfiguration appBarConfiguration;
+    Button login;
+    Button signUp;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_login);
+
+        signUp = findViewById(R.id.SignUpButton);
+        login = findViewById(R.id.LoginButton);
+
+        signUp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openSignUpActivity();
+
+            }
+        });
+    }
+
+    public void openSignUpActivity(){
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+}
+ /*   private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,25 +116,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         boolean retValue = super.onCreateOptionsMenu(menu);
         Menu navigationView = findViewById(R.id.navi_view);
-        //Add items to inflate the menu if there isn't a navigationView;
-        // this adds items to the action bar if it is present.
+        Add items to inflate the menu if there isn't a navigationView;
+         this adds items to the action bar if it is present.
         if (navigationView == null){
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
+           getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
         }
         return retValue;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //navigation UI looks for action matching the menu item and navigates there if found.
-        //otherwise, this will bubble up to parent
+        navigation UI looks for action matching the menu item and navigates there if found.
+        otherwise, this will bubble up to parent
         return super.onOptionsItemSelected(item);
-    }
+  }
 
     //@Override
     //public boolean onSupportNavigateUp() {
     //navigation UI will support up navigation, or drawer menu
     //   return findNavController(R.id.nav_host_fragment).navigateUp(appBarConfiguration);
     //}
-}
+}*/
