@@ -3,38 +3,54 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/navi_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.edesia.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.edesia.presentation.MainActivity"
+    tools:openDrawer="start"
+    tools:showIn="@layout/activity_main">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <include
+        layout="@layout/main_menu"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="match_parent" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_menu_navi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="clip_horizontal"
+        app:itemBackground="?attr/colorPrimary"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_menu_navi"
+        android:background="?android:attr/windowBackground"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-        <fragment
-            android:id="@+id/nav_host_fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/navi_graph" />
-    </RelativeLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
 
     <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navi_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/menu_main" >
-    </com.google.android.material.navigation.NavigationView>
+        android:id="@+id/navi_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        app:elevation="@android:dimen/app_icon_size"
+        app:itemTextColor="@android:color/black"
+        app:menu="@menu/menu_main" />
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/primary">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/action_home_to_login"
-            android:title="Login" />
+            android:title="@string/Login" />
         <item
             android:id="@+id/action_home_to_current_meal_plan"
-            android:title="Meal Plan" />
+            android:title="@string/meal_plan" />
         <item
             android:id="@+id/action_Home_to_user_menu"
-            android:title="User Menu" />
+            android:title="@string/user_menu" />
         <item
             android:id="@+id/action_Home_to_upload_recipe"
-            android:title="Upload Recipe" />
+            android:title="@string/upload_recipe" />
         <item
             android:id="@+id/action_Home_to_settings"
             android:orderInCategory="100"
