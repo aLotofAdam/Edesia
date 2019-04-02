@@ -12,40 +12,99 @@
         tools:layout="@layout/home" >
         <action
             android:id="@+id/action_home_to_login"
-            app:destination="@id/login" />
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_home_to_expanded_day_view"
-            app:destination="@+id/expanded_day_view" />
+            app:destination="@+id/expanded_day_view"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_home_to_current_meal_plan"
-            app:destination="@id/current_meal_plan" />
+            app:destination="@id/current_meal_plan"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_grocery_list"
-            app:destination="@id/grocery_list" />
+            app:destination="@id/grocery_list"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_recipe_search"
-            app:destination="@id/recipe_search" />
+            app:destination="@id/recipe_search"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_recipe_overview"
-            app:destination="@id/recipe_overview" />
+            app:destination="@id/recipe_overview"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_user_menu"
-            app:destination="@id/user_menu" />
+            app:destination="@id/user_menu"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_settings"
-            app:destination="@id/settings" />
+            app:destination="@id/settings"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_meal_randomizer"
-            app:destination="@id/meal_randomizer" />
+            app:destination="@id/meal_randomizer"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
         <action
             android:id="@+id/action_Home_to_upload_recipe"
-            app:destination="@id/upload_recipe" />
+            app:destination="@id/upload_recipe"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
     </fragment>
     <fragment
         android:id="@+id/login"
         android:name="com.example.edesia.presentation.Login"
         android:label="login"
-        tools:layout="@layout/login" />
+        tools:layout="@layout/login" >
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/login" />
+    </fragment>
 
     <fragment
         android:id="@+id/expanded_day_view"
@@ -54,10 +113,20 @@
         tools:layout="@layout/expanded_day_view">
         <action
             android:id="@+id/action_expanded_day_view_to_meal_randomizer"
-            app:destination="@id/meal_randomizer" />
+            app:destination="@id/meal_randomizer"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/expanded_day_view" />
         <action
             android:id="@+id/action_expanded_day_view_to_grocery_list"
-            app:destination="@id/grocery_list" />
+            app:destination="@id/grocery_list"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/expanded_day_view" />
     </fragment>
 
     <fragment
@@ -67,7 +136,12 @@
         tools:layout="@layout/grocery_list">
         <action
             android:id="@+id/action_grocery_list_to_home"
-            app:destination="@id/home" />
+            app:destination="@id/home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/grocery_list" />
     </fragment>
 
     <fragment
@@ -77,10 +151,20 @@
         tools:layout="@layout/recipe_search" >
         <action
             android:id="@+id/action_recipe_search_to_upload_recipe"
-            app:destination="@id/upload_recipe" />
+            app:destination="@id/upload_recipe"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/recipe_search" />
         <action
             android:id="@+id/action_recipe_search_to_google_vision"
-            app:destination="@id/google_vision" />
+            app:destination="@id/google_vision"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/recipe_search" />
     </fragment>
 
     <fragment
@@ -90,7 +174,12 @@
         tools:layout="@layout/google_vision">
         <action
             android:id="@+id/action_google_vision_to_home"
-            app:destination="@id/home" />
+            app:destination="@id/home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/google_vision" />
     </fragment>
 
     <fragment
@@ -100,10 +189,20 @@
         tools:layout="@layout/current_meal_plan" >
         <action
             android:id="@+id/action_current_meal_plan_to_meal_randomizer"
-            app:destination="@id/meal_randomizer" />
+            app:destination="@id/meal_randomizer"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/current_meal_plan" />
         <action
             android:id="@+id/action_current_meal_plan_to_grocery_list"
-            app:destination="@id/grocery_list" />
+            app:destination="@id/grocery_list"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/current_meal_plan" />
     </fragment>
 
     <fragment
@@ -137,7 +236,12 @@
         tools:layout="@layout/user_menu" >
         <action
             android:id="@+id/action_user_menu_to_edit_menu"
-            app:destination="@id/edit_menu" />
+            app:destination="@id/edit_menu"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/user_menu" />
     </fragment>
 
     <fragment

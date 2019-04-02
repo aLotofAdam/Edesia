@@ -11,7 +11,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Randomizer"
+        android:text="@string/randomizer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Grocery_List"
+        android:text="@string/grocery_list"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="580dp" />
 </androidx.constraintlayout.widget.Constraints>

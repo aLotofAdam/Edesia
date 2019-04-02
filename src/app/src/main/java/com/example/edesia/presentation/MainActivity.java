@@ -26,14 +26,15 @@ public class MainActivity extends AppCompatActivity implements Home.OnFragmentIn
         //setContentView(R.layout.login);
 
         // TODO get rid of? navi activity contains navhost, but might use in activity_main.xml
-        this.setContentView(R.layout.navi_activity);
+        this.setContentView(R.layout.activity_main);
+
         // TODO might need to change to main_menu
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         //setup action bar with navHost controller
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
-        DrawerLayout drawerLayout = findViewById(R.id.navi_activity);
+       // NavigationUI.setupWithNavController(this, navController);
+        DrawerLayout drawerLayout = findViewById(R.id.navigationView);
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout);
 
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements Home.OnFragmentIn
 
     private void setupBottomNaviMenu(NavController navController){
         //navigation UI setup for bottom navigation menu
-        BottomNavigationView bottomNavi = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavi = findViewById(R.id.bottom_menu_navi);
         if (bottomNavi != null){
             NavigationUI.setupWithNavController(bottomNavi, navController);
         }
@@ -115,7 +116,9 @@ public class MainActivity extends AppCompatActivity implements Home.OnFragmentIn
     @Override
     public boolean onSupportNavigateUp() {
         //navigation UI will support up navigation, or drawer menu
-        return NavigationUI.navigateUp(Navigation.findNavController(this, R.id.nav_host_fragment),
-               drawerLayout);
+        return Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp();
+        //return NavigationUI.navigateUp(Navigation.findNavController(this, R.id.nav_host_fragment),
+          //     drawerLayout);
     }
+
 }
