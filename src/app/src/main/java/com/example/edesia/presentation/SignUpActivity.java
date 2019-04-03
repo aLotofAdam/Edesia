@@ -1,6 +1,7 @@
 package com.example.edesia.presentation;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -18,6 +19,10 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+    }
+
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
     }
 
     private boolean confirmPassword(){

@@ -32,6 +32,10 @@ public class RecipeSteps extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
     public RecipeSteps() {
         // Required empty public constructor
     }

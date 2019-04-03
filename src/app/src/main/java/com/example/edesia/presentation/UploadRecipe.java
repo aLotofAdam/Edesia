@@ -32,6 +32,10 @@ public class UploadRecipe extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
     public UploadRecipe() {
         // Required empty public constructor
     }

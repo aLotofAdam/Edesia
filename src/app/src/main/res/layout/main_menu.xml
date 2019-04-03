@@ -6,7 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+	
+	<!-- TODO check what this is being used for, 
+	there is a main on github but not main_menu 
+	also, remove appbar and toolbar after test -->
+	
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

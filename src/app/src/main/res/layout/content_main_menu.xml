@@ -9,6 +9,8 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/main_menu">
 
+	<!-- TODO check what this is for -->
+	
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="match_parent"

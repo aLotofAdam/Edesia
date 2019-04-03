@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login_2"
-    tools:context=".LoginActivity">
+    tools:context=".Login">
 
     <Button
         android:id="@+id/RegisterButton"
@@ -38,7 +38,7 @@
         android:ems="10"
         android:hint="@string/Name"
         android:inputType="textPersonName"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -55,7 +55,7 @@
         android:ems="10"
         android:hint="@string/Username"
         android:inputType="textPersonName"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -88,7 +88,7 @@
         android:ems="10"
         android:hint="@string/Password"
         android:inputType="textPassword"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editTextConfirmPassword"
@@ -107,10 +107,10 @@
         android:ems="10"
         android:hint="@string/Confirm_Password"
         android:inputType="textPassword"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewRegisterAccount"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
@@ -123,12 +123,13 @@
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:layout_marginBottom="570dp"
-        android:fontFamily="cursive"
+        app:fontFamily="cursive"
         android:text="@string/RegisterAccount"
         android:textAlignment="center"
-        android:textSize="35dp" />
+        android:textSize="35sp" />
 
     <Button
+        android:id="@+id/signUpBackButton"
         android:layout_width="60dp"
         android:layout_height="45dp"
         android:text="@string/Back"

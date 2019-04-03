@@ -31,6 +31,10 @@ public class UserMenu extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
     public UserMenu() {
         // Required empty public constructor
     }

@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="presentation.UserMenu">
+    tools:context=".UserMenu">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_user_menu" />
+
+    <!--TODO STEP 100 - takeout appbar and toolbar after test -->
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -19,9 +25,5 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <include
-        android:id="@+id/include"
-        layout="@layout/content_user_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

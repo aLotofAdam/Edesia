@@ -7,8 +7,10 @@
     android:layout_height="match_parent"
     android:label="@string/grocery_list"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity">
+    tools:context=".GroceryList">
 
+	<!-- TODO remove toolbar and appbar and back button after test -->
+	
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,4 +34,7 @@
         android:textColor="@android:color/holo_blue_bright"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="603dp" />
+		
+		<include layout="@layout/content_grocery_list" />
+		
 </androidx.constraintlayout.widget.Constraints>
