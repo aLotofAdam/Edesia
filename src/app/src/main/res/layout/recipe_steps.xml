@@ -35,7 +35,7 @@
             android:id="@+id/imv_date_and_time"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_event_white_24dp"
+
             android:alpha=".86"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="44dp"
@@ -46,7 +46,7 @@
             android:layout_marginStart="80dp" />
 
         <TextView
-            style="@style/Text.Primary"
+
             android:id="@+id/lbl_message"
             android:layout_width="0dp"
             android:layout_height="24dp"
@@ -66,7 +66,6 @@
             android:layout_marginEnd="16dp" />
 
         <TextView
-            style="@style/Text.Secondary"
             android:id="@+id/lbl_date_and_time"
             android:layout_width="wrap_content"
             android:layout_height="24dp"

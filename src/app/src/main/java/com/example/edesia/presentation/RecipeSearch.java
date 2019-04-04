@@ -3,42 +3,37 @@ package com.example.edesia.presentation;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import com.example.edesia.R;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link RecipeSearch.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link RecipeSearch#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class RecipeSearch extends Fragment {
+
+public class RecipeSearch extends AppCompatActivity {
     private static final String TAG = "RecipeSearch";
-    private Button btnSearch;
+    private Button searchBtn;
+    public EditText recipeSearch;
+    /*
+        public RecipeSearch(String recipeNme) {
+            // Required empty public constructor
+            this.recipeName = recipeNe;
 
-    public RecipeSearch(String recipeNme) {
-        // Required empty public constructor
-        this.recipeName = recipeName;
+        }
+    /*
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment RecipeSearch.
 
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RecipeSearch.
-     */
     // TODO: Rename and change types and number of parameters
     public static RecipeSearch newInstance(String param1, String param2) {
         RecipeSearch fragment = new RecipeSearch();
@@ -51,7 +46,27 @@ public class RecipeSearch extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+                super.onCreate(savedInstanceState);
+                setContentView(recipeSearch);
+                recipeString = findViewId(R.id.recipeString);
+                recipeSearch = findViewById(R.id.recipe_search);
+                searchBtn = findViewById(R.id.recipeSearchBtn);
+                //need to maybe add a results variable
+                result_address=findViewById(R.id.result);
+                searchBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DatabaseAccess databaseAccess=DatabaseAccess.getInstance(getApplicationContext());
+                        databaseAccess.open();
+                        String r = recipeString.getText().toString();
+                        String address = databaseAccess.getAddress(r);
+                        result_address.setText(address);
+                        databaseAccess.closeDb();
+                    }
+                });
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

@@ -15,8 +15,9 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             android:text="Recipe Search"
+            android:textSize="35dp"
 
-            android:textSize="35dp" />
+            />
     </TableRow>
 
     <TableRow>
@@ -29,10 +30,11 @@
             android:layout_marginLeft="5dp"
             android:background="#ffffff"
             android:textColor="#000"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            android:hint="Please enter in recipe"/>
 
         <Button
-            android:id="@+id/recipeSearch"
+            android:id="@+id/recipeSearchBtn"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_marginLeft="10dp"
@@ -43,4 +45,11 @@
             android:textSize="25sp"
             android:textStyle="bold" />
     </TableRow>
+    <View
+        android:id="@+id/recipeSearchview"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        />
+
 </TableLayout>
