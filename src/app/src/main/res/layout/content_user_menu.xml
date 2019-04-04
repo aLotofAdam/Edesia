@@ -11,11 +11,11 @@
     <!--TODO STEP 101 - fix hardcoded button -->
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/to_recipe_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="@string/Search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/grocery_list">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!-- TODO remove this xml file? -->
 
     <Button
-        android:id="@+id/gl_to_home"
+        android:id="@+id/to_recipe_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Back"
+        android:text="@string/Search"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="603dp" />
 </androidx.constraintlayout.widget.Constraints>

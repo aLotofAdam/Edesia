@@ -1,15 +1,18 @@
 package com.example.edesia.presentation;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.navigation.Navigation;
 
 
 /**
@@ -21,6 +24,18 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class SignUp extends Fragment {
+
+    DatabaseHelper myDb;
+    //Context context = getActivity().getApplicationContext();
+
+    EditText name;
+    EditText username;
+    EditText email;
+    EditText password;
+    EditText confirmPassword;
+    Button backButton;
+    Button registerButton;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -72,17 +87,48 @@ public class SignUp extends Fragment {
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
         textView.setText(R.string.hello_blank_fragment);
-        return textView;
-    }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+        View signUpView = inflater.inflate(R.layout.sign_up, container, false);
+
+        name = signUpView.findViewById(R.id.editTextName);
+        username = signUpView.findViewById(R.id.editTextUsername);
+        email = signUpView.findViewById(R.id.editTextEmail);
+        password = signUpView.findViewById(R.id.editTextPassword);
+        confirmPassword = signUpView.findViewById(R.id.editTextConfirmPassword);
+        backButton = signUpView.findViewById(R.id.signUpBackButton);
+        registerButton = signUpView.findViewById(R.id.RegisterButton);
+
+        if(name.equals("")||username.equals("")||email.equals("")||password.equals("")||confirmPassword.equals("")){
+            Toast.makeText(getContext(), "Fields missing", Toast.LENGTH_SHORT);
         }
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        //inflate layout
+        return inflater.inflate(R.layout.sign_up, container, false);
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
+        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    /*public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }*/
+
+    /*@Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -91,13 +137,13 @@ public class SignUp extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
+    }*/
 
     /**
      * This interface must be implemented by activities that contain this
@@ -111,6 +157,6 @@ public class SignUp extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        //void onFragmentInteraction(Uri uri);
     }
 }

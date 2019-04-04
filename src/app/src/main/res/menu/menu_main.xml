@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/action_home_to_login"
-            android:title="@string/Login" />
-        <item
-            android:id="@+id/action_home_to_current_meal_plan"
-            android:title="@string/meal_plan" />
-        <item
-            android:id="@+id/action_Home_to_user_menu"
-            android:title="@string/user_menu" />
-        <item
-            android:id="@+id/action_Home_to_upload_recipe"
-            android:title="@string/upload_recipe" />
-        <item
-            android:id="@+id/action_Home_to_settings"
-            android:orderInCategory="100"
-            android:title="@string/action_settings" />
-    </group>
+    <item
+        android:id="@+id/action_Home_to_settings"
+        android:title="@string/action_settings" />
+    <item
+        android:id="@+id/action_home_to_login"
+        android:title="@string/Login" />
+    <item
+        android:id="@+id/action_Home_to_upload_recipe"
+        android:title="@string/upload_recipe" />
+    <item
+        android:id="@+id/action_home_to_current_meal_plan"
+        android:title="@string/meal_plan" />
+    <item
+        android:id="@+id/action_Home_to_user_menu"
+        android:title="@string/user_menu" />
 </menu>

@@ -45,10 +45,9 @@ public class Home extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //uses navigationController to use the action gl_to_home button to navigate
-        Navigation.findNavController(view).navigate(R.id.action_Home_to_grocery_list, savedInstanceState);
-       // Button.OnClickListener(R.id.action_grocery_list_to_home);
-            setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_Home_to_grocery_list, savedInstanceState));
-
+        //Navigation.findNavController(view).navigate(R.id.action_Home_to_grocery_list, savedInstanceState);
+        view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));
+        view.findViewById(R.id.to_RecipeSearch).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
     }
 
     public interface OnFragmentInteractionListener {

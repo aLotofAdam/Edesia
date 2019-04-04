@@ -9,17 +9,7 @@
     tools:showIn="@layout/expanded_day_view">
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/randomizer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.49"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button4"
+        android:id="@+id/to_recipe_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Search"
@@ -29,10 +19,10 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/to_google_vision"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/grocery_list"
+        android:text="@string/Google_Vision"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,15 +72,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.100000024" />
-
-    <!-- TODO remove back button after navigation implemented -->
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

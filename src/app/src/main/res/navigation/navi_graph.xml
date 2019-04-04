@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi_map"
-    app:startDestination="@id/home" >
+    app:startDestination="@id/login" >
     <fragment
         android:id="@+id/home"
         android:name="com.example.edesia.presentation.Home"
@@ -104,6 +104,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/login" />
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUp" />
     </fragment>
 
     <fragment
@@ -127,6 +130,14 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@+id/expanded_day_view" />
+        <action
+            android:id="@+id/action_expanded_day_view_to_recipe_search"
+            app:destination="@id/recipe_search"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/home" />
     </fragment>
 
     <fragment
@@ -188,21 +199,13 @@
         android:label="current_meal_plan"
         tools:layout="@layout/current_meal_plan" >
         <action
-            android:id="@+id/action_current_meal_plan_to_meal_randomizer"
-            app:destination="@id/meal_randomizer"
+            android:id="@+id/action_current_meal_plan_to_recipe_search"
+            app:destination="@id/recipe_search"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/current_meal_plan" />
-        <action
-            android:id="@+id/action_current_meal_plan_to_grocery_list"
-            app:destination="@id/grocery_list"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@+id/current_meal_plan" />
+            app:popUpTo="@+id/home" />
     </fragment>
 
     <fragment
@@ -259,4 +262,22 @@
         android:name="com.example.edesia.presentation.RecipeSteps"
         android:label="recipe_steps"
         tools:layout="@layout/recipe_steps" />
+
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.edesia.presentation.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/sign_up">
+        <action
+            android:id="@+id/action_signUp_to_home"
+            app:destination="@id/home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/login" />
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

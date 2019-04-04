@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             Set<Integer> topLevelDestinations = new HashSet<>();
             topLevelDestinations.add(R.id.navi_map);
-            //topLevelDestinations.add(drawerLayout);
+            topLevelDestinations.add(R.id.navigationView); //changed from drawerLayout
 
             appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations)
                     .setDrawerLayout(drawerLayout).build();
@@ -126,10 +126,12 @@ public class MainActivity extends AppCompatActivity {
                     String var5;
                     try {
                         var10000 = MainActivity.this.getResources().getResourceName(destination.getId());
+                        System.out.println("tried");
                         //Intrinsics.checkExpressionValueIsNotNull(var10000, "resources.getResourceName(destination.id)");
                         var5 = var10000;
                     } catch (Resources.NotFoundException var7) {
                         var10000 = Integer.toString(destination.getId());
+                        System.out.println("Caught");
                         //Intrinsics.checkExpressionValueIsNotNull(var10000, "Integer.toString(destination.id)");
                         var5 = var10000;
                     }
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         boolean retValue = super.onCreateOptionsMenu(menu);
-        Menu navigationView = findViewById(R.id.navi_view);
+        Menu navigationView = findViewById(R.id.navi_map); //navi_view not work
         //Add items to inflate the menu if there isn't a navigationView;
         // this adds items to the action bar if it is present.
         if (navigationView == null){

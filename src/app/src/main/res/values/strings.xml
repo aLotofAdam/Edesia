@@ -22,11 +22,13 @@
     <string name="Month">Month</string>
     <string name="Day">Day</string>
     <string name="Current_Meal_Plan">Current Meal Plan</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Expanded_Day_View">Expanded Day View</string>
     <string name="Start">Start</string>
     <string name="End">End</string>
     <string name="Google_Vision">Google Vision</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

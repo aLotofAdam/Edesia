@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.Constraints
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:label="@string/grocery_list"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".GroceryList">
 
-	<!-- TODO remove toolbar and appbar and back button after test -->
-	
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
     <Button
-        android:id="@+id/gl_to_home"
+        android:id="@+id/to_recipe_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/ic_menu_revert"
-        android:text="@string/Back"
-        android:textColor="@android:color/holo_blue_bright"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:text="@string/Search"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="603dp" />
-		
-		<include layout="@layout/content_grocery_list" />
-		
-</androidx.constraintlayout.widget.Constraints>
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
