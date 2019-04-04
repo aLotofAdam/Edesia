@@ -12,7 +12,17 @@
     <string name="SignUp">Sign Up</string>
     <string name="Login">Login</string>
     <string name="Back">Back</string>
-
+    <string name="GroceryList">Grocery List</string>
+    <string name="MealRandomizer">Meal Randomizer</string>
+    <string name="ExpandedDayView">ExpandedDayView</string>
+    <string name="Month">Month</string>
+    <string name="Day">Day</string>
+    <string name="Search">Search</string>
+    <string name="Randomize">Randomize</string>
+    <string name="Plan">Plan</string>
+    <string name="Breakfast">Breakfast</string>
+    <string name="Lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
 
 
     <string-array name="Months">
