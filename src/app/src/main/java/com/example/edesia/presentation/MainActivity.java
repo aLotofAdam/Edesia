@@ -24,30 +24,6 @@ import androidx.navigation.ui.NavigationUI;
 //import androidx.navigation.ui.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button login;
-    Button signUp;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_login);
-
-        signUp = findViewById(R.id.SignUpButton);
-        login = findViewById(R.id.LoginButton);
-
-        signUp.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                openSignUpActivity();
-
-            }
-        });
-    }
-
-    public void openSignUpActivity(){
-        Intent intent = new Intent(this, SignUpActivity.class);
-        startActivity(intent);
-    }
 }
  /*   private AppBarConfiguration appBarConfiguration;
 
