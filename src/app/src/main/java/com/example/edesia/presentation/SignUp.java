@@ -1,15 +1,12 @@
 package com.example.edesia.presentation;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.VibrationEffect;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,8 +17,8 @@ import androidx.navigation.Navigation;
 public class SignUp extends Fragment {
 
     DatabaseHelper myDb;
-    Context context = getActivity().getApplicationContext();
 
+    Context context;
     EditText name;
     EditText username;
     EditText email;
@@ -50,7 +47,9 @@ public class SignUp extends Fragment {
         backButton = signUpView.findViewById(R.id.signUpBackButton);
         registerButton = signUpView.findViewById(R.id.RegisterButton);
 
-
+        if (getContext() != null){
+            this.context = getContext(); //getActivity().getApplicationContext();
+        }
 
         if(name.equals("")||username.equals("")||email.equals("")||password.equals("")||confirmPassword.equals("")){
             Toast.makeText(getContext(), "Fields missing", Toast.LENGTH_SHORT);
