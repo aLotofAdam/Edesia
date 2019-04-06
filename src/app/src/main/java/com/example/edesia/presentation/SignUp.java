@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.navigation.Navigation;
 
 public class SignUp extends Fragment {
 
@@ -27,6 +29,13 @@ public class SignUp extends Fragment {
     EditText confirmPassword;
     Button backButton;
     Button registerButton;
+
+    public SignUp() {
+        // Required empty public constructor
+    }
+
+    //need it?
+    private OnFragmentInteractionListener mListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,8 +81,15 @@ public class SignUp extends Fragment {
             }
         });
 
-
         return signUpView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
+        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
     }
 
     private boolean confirmPassword(String pass, String cPass){
@@ -86,5 +102,18 @@ public class SignUp extends Fragment {
         }
     }
 
-
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        //void onFragmentInteraction(Uri uri);
+    }
 }

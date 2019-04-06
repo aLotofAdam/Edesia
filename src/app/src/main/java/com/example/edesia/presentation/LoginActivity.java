@@ -19,10 +19,14 @@ public class LoginActivity extends AppCompatActivity {
     EditText Password;
     DatabaseHelper myDb;
 
+    //TODO take out? Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_login);
+        setContentView(R.layout.login); //changed in merge
         myDb = new DatabaseHelper(this);
         Username = (EditText)findViewById(R.id.LoginUserName);
         Password = (EditText)findViewById(R.id.LoginPassword);

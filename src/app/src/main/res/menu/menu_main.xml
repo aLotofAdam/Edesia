@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/primary">
-        <item
-            android:id="@+id/action_home_to_login"
-            android:title="Login" />
-        <item
-            android:id="@+id/action_home_to_current_meal_plan"
-            android:title="Meal Plan" />
-        <item
-            android:id="@+id/action_Home_to_user_menu"
-            android:title="User Menu" />
-        <item
-            android:id="@+id/action_Home_to_upload_recipe"
-            android:title="Upload Recipe" />
-        <item
-            android:id="@+id/action_Home_to_settings"
-            android:orderInCategory="100"
-            android:title="@string/action_settings" />
-    </group>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_Home_to_recipe_search"
+        android:icon="@drawable/send24px"
+        android:title="@string/Search"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_Home_to_settings"
+        android:icon="@drawable/settings20px"
+        android:title="@string/action_settings"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_home_to_login"
+        android:icon="@drawable/contacts24px"
+        android:title="@string/Logout"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_Home_to_upload_recipe"
+        android:icon="@drawable/send24px"
+        android:title="@string/upload_recipe"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_home_to_current_meal_plan"
+        android:icon="@drawable/calendar_today24px"
+        android:title="@string/meal_plan"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_Home_to_user_menu"
+        android:icon="@drawable/book24px"
+        android:title="@string/user_menu"
+        app:showAsAction="collapseActionView" />
 </menu>

@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 public class Login extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -57,18 +60,29 @@ public class Login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-    //    textView.setText(R.string.hello_blank_fragment);
-        return textView;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+        //    textView.setText(R.string.hello_blank_fragment);
+        //inflate layout
+        return inflater.inflate(R.layout.login, container, false);
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //uses navigationController to use the action gl_to_home button to navigate
+        //Navigation.findNavController(view).navigate(R.id.action_Home_to_grocery_list, savedInstanceState);
+        view.findViewById(R.id.LoginButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_home, savedInstanceState));
+        view.findViewById(R.id.SignUpButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_signUp, savedInstanceState));
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+   /* public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }*/
+
+   /* @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -77,13 +91,13 @@ public class Login extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
-    }
+    }*/
 
     /**
      * This interface must be implemented by activities that contain this
@@ -97,6 +111,6 @@ public class Login extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+       // void onFragmentInteraction(Uri uri);
     }
 }
