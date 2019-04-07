@@ -126,8 +126,9 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
         super.onCreate(savedInstancedState);
         setContentView(R.layout.content_expanded_day_view);
 
-        Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.Months, android.R.layout.simple_spimmer_item);
+        Spinner spinner =
+        findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.Months, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item-);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
