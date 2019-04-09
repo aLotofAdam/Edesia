@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -73,33 +72,11 @@ public class EditMenu extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));
-        view.findViewById(R.id.to_RecipeSearch).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
+        view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));
+        view.findViewById(R.id.to_RecipeSearch).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    /*public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }*/
-
-    //@Override
-    /*public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
-
-    /*@Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }*/
 
     /**
      * This interface must be implemented by activities that contain this

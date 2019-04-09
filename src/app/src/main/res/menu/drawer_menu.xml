@@ -1,35 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
     <item
-        android:id="@+id/action_Home_to_recipe_search"
-        android:icon="@drawable/send24px"
-        android:title="@string/Search"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_Home_to_settings"
+        android:id="@+id/settings"
         android:icon="@drawable/settings20px"
         android:title="@string/action_settings"
         app:showAsAction="collapseActionView" />
     <item
-        android:id="@+id/action_home_to_login"
+        android:id="@+id/login"
         android:icon="@drawable/contacts24px"
         android:title="@string/Logout"
         app:showAsAction="collapseActionView" />
     <item
-        android:id="@+id/action_Home_to_upload_recipe"
+        android:id="@+id/upload_recipe"
         android:icon="@drawable/send24px"
         android:title="@string/upload_recipe"
         app:showAsAction="collapseActionView" />
     <item
-        android:id="@+id/action_home_to_current_meal_plan"
+        android:id="@+id/current_meal_plan"
         android:icon="@drawable/calendar_today24px"
         android:title="@string/meal_plan"
         app:showAsAction="collapseActionView" />
     <item
-        android:id="@+id/action_Home_to_user_menu"
+        android:id="@+id/user_menu"
         android:icon="@drawable/book24px"
         android:title="@string/user_menu"
         app:showAsAction="collapseActionView" />

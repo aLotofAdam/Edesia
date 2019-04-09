@@ -5,9 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -69,8 +66,6 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //TextView textView = new TextView(getActivity());
-        //textView.setText(R.string.hello_blank_fragment);
         //inflate layout
         return inflater.inflate(R.layout.expanded_day_view, container, false);
     }
@@ -79,32 +74,9 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.to_recipe_search).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_expanded_day_view_to_recipe_search, savedInstanceState));
+        view.findViewById(R.id.to_recipe_search).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_expanded_day_view_to_recipe_search, savedInstanceState));
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    /*public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }*/
-
-    //@Override
-    /*public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
-
-    /*@Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }*/
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

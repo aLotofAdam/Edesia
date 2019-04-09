@@ -1,12 +1,9 @@
 package com.example.edesia.presentation;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -34,5 +31,9 @@ public class GroceryList extends Fragment {
         //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.gl_to_home, null));
         //uses navigationController to use the action gl_to_home button to navigate
         Navigation.findNavController(view).navigate(R.id.action_grocery_list_to_home);
+    }
+
+    //allows communication between fragment and activity
+    public interface OnFragmentInteractionListener {
     }
 }

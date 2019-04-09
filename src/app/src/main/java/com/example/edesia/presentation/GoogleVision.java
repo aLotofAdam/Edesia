@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the

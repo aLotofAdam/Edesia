@@ -1,12 +1,9 @@
 package com.example.edesia.presentation;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -59,8 +56,6 @@ public class Login extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        //    textView.setText(R.string.hello_blank_fragment);
         //inflate layout
         return inflater.inflate(R.layout.login, container, false);
     }
@@ -69,35 +64,32 @@ public class Login extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //uses navigationController to use the action gl_to_home button to navigate
-        //Navigation.findNavController(view).navigate(R.id.action_Home_to_grocery_list, savedInstanceState);
-        view.findViewById(R.id.LoginButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_home, savedInstanceState));
-        view.findViewById(R.id.SignUpButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_to_signUp, savedInstanceState));
+        //navigate using convenience method
+        view.findViewById(R.id.LoginButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_login_to_home, savedInstanceState));
+        view.findViewById(R.id.SignUpButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_login_to_signUp, savedInstanceState));
+
+        /**navigate other way
+        Button login = view.findViewById(R.id.LoginButton);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.action_login_to_home);
+            }
+        });
+
+        Button signUp = view.findViewById(R.id.SignUpButton);
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.action_login_to_signUp);
+            }
+        });**/
+
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-   /* public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }*/
-
-   /* @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
-
-    /*@Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }*/
 
     /**
      * This interface must be implemented by activities that contain this

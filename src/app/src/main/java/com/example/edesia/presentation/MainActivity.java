@@ -1,6 +1,9 @@
 package com.example.edesia.presentation;
 
+import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -9,14 +12,18 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
+import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
@@ -25,20 +32,128 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 //TODO on merge: changed mainActivity to not be an empty constructor
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
+        CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener,
+        ExpandedDayView.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
+        GroceryList.OnFragmentInteractionListener, Home.OnFragmentInteractionListener,
+        MealRandomizer.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
+        RecipeSearch.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
+        Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
+        UserMenu.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
+    private DrawerLayout drawer_layout;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        // TODO get rid of? navi activity contains navhost, but might use in activity_main.xml
-        this.setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         // TODO might need to change to main_menu
-        Toolbar toolbar = this.findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.actionbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
+        final Activity activity = this;
 
-        this.setSupportActionBar(toolbar);
+        //interface for Navigation drawer
+        drawer_layout = findViewById(R.id.drawer_layout);
+        drawer_layout.addDrawerListener(
+                new DrawerLayout.DrawerListener() {
+                    @Override
+                    public void onDrawerSlide(View drawerView, float slideOffset) {
+                        // Respond when the drawer's position changes
+                    }
+
+                    @Override
+                    public void onDrawerOpened(View drawerView) {
+                        // Respond when the drawer is opened
+                    }
+
+                    @Override
+                    public void onDrawerClosed(View drawerView) {
+                        // Respond when the drawer is closed
+                    }
+
+                    @Override
+                    public void onDrawerStateChanged(int newState) {
+                        // Respond when the drawer motion state changes
+                    }
+                }
+        );
+
+        //sets up navigation drawer
+        final NavigationView navigationView = findViewById(R.id.drawer_view);
+        navigationView.setNavigationItemSelectedListener(
+            new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
+                    /*MenuItem settings = findViewById(R.id.settings);
+                    MenuItem logout = findViewById(R.id.login);
+                    MenuItem uploadRecipe = findViewById(R.id.upload_recipe);
+                    MenuItem mealPlan = findViewById(R.id.current_meal_plan);
+                    MenuItem userMenu = findViewById(R.id.user_menu);*/
+                  //  navigationView.setItemIc setIconColor(ColorStateList.valueOf(Color.BLACK));
+                    //navigation UI looks for action matching the menu item and navigates there if found.
+                    //otherwise, this will bubble up to parent
+                    NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
+                   // boolean navigated = false;
+                     //   navigated = NavigationUI.onNavDestinationSelected(menuItem, navController);
+                        //set item as selected
+                    menuItem.setChecked(true);
+                        //close drawer when item is tapped
+                        //drawer_layout.closeDrawers();
+
+                    navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+                    /*if (menuItem != null) {
+                        if (menuItem == settings) {
+                            menuItem.setIcon(R.drawable.settings20px);
+                        }
+                        if (menuItem == logout) {
+                            menuItem.setIcon(R.drawable.contacts24px);
+                        }
+                        if (menuItem == uploadRecipe) {
+                            menuItem.setIcon(R.drawable.send24px);
+                        }
+                        if (menuItem == mealPlan) {
+                            menuItem.setIcon(R.drawable.calendar_today24px);
+                        }
+                        if (menuItem == userMenu) {
+                            menuItem.setIcon(R.drawable.book24px);
+                        }
+                    }*/
+                    //if (navigated)
+                    return NavigationUI.onNavDestinationSelected(menuItem, navController)
+                            || onNavigationItemSelected(menuItem);
+                    //add code here to update UI based on item selected. e.g. swap UI fragments
+
+                    /*drawer_layout.addDrawerListener(
+                            new DrawerLayout.DrawerListener() {
+                                @Override
+                                public void onDrawerSlide(View drawerView, float slideOffset) {
+                                    // Respond when the drawer's position changes
+                                }
+
+                                @Override
+                                public void onDrawerOpened(View drawerView) {
+                                    // Respond when the drawer is opened
+                                }
+
+                                @Override
+                                public void onDrawerClosed(View drawerView) {
+                                    // Respond when the drawer is closed
+                                }
+
+                                @Override
+                                public void onDrawerStateChanged(int newState) {
+                                    // Respond when the drawer motion state changes
+                                }
+                            }**/
+                    //return true;
+                }
+            });
 
 		//TODO maybe add fab?
         //FloatingActionButton fab = findViewById(R.id.navi_map);
@@ -52,32 +167,35 @@ public class MainActivity extends AppCompatActivity {
        // });
 
 		//TODO comment out this method and test. Maybe just comment out public void onclick?
-        Home.setOnClickListener(new View.OnClickListener() {
+        /*Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.action_grocery_list_to_home);
             }
-        });
+        });*/
 
 		//attach NavController to NavHost
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-		//TODO test if this does anything
-        DrawerLayout drawerLayout = this.findViewById(R.id.navigationView); //maybe change id?
+        setupDrawerMenu(navController); //broken casting
 
-		////sets top level destinations via the navigation graph
+        //drawer_layout = findViewById(R.id.drawer_layout);
+
+		//sets top level destinations via the navigation graph
         Set<Integer> topLevelDestinations = new HashSet<>();
         topLevelDestinations.add(R.id.navi_map);
-        topLevelDestinations.add(R.id.navigationView);
-        appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations)
-            .setDrawerLayout(drawerLayout).build();
+        topLevelDestinations.add(R.id.actionbar);
+        appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).
+                setDrawerLayout(drawer_layout).build();
+
+       // appBarConfiguration = new AppBarConfiguration();
 
         //sets up action bar with navController and top level destinations and passes to method for handling
-        NavigationUI.setupActionBarWithNavController(this, navController, this.appBarConfiguration);
-		this.setupActionBar(navController, appBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+		setupActionBar(navController, appBarConfiguration);
 
 		//method to setup bottom navigation bar
-        this.setupBottomNavMenu(navController);
+        setupBottomNavMenu(navController);
 
 		//creates the listener for navigation on the main activity
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
@@ -99,6 +217,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void onFragmentInteraction(URI uri){
+
+    }
+    //broken casting
+    private void setupDrawerMenu(NavController navController) {
+        DrawerLayout drawer_menu = this.findViewById(R.id.drawer_layout);
+        if (drawer_menu != null) {
+            NavigationUI.setupActionBarWithNavController(this, navController, drawer_menu);
+        }
+    }
+
 	//method to attach navController to bottom navigation menu
     private final void setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNav = this.findViewById(R.id.bottom_menu_navi);
@@ -113,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
     }
 
-	//method to setup the navigation drawer
+	//method to setup the overflow menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         boolean retValue = super.onCreateOptionsMenu(menu);
@@ -121,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
         //Add items to inflate the menu if there isn't a navigationView;
         //this adds items to the action bar if it is present.
         if (navigationView == null){
-            getMenuInflater().inflate(R.menu.menu_main, menu);
+            getMenuInflater().inflate(R.menu.drawer_menu, menu);
             return true;
         }
         return retValue;
@@ -130,15 +259,21 @@ public class MainActivity extends AppCompatActivity {
 	//method to attach navController to navigation drawer
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home: drawer_layout.openDrawer(GravityCompat.START);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
         //navigation UI looks for action matching the menu item and navigates there if found.
         //otherwise, this will bubble up to parent
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        boolean navigated = false;
-        if (item != null) {
-            navigated = NavigationUI.onNavDestinationSelected(item, navController);
-        }
-        if (navigated) return true;
-        else return super.onOptionsItemSelected(item);
+        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        //boolean navigated = false;
+        //if (item != null) {
+            //navigated = NavigationUI.onNavDestinationSelected(item, navController);
+        //}
+        //if (navigated) return true;
+        //else return super.onOptionsItemSelected(item);
     }
 
 	//method to add up navigation support if no drawer is present
@@ -146,5 +281,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         //navigation UI will support up navigation, or drawer menu
         return Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp();
+    }
+
+    //listener for handling events on navigation items
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return false;
     }
 }

@@ -87,8 +87,10 @@ public class SignUp extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
-        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
+        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
+        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
     }
 
     private boolean confirmPassword(String pass, String cPass){
