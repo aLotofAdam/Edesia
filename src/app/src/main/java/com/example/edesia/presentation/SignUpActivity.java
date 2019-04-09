@@ -12,6 +12,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//TODO should be able to use fragment, this activity is just a backup
 public class SignUpActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
@@ -76,6 +77,11 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
 
     private boolean confirmPassword(String pass, String cPass){
 

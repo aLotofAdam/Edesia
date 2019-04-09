@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--TODO on merge: changed context from mainactivity to login fragment-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login_2"
-    tools:context="com.example.edesia.presentation.MainActivity">
-
+    tools:context=".Login">
 
     <Button
         android:id="@+id/LoginButton"
@@ -111,7 +111,7 @@
         android:fontFamily="cursive"
         android:text="@string/app_motto"
         android:textAlignment="center"
-        android:textSize="20dp" />
+		android:textSize="20dp" />
 
 
 </RelativeLayout>

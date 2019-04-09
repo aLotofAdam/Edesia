@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login_2"
-    tools:context="com.example.edesia.presentation.MainActivity">
+    tools:context=".SignUp"
+    tools:showIn="@layout/sign_up">
+
+    <!--TODO on merge, changed context to fragment from Mainctivity-->
 
     <Button
         android:id="@+id/RegisterButton"

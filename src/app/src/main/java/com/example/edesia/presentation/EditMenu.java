@@ -1,15 +1,14 @@
 package com.example.edesia.presentation;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-
+import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,28 +68,14 @@ public class EditMenu extends Fragment {
         return inflater.inflate(R.layout.edit_menu, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+        view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));
+        view.findViewById(R.id.to_RecipeSearch).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
     }
 
     /**
@@ -105,6 +90,6 @@ public class EditMenu extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+       // void onFragmentInteraction(Uri uri);
     }
 }
