@@ -1,13 +1,9 @@
 package com.example.edesia.presentation;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,6 +36,7 @@ public class Home extends Fragment {
     @Override //might can change nonnull
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().getActionBar().show();
         //inflate layout
         return inflater.inflate(R.layout.home, container, false);
     }

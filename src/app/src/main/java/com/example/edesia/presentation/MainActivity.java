@@ -54,8 +54,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.actionbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
+        }
         final Activity activity = this;
 
         //interface for Navigation drawer
@@ -90,12 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             new NavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
-                    /*MenuItem settings = findViewById(R.id.settings);
-                    MenuItem logout = findViewById(R.id.login);
-                    MenuItem uploadRecipe = findViewById(R.id.upload_recipe);
-                    MenuItem mealPlan = findViewById(R.id.current_meal_plan);
-                    MenuItem userMenu = findViewById(R.id.user_menu);*/
-                  //  navigationView.setItemIc setIconColor(ColorStateList.valueOf(Color.BLACK));
                     //navigation UI looks for action matching the menu item and navigates there if found.
                     //otherwise, this will bubble up to parent
                     NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
@@ -104,54 +102,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         //set item as selected
                     menuItem.setChecked(true);
                         //close drawer when item is tapped
-                        //drawer_layout.closeDrawers();
+                    drawer_layout.closeDrawers();
 
-                    navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
-                    /*if (menuItem != null) {
-                        if (menuItem == settings) {
-                            menuItem.setIcon(R.drawable.settings20px);
-                        }
-                        if (menuItem == logout) {
-                            menuItem.setIcon(R.drawable.contacts24px);
-                        }
-                        if (menuItem == uploadRecipe) {
-                            menuItem.setIcon(R.drawable.send24px);
-                        }
-                        if (menuItem == mealPlan) {
-                            menuItem.setIcon(R.drawable.calendar_today24px);
-                        }
-                        if (menuItem == userMenu) {
-                            menuItem.setIcon(R.drawable.book24px);
-                        }
-                    }*/
-                    //if (navigated)
+                    navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
+                    navigationView.setItemIconTintList(ColorStateList.valueOf(Color.GRAY));
+
                     return NavigationUI.onNavDestinationSelected(menuItem, navController)
-                            || onNavigationItemSelected(menuItem);
-                    //add code here to update UI based on item selected. e.g. swap UI fragments
-
-                    /*drawer_layout.addDrawerListener(
-                            new DrawerLayout.DrawerListener() {
-                                @Override
-                                public void onDrawerSlide(View drawerView, float slideOffset) {
-                                    // Respond when the drawer's position changes
-                                }
-
-                                @Override
-                                public void onDrawerOpened(View drawerView) {
-                                    // Respond when the drawer is opened
-                                }
-
-                                @Override
-                                public void onDrawerClosed(View drawerView) {
-                                    // Respond when the drawer is closed
-                                }
-
-                                @Override
-                                public void onDrawerStateChanged(int newState) {
-                                    // Respond when the drawer motion state changes
-                                }
-                            }**/
-                    //return true;
+                            || MainActivity.super.onOptionsItemSelected(menuItem);
                 }
             });
 
@@ -166,18 +123,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //}
        // });
 
-		//TODO comment out this method and test. Maybe just comment out public void onclick?
-        /*Home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_grocery_list_to_home);
-            }
-        });*/
-
 		//attach NavController to NavHost
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        setupDrawerMenu(navController); //broken casting
+        //setupDrawerMenu(navController); //broken casting
 
         //drawer_layout = findViewById(R.id.drawer_layout);
 

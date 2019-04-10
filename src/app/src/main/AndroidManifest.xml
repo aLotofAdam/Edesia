@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_circle_grape"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:value="@navigation/navi_graph" >
+        android:value="@navigation/navi_graph"
+        android:fitsSystemWindows="true">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

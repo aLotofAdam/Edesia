@@ -64,6 +64,7 @@ public class EditMenu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().getActionBar().show();
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.edit_menu, container, false);
     }

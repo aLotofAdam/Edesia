@@ -29,6 +29,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
     </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/drawer_view"
         android:layout_width="256dp"
