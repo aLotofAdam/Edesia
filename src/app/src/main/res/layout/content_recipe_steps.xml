@@ -1,42 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_list_detail"
     android:layout_width="match_parent"
-    android:layout_height="1200dp"
-    android:padding="10dip"
-    android:scrollbar="vertical" >
+    android:layout_height="match_parent"
+    >
+
 
     <ImageView
         android:id="@+id/imv_colored_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/div_center" />
+        android:layout_above="@+id/div_center"
+         />
 
 
     <TextView
-        android:id="@+id/lbl_date_and_time_header"
-
+        android:id="@+id/lbl_recipe_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/lbl_message_body"
+        android:layout_above="@+id/lbl_recipe_body"
 
-        android:padding="16dp" />
+        android:padding="16dp"
 
+        tools:text="Recipe Title" />
 
     <View
         android:id="@+id/div_center"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_centerVertical="true"
+
         />
 
     <TextView
-        android:id="@+id/lbl_message_body"
+        android:id="@+id/lbl_recipe_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/div_center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="9dp"
-        android:padding="16dp" />
+        android:padding="16dp"
+
+
+        tools:text="Recipe Information" />
 
 
 </RelativeLayout>

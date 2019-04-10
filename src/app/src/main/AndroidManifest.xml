@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name="com.example.edesia.presentationLoginActivity"
+            android:name="com.example.edesia.presentation.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
