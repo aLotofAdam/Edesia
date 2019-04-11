@@ -22,6 +22,38 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".Home"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MealRandomizer"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- TODO 2 activities from Jon branch merge added above, extendeddayview commented out below
+            <activity
+            android:name=".ExpandedDayView"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+
+
         <!-- Commented out other activities besides MainActivity
         <activity
             android:name="com.example.edesia.presentation.LoginActivity"

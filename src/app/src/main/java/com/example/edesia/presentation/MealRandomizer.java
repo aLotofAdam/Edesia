@@ -1,6 +1,56 @@
 package com.example.edesia.presentation;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+
+public class MealRandomizer extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_meal_randomizer);
+
+
+
+
+        ArrayAdapter<CharSequence> months;
+        ArrayAdapter<CharSequence> days;
+        String[] monthArr = {"January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"};
+
+        String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
+                "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31",};
+
+        Spinner s3 = (Spinner)findViewById(R.id.month_spinner2);
+        Spinner s4 = (Spinner)findViewById(R.id.day_spinner2);
+
+        months = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+                monthArr);
+        months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s3.setAdapter(months);
+
+
+
+        days = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+                dayArr);
+        days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s4.setAdapter(days);
+    }
+
+
+}
+
+/* TODO: on Jon merge: past fragment code below
+
+package com.example.edesia.presentation;
+
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +65,7 @@ import androidx.fragment.app.Fragment;
  * to handle interaction events.
  * Use the {@link MealRandomizer#newInstance} factory method to
  * create an instance of this fragment.
- */
+ *
 public class MealRandomizer extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +93,7 @@ public class MealRandomizer extends Fragment {
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment MealRandomizer.
-     */
+     *
     // TODO: Rename and change types and number of parameters
     public static MealRandomizer newInstance(String param1, String param2) {
         MealRandomizer fragment = new MealRandomizer();
@@ -79,9 +129,12 @@ public class MealRandomizer extends Fragment {
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
-     */
+     *
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         //void onFragmentInteraction(Uri uri);
     }
 }
+
+ */
+

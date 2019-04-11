@@ -32,16 +32,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-//TODO on merge: changed mainActivity to not be an empty constructor
+//TODO on merge: changed mainActivity to not be an empty constructor, removed implemented home and mealrandomizer
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
         CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener,
         ExpandedDayView.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
-        GroceryList.OnFragmentInteractionListener, Home.OnFragmentInteractionListener,
-        MealRandomizer.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
+        GroceryList.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
         RecipeSearch.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
         Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
-        UserMenu.OnFragmentInteractionListener {
+        UserMenu.OnFragmentInteractionListener, Home.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
     public BottomNavigationView bottomNav;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -172,6 +170,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Log.d("NavigationActivity", "Navigated to " + destinations);
             }
         });
+
+        //TODO start activity stuff
+        /*ArrayAdapter<CharSequence> months;
+        ArrayAdapter<CharSequence> days;
+        String[] monthArr = {"January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"};
+        String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
+                "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31",};
+
+        Spinner s1 = (Spinner)findViewById(R.id.month_spinner1);
+        Spinner s2 = (Spinner)findViewById(R.id.day_spinner1);
+
+        months = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+                monthArr);
+        months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s1.setAdapter(months);
+
+
+
+        days = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+                dayArr);
+        days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s2.setAdapter(days);*/
+
     }
 
     //broken casting
@@ -289,10 +311,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             SignUp signup = (SignUp) fragment;
             signup.onStop();
         }
-        if (fragment instanceof Home) {
+        /*if (fragment instanceof Home) {
             Home home = (Home) fragment;
             home.onResume();
-        }
+        }*/
     }
 
     public void setNavigationVisibility(boolean visible) {

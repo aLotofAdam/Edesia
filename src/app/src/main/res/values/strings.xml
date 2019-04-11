@@ -23,12 +23,18 @@
     <string name="Day">Day</string>
     <string name="Current_Meal_Plan">Current Meal Plan</string>
     <string name="Expanded_Day_View">Expanded Day View</string>
+    <string name="ExpandedDayView">ExpandedDayView</string>
     <string name="Start">Start</string>
     <string name="End">End</string>
     <string name="Google_Vision">Google Vision</string>
     <string name="Logout">Logout</string>
+    <string name="Randomize">Randomize</string>
+    <string name="Plan">Plan</string>
+    <string name="Breakfast">Breakfast</string>
+    <string name="Lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
 
-    <string-array name="Months">
+    <string-array name="months">
         <item>January</item>
         <item>February</item>
         <item>March</item>
@@ -77,6 +83,4 @@
         <item>31</item>
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

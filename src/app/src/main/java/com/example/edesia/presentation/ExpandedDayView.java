@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -108,12 +107,35 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
         super.onCreate(savedInstancedState);
         setContentView(R.layout.content_expanded_day_view);
 
-        Spinner spinner =
-        findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.Months, android.R.layout.simple_spinner_item);
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.Months, android.R.layout.simple_spimmer_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item-);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
     }
 */
 }
+
+/*TODO on merge Jon: entire activity code below, need to integrate
+
+package com.example.edesia.presentation;
+
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class ExpandedDayView extends AppCompatActivity{
+
+
+       @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_expanded_day_view);
+
+    }
+
+}
+
+ */
