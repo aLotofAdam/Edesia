@@ -1,6 +1,7 @@
 package com.example.edesia.presentation;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -34,10 +38,24 @@ public class SignUp extends Fragment {
     //need it?
     private OnFragmentInteractionListener mListener;
 
+    //TODO make Bundle androidx?
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View signUpView = inflater.inflate(R.layout.sign_up, container, false);
+
+        // create ContextThemeWrapper from the original Activity Context with the custom theme
+        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.Login);
+
+        // clone the inflater using the ContextThemeWrapper
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+
+        // inflate the layout using the cloned inflater, not default inflater
+        View signUpView = localInflater.inflate(R.layout.sign_up, container, false);
+        //View signUpView = inflater.inflate(R.layout.sign_up, container, false);
 
         name = signUpView.findViewById(R.id.editTextName);
         username = signUpView.findViewById(R.id.editTextUsername);
@@ -87,8 +105,10 @@ public class SignUp extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
-        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
+        view.findViewById(R.id.RegisterButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_signUp_to_home, savedInstanceState));
+        view.findViewById(R.id.signUpBackButton).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_signUp_to_login, savedInstanceState));
     }
 
     private boolean confirmPassword(String pass, String cPass){
@@ -113,6 +133,48 @@ public class SignUp extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        //void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
+
+        //void onOpen();
+       // void onClose();
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        MainActivity activity = (MainActivity) getActivity();
+        assert activity != null;
+
+        activity.setNavigationVisibility(true);
+
+        BottomNavigationView bottomNavigationView = activity.getBottomNav();
+
+        activity.hideBottomNavigationView(bottomNavigationView);
+
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /*@Override
+    public void onStop() {
+        super.onStop();
+        mListener.onClose();
+    }*/
+
+    /*@Override
+    public void onResume() {
+        super.onResume();
+        mListener.onOpen();
+    }*/
 }

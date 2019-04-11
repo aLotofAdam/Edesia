@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.edesia.presentation.MainActivity">
-
+    tools:context=".ExpandedDayView"
+    tools:showIn="@layout/expanded_day_view">
+    <!--TODO on Jon merge: take out search button?-->
     <Button
         android:id="@+id/search2"
         android:layout_width="wrap_content"

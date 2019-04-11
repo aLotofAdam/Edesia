@@ -23,15 +23,64 @@
     <string name="Day">Day</string>
     <string name="Current_Meal_Plan">Current Meal Plan</string>
     <string name="Expanded_Day_View">Expanded Day View</string>
+    <string name="ExpandedDayView">ExpandedDayView</string>
     <string name="Start">Start</string>
     <string name="End">End</string>
     <string name="Google_Vision">Google Vision</string>
     <string name="Logout">Logout</string>
+    <string name="Randomize">Randomize</string>
     <string name="Plan">Plan</string>
     <string name="Breakfast">Breakfast</string>
     <string name="Lunch">Lunch</string>
     <string name="Dinner">Dinner</string>
-    <string name="Randomize">Ramdomize</string>
 
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="Numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
 
 </resources>

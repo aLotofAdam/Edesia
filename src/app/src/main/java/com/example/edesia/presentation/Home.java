@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity {
 
-    String selectedMonth;
-    int selectedDay;
+
 
 
 
@@ -40,8 +39,5 @@ public class Home extends AppCompatActivity {
                 dayArr);
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s2.setAdapter(days);
-
-        selectedMonth = s1.getSelectedItem().toString();
-        selectedDay = Integer.parseInt(s2.getSelectedItem().toString());
 }
 }
