@@ -67,7 +67,6 @@ public class RecipeSteps extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().getActionBar().show();
         //inflate layout
         return inflater.inflate(R.layout.recipe_steps, container, false);
     }

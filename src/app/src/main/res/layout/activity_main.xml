@@ -14,7 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:context=".MainActivity"
+        tools:elevation="2dp"
         tools:openDrawer="start"
         tools:closeDrawer="end">
 
@@ -37,7 +39,7 @@
                 app:menu="@menu/actionbar_menu">
 
                 <ImageButton
-                    android:id="@id/to_recipe_search"
+                    android:id="@+id/button_recipe_search"
                     android:layout_width="118dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="256dp"
@@ -53,8 +55,8 @@
             </androidx.appcompat.widget.Toolbar>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="304dp"
+        <FrameLayout
+            android:layout_width="256dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:fitsSystemWindows="true">
@@ -71,7 +73,7 @@
                 app:menu="@menu/drawer_menu">
 
             </com.google.android.material.navigation.NavigationView>
-        </LinearLayout>
+        </FrameLayout>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 
@@ -79,7 +81,7 @@
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="626dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         app:defaultNavHost="true"
         app:layout_anchor="@+id/constraintLayout"
@@ -105,11 +107,13 @@
             android:layout_height="55dp"
             android:background="@color/colorPrimary"
             android:foregroundGravity="clip_horizontal"
+            android:visibility="visible"
             app:itemBackground="@color/colorPrimary"
             app:itemTextColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            tools:elevation="3dp"
             app:menu="@menu/bottom_menu_navi">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>

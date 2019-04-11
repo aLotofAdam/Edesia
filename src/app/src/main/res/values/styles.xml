@@ -24,4 +24,9 @@
         </item>
     </style>
 
+    <style name="Login" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
 </resources>

@@ -1,13 +1,17 @@
 package com.example.edesia.presentation;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -37,29 +41,34 @@ public class Login extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static Login newInstance(String param1, String param2) {
-        Login fragment = new Login();
+        Login login = new Login();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        login.setArguments(args);
+        return login;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
+        // create ContextThemeWrapper from the original Activity Context with the custom theme
+        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.Login);
+
+        // clone the inflater using the ContextThemeWrapper
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+
+        // inflate the layout using the cloned inflater, not default inflater
+        return localInflater.inflate(R.layout.login, container, false);
+
         //inflate layout
-        return inflater.inflate(R.layout.login, container, false);
+        //return inflater.inflate(R.layout.login, container, false);
     }
 
     @Override
@@ -104,7 +113,55 @@ public class Login extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-       // void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
+
+        //hides bottom navigation bar
+        //void onClose();
+        //shows bottom navigation bar
+       // void onOpen();
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        MainActivity activity = (MainActivity) getActivity();
+        assert activity != null;
+
+        activity.setNavigationVisibility(true);
+
+        BottomNavigationView bottomNavigationView = activity.getBottomNav();
+
+        activity.hideBottomNavigationView(bottomNavigationView);
+
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /*@Override
+    public void onStop() {
+        super.onStop();
+        mListener.onClose();
+    }*/
+
+    //@Override
+    //public void onResume() {
+        //super.onResume();
+        //mListener.onOpen();
+    //}
+
+    /*public interface hideBottomNavigation{
+        void onOpen();
+        void onClose();
+    }*/
 }

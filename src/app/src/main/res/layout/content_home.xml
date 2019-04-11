@@ -48,7 +48,8 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20999998" />
+        app:layout_constraintVertical_bias="0.20999998"
+		tools:elevation="1dp"/>
 
     <Spinner
         android:id="@+id/spinner2"
@@ -58,7 +59,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20999998" />
+        app:layout_constraintVertical_bias="0.20999998"
+		tools:elevation="1dp"/>
 
 	<TextView
 		android:id="@+id/textView"
@@ -70,6 +72,7 @@
 		app:layout_constraintHorizontal_bias="0.1"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
+		tools:elevation="1dp"
 		app:layout_constraintVertical_bias="0.100000024" />
 
 	<TextView
@@ -81,6 +84,7 @@
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toTopOf="parent"
+		tools:elevation="1dp"
 		app:layout_constraintVertical_bias="0.100000024" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

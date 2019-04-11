@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 
 /**
@@ -66,9 +69,16 @@ public class RecipeSearch extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().getActionBar().show();
         //inflate layout
         return inflater.inflate(R.layout.recipe_search, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+        view.findViewById(R.id.to_recipe_search).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
     }
 
     // TODO: Rename method, update argument and hook method into UI event

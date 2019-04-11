@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         UserMenu.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
+    public BottomNavigationView bottomNav;
+    public NavController navController;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -97,11 +100,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     //navigation UI looks for action matching the menu item and navigates there if found.
                     //otherwise, this will bubble up to parent
                     NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
-                   // boolean navigated = false;
-                     //   navigated = NavigationUI.onNavDestinationSelected(menuItem, navController);
-                        //set item as selected
+
+                    //set item as selected
                     menuItem.setChecked(true);
-                        //close drawer when item is tapped
+                    //close drawer when item is tapped
                     drawer_layout.closeDrawers();
 
                     navigationView.setItemTextColor(ColorStateList.valueOf(Color.WHITE));
@@ -123,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //}
        // });
 
-		//attach NavController to NavHost
+		//TODO dup NavController above, need both? //attach NavController to NavHost
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         //setupDrawerMenu(navController); //broken casting
@@ -144,7 +146,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		setupActionBar(navController, appBarConfiguration);
 
 		//method to setup bottom navigation bar
-        setupBottomNavMenu(navController);
+        bottomNav = setupBottomNavMenu(navController);
+
+        //hideBottomNavigationView(bottomNav);
+        //TODO mess with these
+        //hideBottomNavigationView(bottomNav);
+        //showBottomNavigationView(bottomNav);
+        //onResume();
 
 		//creates the listener for navigation on the main activity
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
@@ -166,9 +174,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    public void onFragmentInteraction(URI uri){
-
-    }
     //broken casting
     private void setupDrawerMenu(NavController navController) {
         DrawerLayout drawer_menu = this.findViewById(R.id.drawer_layout);
@@ -177,32 +182,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-	//method to attach navController to bottom navigation menu
-    private final void setupBottomNavMenu(NavController navController) {
+    public NavController getNavController() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return navController;
+    }
+
+    //method to attach navController to bottom navigation menu
+    public BottomNavigationView setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNav = this.findViewById(R.id.bottom_menu_navi);
         if (bottomNav != null) {
             NavigationUI.setupWithNavController(bottomNav, navController);
         }
+        return bottomNav;
     }
 
-	//method to attach navController to acton bar
+    public BottomNavigationView getBottomNav() {
+        //BottomNavigationView bottomNav;
+        bottomNav = this.findViewById(R.id.bottom_menu_navi);
+        return bottomNav;
+    }
+
+    //method to attach navController to acton bar
     private void setupActionBar(NavController navController, AppBarConfiguration appBarConfig){
         //navigation UI determines whether to put an up arrow in action bar or draw icon
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
     }
 
-	//method to setup the overflow menu
+	//TODO change this from navi view, method to setup the overflow menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        boolean retValue = super.onCreateOptionsMenu(menu);
-        Menu navigationView = findViewById(R.id.navi_map);
+        //boolean retValue = super.onCreateOptionsMenu(menu);
+        //menu = findViewById(R.menu.actionbar_menu;
         //Add items to inflate the menu if there isn't a navigationView;
         //this adds items to the action bar if it is present.
-        if (navigationView == null){
-            getMenuInflater().inflate(R.menu.drawer_menu, menu);
+        //if (menu == null){
+            getMenuInflater().inflate(R.menu.actionbar_menu, menu);
             return true;
-        }
-        return retValue;
+        //}
+        //return retValue;
     }
 
 	//method to attach navController to navigation drawer
@@ -236,5 +253,66 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return false;
+    }
+
+    public void hideBottomNavigationView(BottomNavigationView view) {
+        view.clearAnimation();
+        view.animate().translationY(view.getHeight()).setDuration(300);
+        bottomNav.setVisibility(View.GONE);
+    }
+
+    public void showBottomNavigationView(BottomNavigationView view) {
+        view.clearAnimation();
+        view.animate().translationY(0).setDuration(300);
+        bottomNav.setVisibility(View.VISIBLE);
+    }
+
+   /* @Override
+    public void onClose() {
+        BottomNavigationView bottomNavigationView = getBottomNav();
+        hideBottomNavigationView(bottomNavigationView);
+    }
+
+    @Override
+    public void onOpen() {
+        BottomNavigationView bottomNavigationView = getBottomNav();
+        showBottomNavigationView(bottomNavigationView);
+    }*/
+
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        if (fragment instanceof Login) {
+            Login login = (Login) fragment;
+            login.onStop();
+        }
+        if (fragment instanceof SignUp) {
+            SignUp signup = (SignUp) fragment;
+            signup.onStop();
+        }
+        if (fragment instanceof Home) {
+            Home home = (Home) fragment;
+            home.onResume();
+        }
+    }
+
+    public void setNavigationVisibility(boolean visible) {
+        bottomNav = getBottomNav();
+        if(bottomNav == null){
+            System.out.print("bottomNav is null dude");
+        }
+        if (bottomNav.isShown() && visible) {
+            bottomNav.setVisibility(View.INVISIBLE);
+        }
+        else if (!bottomNav.isShown() && !visible){
+            bottomNav.setVisibility(View.VISIBLE);
+        }
+        else if (bottomNav.isShown() && !visible){
+            bottomNav.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

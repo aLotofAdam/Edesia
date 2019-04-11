@@ -6,7 +6,7 @@
     <application
         android:supportsRtl="true"
         android:allowBackup="false"
-        tools:targetApi="donut"
+        tools:targetApi="p"
         tools:ignore="ExtraText,GoogleAppIndexingWarning"
         android:icon="@mipmap/ic_launcher_sq_grape"
         android:label="@string/app_name"
