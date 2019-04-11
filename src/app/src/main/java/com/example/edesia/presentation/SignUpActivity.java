@@ -8,8 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+//TODO should be able to use fragment, this activity is just a backup
 public class SignUpActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
@@ -17,6 +20,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     EditText name;
     EditText username;
+
     EditText email;
     EditText password;
     EditText confirmPassword;
@@ -28,17 +32,17 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_sign_up);
-        SignUpActivity.context = getApplicationContext();
+     //   SignUpActivity.context = getApplicationContext();
 
-        name = findViewById(R.id.editTextName);
-        username = findViewById(R.id.editTextUsername);
-        email = findViewById(R.id.editTextEmail);
-        password = findViewById(R.id.editTextPassword);
-        confirmPassword = findViewById(R.id.editTextConfirmPassword);
+        myDb = new DatabaseHelper(this);
+
+        name = (EditText)findViewById(R.id.editTextName);
+        username = (EditText)findViewById(R.id.editTextUsername);
+        email = (EditText)findViewById(R.id.editTextEmail);
+        password = (EditText)findViewById(R.id.editTextPassword);
+        confirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
         backButton = findViewById(R.id.signUpBackButton);
         registerButton = findViewById(R.id.RegisterButton);
-
-
 
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -50,42 +54,48 @@ public class SignUpActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                do{
-                        try {
-                            boolean fields = fieldsComplete(name.toString(), username.toString(), email.toString(), password.toString(), confirmPassword.toString());
-                            boolean passwordsMatch = confirmPassword(password.toString(), confirmPassword.toString());
-                            boolean inserted = myDb.insertData(name.toString(), username.toString(), email.toString(), password.toString());
-                            if (fields && passwordsMatch && inserted) {
-                                Toast.makeText(context, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                regComplete = true;
+                String UserName = username.getText().toString();
+                String Name = name.getText().toString();
+                String Email = email.getText().toString();
+                String Pass = password.getText().toString();
+                String cPass = confirmPassword.getText().toString();
 
-                            } else {
-                                Toast.makeText(context, "Registration Incomplete", Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                    boolean fields = fieldsComplete(Name, UserName, Email, Pass, cPass);
+                    boolean passwordsMatch = confirmPassword(Pass, cPass);
+                    boolean userCheck = myDb.checkUsername(UserName);
+
+                    if (fields && passwordsMatch && userCheck) {
+                        boolean inserted = myDb.insertData(Name, UserName, Email, Pass);
+                        if(inserted == true) {
+                            Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
+                            openLoginActivity();
                         }
 
-                } while(!regComplete);
-
-                openLoginActivity();
+                    } else if (!userCheck) {
+                        Toast.makeText(getApplicationContext(), "Username Already Exists", Toast.LENGTH_LONG).show();
+                    }
             }
         });
     }
 
+    //Listener for navigation component
+    public static void setOnClickListener(View.OnClickListener onClickListener) {
+    }
+
+
     private boolean confirmPassword(String pass, String cPass){
 
-        if(password.toString().equals(confirmPassword.toString())) {
+        if(pass.equals(cPass)) {
             return true;
         }else{
-            Toast.makeText(context, "Passwords Do Not Match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Passwords Do Not Match", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
 
     private boolean fieldsComplete(String name, String user, String email, String pass, String cPass){
-        if(name.equals("")||username.equals("")||email.equals("")||password.equals("")||confirmPassword.equals("")){
-            Toast.makeText(context, "Fields missing", Toast.LENGTH_SHORT).show();
+        if(name.equals("")||user.equals("")||email.equals("")||pass.equals("")||cPass.equals("")){
+            Toast.makeText(getApplicationContext(), "Fields Missing", Toast.LENGTH_SHORT).show();
             return false;
         }else{
             return true;
@@ -93,12 +103,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void openLoginActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 
-    public void openHomeActivity(){
-        Intent intent = new Intent(this, Home.class);
-        startActivity(intent);
-    }
 }

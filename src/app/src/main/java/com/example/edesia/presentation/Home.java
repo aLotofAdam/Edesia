@@ -25,8 +25,8 @@ public class Home extends AppCompatActivity {
         String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
                 "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31",};
 
-        Spinner s1 = (Spinner)findViewById(R.id.month_spinner1);
-        Spinner s2 = (Spinner)findViewById(R.id.day_spinner1);
+        Spinner s1 = findViewById(R.id.month_spinner1);
+        Spinner s2 = findViewById(R.id.day_spinner1);
 
         months = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
                 monthArr);

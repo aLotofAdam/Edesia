@@ -3,12 +3,16 @@ package com.example.edesia.presentation;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 
 public class MealRandomizer extends AppCompatActivity {
+    Random rand = new Random();
+
+    int number = rand.nextInt(300) + 1;
 
 
     @Override
