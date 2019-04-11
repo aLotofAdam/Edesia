@@ -6,13 +6,14 @@
     <application
         android:supportsRtl="true"
         android:allowBackup="false"
-        tools:targetApi="donut"
+        tools:targetApi="p"
         tools:ignore="ExtraText,GoogleAppIndexingWarning"
         android:icon="@mipmap/ic_launcher_sq_grape"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_circle_grape"
-        android:theme="@style/AppTheme"
-        android:value="@navigation/navi_graph" >
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:value="@navigation/navi_graph"
+        android:fitsSystemWindows="true">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +21,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Home"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MealRandomizer"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- TODO 2 activities from Jon branch merge added above, extendeddayview commented out below
+            <activity
+            android:name=".ExpandedDayView"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+
 
         <!-- Commented out other activities besides MainActivity
         <activity

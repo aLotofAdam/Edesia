@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_menu">
     <item
-        android:id="@+id/meal_randomizer"
-        android:icon="@drawable/icons8_shuffle_22"
-        android:title="@string/randomizer" />
+        android:id="@id/user_menu"
+        android:icon="@drawable/book24px"
+        android:title="@string/user_menu" />
     <item
-        android:id="@+id/home"
+        android:id="@id/home"
         android:icon="@drawable/round_home_black_18dp"
         android:title="@string/home" />
     <item
-        android:id="@+id/grocery_list"
+        android:id="@id/grocery_list"
         android:icon="@drawable/shopping_cart24px"
         android:title="@string/grocery_list" />
 </menu>
