@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home" >
-
-	<!-- TODO on merge: changed androidx coordinator layout to relative
-	    changed context from mainactivity to .Home fragment
-	    removed appbar and toolbar -->
+    tools:context=".Home">
 
     <include layout="@layout/content_home" />
 

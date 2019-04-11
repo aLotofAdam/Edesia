@@ -71,10 +71,10 @@ public class EditMenu extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.
-                createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));
-        view.findViewById(R.id.to_RecipeSearch).setOnClickListener(Navigation.
+        //TODO fix navigation links
+        view.findViewById(R.id.edit_menu).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_user_menu, savedInstanceState));
+        view.findViewById(R.id.edit_menu).setOnClickListener(Navigation.
                 createNavigateOnClickListener(R.id.action_Home_to_recipe_search, savedInstanceState));
     }
 

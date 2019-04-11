@@ -1,5 +1,7 @@
 package com.example.edesia.presentation;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +71,13 @@ public class CurrentMealPlan extends Fragment {
         return inflater.inflate(R.layout.current_meal_plan, container, false);
     }
 
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -76,6 +85,23 @@ public class CurrentMealPlan extends Fragment {
         view.findViewById(R.id.to_recipe_search).setOnClickListener(Navigation.
                 createNavigateOnClickListener(R.id.action_current_meal_plan_to_recipe_search,
                         savedInstanceState));
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
     }
 
     /**
@@ -90,6 +116,6 @@ public class CurrentMealPlan extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: on merge: commented next line out
-       // void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 }
