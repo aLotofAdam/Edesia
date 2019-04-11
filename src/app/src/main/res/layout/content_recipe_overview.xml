@@ -1,48 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.support.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+<android.support.v7.widget.CardView
+xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+card_view:cardBackgroundColor="#E6E6E6"
+card_view:cardCornerRadius="8dp"
+card_view:cardElevation="8dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:id="@+id/recipe_image_"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="TODO"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_marginLeft = "10dp"
-        android:gravity="center_vertical|start"
-        android:layout_width="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"/>
-    <TextView
-        android:id="@+id/prepTime"
-        android:layout_marginLeft = "10dp"
-        android:gravity="center_vertical|start"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-
-        android:layout_marginStart="10dp"/>
-    <TextView
-        android:id="@+id/totalTime"
-        android:layout_marginLeft = "10dp"
-        android:gravity="center_vertical|start"
-        android:layout_width="wrap_content"
-        android:textStyle="italic"
-        android:layout_marginStart="10dp"/>
+</android.support.v7.widget.CardView>
 
 
-</androidx.support.widget.CardView>
+
+

@@ -1,12 +1,8 @@
 package com.example.edesia.presentation;
 //imports needed
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Layout;
 import android.text.TextWatcher;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
@@ -14,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.ListViewCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,16 +58,9 @@ public class RecipeSearch extends AppCompatActivity {
         public void afterTextChanged(Editable s) {
 
         }
+    });
 
 
-    private void loadSuggestList() {
-        suggestList = database.getRecipes();
-        materialSearchBar.setLastSuggestions(suggestList);
-
-
-    }
-
-    };
     materialSearchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
         @Override
         public void onSearchStateChanged(boolean enabled) {
@@ -86,7 +74,7 @@ public class RecipeSearch extends AppCompatActivity {
         public void onSearchConfirmed(CharSequence text) {
             startSearch(text.toString());
         }
-        
+
 
         @Override
         public void onButtonClicked(int buttonCode) {
@@ -94,6 +82,11 @@ public class RecipeSearch extends AppCompatActivity {
         }
     });
     adapter = new SearchAdapter(this,database.getRecipes());
+    }
+
+    private void loadSuggestList() {
+        suggestList = database.getTitles();
+        materialSearchBar.setLastSuggestions(suggestList);
     }
 
     private void startSearch(String text) {

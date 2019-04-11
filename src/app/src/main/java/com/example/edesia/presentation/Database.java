@@ -13,23 +13,24 @@ import java.util.List;
 public class Database extends SQLiteAssetHelper {
 
     private static final String DB_NAME = "recipe_db.db";
-    private static final int DB_VERSION =1;
+    private static final int DB_VERSION = 1;
 
 
     public Database(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
-    public List<Recipe> getRecipes(){
+
+    public List<Recipe> getRecipes() {
 
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"URL","Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
+        String[] sqlSelect = {"URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
         String table_name = "output";
         qb.setTables(table_name);
-        Cursor cursor = qb.query(db, sqlSelect, null,null,null,null,null);
+        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
         List<Recipe> result = new ArrayList<>();
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 Recipe recipe = new Recipe();
                 recipe.setURL(cursor.getString(cursor.getColumnIndex("URL")));
@@ -40,37 +41,58 @@ public class Database extends SQLiteAssetHelper {
                 recipe.setInstructions(cursor.getString(cursor.getColumnIndex("Instructions")));
 
                 result.add(recipe);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         return result;
     }
-    public List<String> getURL(String URL){
+    public List<String> getTitles(){
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        String[] sqlSelect = {"Title"};
+        String table_name = "output";
+        qb.setTables(table_name);
+        //will query like select from where %patterm%
+        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
+        List<String> result = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                result.add(cursor.getString(cursor.getColumnIndex("Title")));
+
+            } while (cursor.moveToNext());
+        }
+        return result;
+    }
+
+
+    public List<String> getURL(String URL) {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         String[] sqlSelect = {"URL"};
         String table_name = "output";
         qb.setTables(table_name);
-        Cursor cursor = qb.query(db, sqlSelect, null,null,null,null,null);
+        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
         List<String> result = new ArrayList<>();
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 result.add(cursor.getString(cursor.getColumnIndex("URL")));
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         return result;
     }
-    public List<Recipe> getRecipebyName(String Title){
+
+    public List<Recipe> getRecipebyName(String Title) {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"URL","Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
+        String[] sqlSelect = {"URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
         String table_name = "output";
         qb.setTables(table_name);
         //will query like select from where %patterm%
-        Cursor cursor = qb.query(db, sqlSelect, "Title LIKE ?",new String[]{"%"+Title+"%"},null,null,null);
+        Cursor cursor = qb.query(db, sqlSelect, "Title LIKE ?", new String[]{"%" + Title + "%"}, null, null, null);
         List<Recipe> result = new ArrayList<>();
-        if(cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 Recipe recipe = new Recipe();
                 recipe.setURL(cursor.getString(cursor.getColumnIndex("URL")));
@@ -80,10 +102,9 @@ public class Database extends SQLiteAssetHelper {
                 recipe.setIngredients(cursor.getString(cursor.getColumnIndex("Ingredients")));
                 recipe.setInstructions(cursor.getString(cursor.getColumnIndex("Instructions")));
                 result.add(recipe);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         return result;
     }
-
 
 }

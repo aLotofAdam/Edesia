@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.mancj.materialsearchbar.MaterialSearchBar
         android:id="@+id/search_Bar"
-        android:layout_alignParentTop="true"
-        app:mt_speechMode="false"
-        app:mt_hint="Search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <androidx.recyclerview.widget.RecyclerView
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        app:mt_hint="Search"
+        app:mt_speechMode="false" />
+    <android.recyclerview.widget.RecyclerView
         android:id="@+id/recipe_Search"
         android:layout_below="@id/search_Bar"
         android:layout_width="match_parent"
