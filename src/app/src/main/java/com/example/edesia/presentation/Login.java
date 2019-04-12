@@ -74,7 +74,9 @@ public class Login extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+       // startLoginDirections.actionLoginToHome();
+        //view.findViewById(R.id.LoginButton).setOnClickListener(Navigation.
+                //createNavigateOnClickListener(startActivity(), savedInstanceState));
         //navigate using convenience method
         view.findViewById(R.id.LoginButton).setOnClickListener(Navigation.
                 createNavigateOnClickListener(R.id.action_login_to_home, savedInstanceState));

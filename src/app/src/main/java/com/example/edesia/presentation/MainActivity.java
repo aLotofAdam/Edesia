@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         GroceryList.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
         RecipeSearch.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
         Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
-        UserMenu.OnFragmentInteractionListener, Home.OnFragmentInteractionListener {
+        UserMenu.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
     public BottomNavigationView bottomNav;
@@ -319,8 +319,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void setNavigationVisibility(boolean visible) {
         bottomNav = getBottomNav();
-        if(bottomNav == null){
-            System.out.print("bottomNav is null dude");
+        if(!bottomNav.isShown() && visible){
+            bottomNav.setVisibility(View.INVISIBLE);
         }
         if (bottomNav.isShown() && visible) {
             bottomNav.setVisibility(View.INVISIBLE);

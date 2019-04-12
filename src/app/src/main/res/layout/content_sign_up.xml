@@ -24,6 +24,7 @@
         android:layout_marginEnd="145dp"
         android:layout_marginRight="145dp"
         android:layout_marginBottom="233dp"
+        android:backgroundTint="@android:color/darker_gray"
         android:text="@string/Register" />
 
     <EditText
@@ -40,6 +41,8 @@
         android:layout_marginBottom="510dp"
         android:ems="10"
         android:hint="@string/Name"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:textColor="@color/textColor"
         android:inputType="textPersonName"
         android:textSize="18dp" />
 
@@ -58,6 +61,8 @@
         android:ems="10"
         android:hint="@string/Username"
         android:inputType="textPersonName"
+        android:textColor="@color/textColor"
+        android:textColorHint="@android:color/tertiary_text_light"
         android:textSize="18dp" />
 
     <EditText
@@ -73,6 +78,8 @@
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="410dp"
         android:hint="@string/Email"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:textColor="@color/textColor"
         android:inputType="textEmailAddress" />
 
 
@@ -90,6 +97,8 @@
         android:layout_marginBottom="360dp"
         android:ems="10"
         android:hint="@string/Password"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:textColor="@color/textColor"
         android:inputType="textPassword"
         android:textSize="18dp" />
 
@@ -109,6 +118,8 @@
         android:layout_marginBottom="310dp"
         android:ems="10"
         android:hint="@string/Confirm_Password"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:textColor="@color/textColor"
         android:inputType="textPassword"
         android:textSize="18dp" />
 
@@ -128,6 +139,7 @@
         android:layout_marginBottom="570dp"
         android:fontFamily="cursive"
         android:text="@string/RegisterAccount"
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:textSize="35dp" />
 

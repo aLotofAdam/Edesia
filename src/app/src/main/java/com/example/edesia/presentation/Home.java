@@ -1,22 +1,18 @@
 package com.example.edesia.presentation;
 
+
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class Home extends AppCompatActivity {
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_home);
+        setContentView(R.layout.home);
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
@@ -39,5 +35,5 @@ public class Home extends AppCompatActivity {
                 dayArr);
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s2.setAdapter(days);
-}
+    }
 }
