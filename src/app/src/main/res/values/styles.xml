@@ -28,6 +28,9 @@
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="editTextColor">@color/textColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="editTextBackground">@color/colorAccent</item>
+        <item name="android:textColorHint">@android:color/tertiary_text_light</item>
     </style>
 
 </resources>
