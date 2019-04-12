@@ -3,12 +3,11 @@ package com.example.edesia.presentation;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import java.util.Random;
 
 import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 
 public class MealRandomizer extends AppCompatActivity {
     Random rand = new Random();
@@ -22,9 +21,6 @@ public class MealRandomizer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meal_randomizer);
-
-
-
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
@@ -42,12 +38,14 @@ public class MealRandomizer extends AppCompatActivity {
         months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s3.setAdapter(months);
 
-
-
         days = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
                 dayArr);
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s4.setAdapter(days);
+      
+        selectedMonth = s3.getSelectedItem().toString();
+        selectedDay = Integer.parseInt(s4.getSelectedItem().toString());
+    }
 
         selectedMonth = s3.getSelectedItem().toString();
         selectedDay = Integer.parseInt(s4.getSelectedItem().toString());
@@ -66,7 +64,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 
-/**
+/** 
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link MealRandomizer.OnFragmentInteractionListener} interface
