@@ -16,7 +16,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_home);
+        setContentView(R.layout.home);
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;

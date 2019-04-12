@@ -22,7 +22,7 @@ public class MealRandomizer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_meal_randomizer);
+        setContentView(R.layout.meal_randomizer);
 
 
 
