@@ -3,7 +3,6 @@ package com.example.edesia.presentation;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import java.util.Random;
 
 import java.util.Random;
 
@@ -43,10 +42,6 @@ public class MealRandomizer extends AppCompatActivity {
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s4.setAdapter(days);
       
-        selectedMonth = s3.getSelectedItem().toString();
-        selectedDay = Integer.parseInt(s4.getSelectedItem().toString());
-    }
-
         selectedMonth = s3.getSelectedItem().toString();
         selectedDay = Integer.parseInt(s4.getSelectedItem().toString());
     }
