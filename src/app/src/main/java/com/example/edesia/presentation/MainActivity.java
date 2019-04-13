@@ -35,10 +35,8 @@ import androidx.navigation.ui.NavigationUI;
 //TODO on merge: changed mainActivity to not be an empty constructor, removed implemented home and mealrandomizer
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
-        CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener,
-        ExpandedDayView.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
-        GroceryList.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
-        RecipeSearch.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
+        CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
+        RecipeOverview.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
         Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
         UserMenu.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
@@ -57,10 +55,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        }/*
         if (actionBar != null) {
             actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
-        }
+        }*/
         final Activity activity = this;
 
         //interface for Navigation drawer

@@ -8,56 +8,49 @@
     tools:context=".ExpandedDayView"
     tools:showIn="@layout/expanded_day_view">
     <!--TODO on Jon merge: take out search button?-->
+
+    <Spinner
+        android:id="@+id/month_spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="584dp"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:id="@+id/day_spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="586dp" />
+
     <Button
-        android:id="@+id/search2"
+        android:id="@+id/Add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginBottom="587dp"
-        android:text="@string/Search"
+        android:layout_marginEnd="155dp"
+        android:layout_marginRight="155dp"
+        android:layout_marginBottom="369dp"
+        android:text="@string/Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
-        tools:text="Search" />
+        app:layout_constraintVertical_bias="0.13" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Spinner
+        android:id="@+id/meal_choice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="321dp"
-        android:layout_marginRight="321dp"
-        android:layout_marginBottom="603dp"
-        android:text="@string/Breakfast" />
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="495dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="332dp"
-        android:layout_marginRight="332dp"
-        android:layout_marginBottom="437dp"
-        android:text="@string/Lunch" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="331dp"
-        android:layout_marginRight="331dp"
-        android:layout_marginBottom="281dp"
-        android:text="@string/Dinner" />
 </RelativeLayout>
