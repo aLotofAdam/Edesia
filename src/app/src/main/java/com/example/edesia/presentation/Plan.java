@@ -5,72 +5,68 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-
-public class MealRandomizer extends AppCompatActivity {
-    Random BreakfastRand = new Random();
-    Random LunchRand = new Random();
-    Random DinnerRand = new Random();
-
-    int BreakfastID = BreakfastRand.nextInt(82) + 1;
-    int LunchID = LunchRand.nextInt(82) + 1;
-    int DinnerID = DinnerRand.nextInt(82) + 1;
-
+public class Plan extends AppCompatActivity {
     String selectedMonth;
     int selectedDay;
-
-
-
-
+    String selectedMeal;
+    int recipeIDHold;
+    Button Add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.meal_randomizer);
-
-
+        setContentView(R.layout.content_plan);
 
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
+        ArrayAdapter<CharSequence> choice;
+
         String[] monthArr = {"January", "February", "March", "April", "May", "June", "July",
                 "August", "September", "October", "November", "December"};
 
         String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
                 "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
 
-        Spinner s4 = findViewById(R.id.month_spinner2);
-        Spinner s5 = findViewById(R.id.day_spinner2);
+        String[] mealChoice = {"Breakfast", "Lunch", "Dinner"};
+
+        Spinner s1 = findViewById(R.id.month_spinner1);
+        Spinner s2 = findViewById(R.id.day_spinner1);
+        Spinner s3 = findViewById(R.id.meal_choice1);
 
         months = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
                 monthArr);
         months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s4.setAdapter(months);
+        s1.setAdapter(months);
 
 
 
         days = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
                 dayArr);
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s5.setAdapter(days);
-
-      Button Randomize =  findViewById(R.id.randomize1);
-        Randomize.setOnClickListener(RandomListener);
+        s2.setAdapter(days);
 
 
-        selectedMonth = s4.getSelectedItem().toString();
-        selectedDay = Integer.parseInt(s5.getSelectedItem().toString());
+        choice = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+                mealChoice);
+        choice.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s3.setAdapter(choice);
+
+        Add = findViewById(R.id.Add);
+        Add.setOnClickListener(AddListener);
+
+        selectedMonth = s1.getSelectedItem().toString();
+        selectedDay = Integer.parseInt(s2.getSelectedItem().toString());
+        selectedMeal = s3.getSelectedItem().toString();
 
 
 
     }
 
-
-    private View.OnClickListener RandomListener = new View.OnClickListener() {
+    private View.OnClickListener AddListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
@@ -78,7 +74,4 @@ public class MealRandomizer extends AppCompatActivity {
     };
 
 }
-
-
-
 
