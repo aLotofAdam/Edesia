@@ -1,10 +1,10 @@
 package com.example.edesia.presentation;
 
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+        import android.os.Bundle;
+        import android.widget.ArrayAdapter;
+        import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Home extends AppCompatActivity {
@@ -45,5 +45,5 @@ public class Home extends AppCompatActivity {
         selectedMonth = s1.getSelectedItem().toString();
         selectedDay = Integer.parseInt(s2.getSelectedItem().toString());
 
-}
+    }
 }
