@@ -41,9 +41,9 @@
             </intent-filter>
         </activity>
 
-        <!-- TODO 2 activities from Jon branch merge added above, extendeddayview commented out below
+
             <activity
-            android:name=".ExpandedDayView"
+            android:name=".Plan"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +51,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        -->
+
+        <activity
+            android:name=".GroceryList"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
 
 
         <!-- Commented out other activities besides MainActivity

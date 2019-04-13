@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
-
+/*
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class Database extends SQLiteAssetHelper {
         Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
         List<String> result = new ArrayList<>();
         if (cursor.moveToFirst()) {
-            do {
+           do {
                 result.add(cursor.getString(cursor.getColumnIndex("URL")));
             } while (cursor.moveToNext());
         }
@@ -108,3 +108,4 @@ public class Database extends SQLiteAssetHelper {
     }
 
 }
+        */

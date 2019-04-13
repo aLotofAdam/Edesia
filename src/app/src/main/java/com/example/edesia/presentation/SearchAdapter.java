@@ -34,8 +34,8 @@ class SearchViewHolder extends RecyclerView.ViewHolder {
     public SearchViewHolder(@NonNull View itemView) {
         super(itemView);
         title=(TextView)itemView.findViewById(R.id.title);
-        prepTime=(TextView)itemView.findViewById(R.id.prepTime);
-        totalTime=(TextView)itemView.findViewById(R.id.totalTime);
+        //prepTime=(TextView)itemView.findViewById(R.id.prepTime);
+        //totalTime=(TextView)itemView.findViewById(R.id.totalTime);
 
 
 
