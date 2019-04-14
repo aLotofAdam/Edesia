@@ -64,6 +64,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder>{
         holder.title. setText(recipes.get(position).getTitle());
         holder.prepTime. setText(recipes.get(position).getPrepTime());
         holder.totalTime. setText(recipes.get(position).getTotalTime());
+
     }
 
     @Override

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:conttext="com.android.example.word"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipeSearch">
@@ -10,12 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
+        android:layout_margin="16dp"
         app:mt_hint="Search"
-        app:mt_speechMode="false" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recipe_Search"
-        android:layout_below="@id/search_Bar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        app:mt_speechMode="false" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipe_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:padding="4dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </com.mancj.materialsearchbar.MaterialSearchBar>
+
+
 </RelativeLayout>
