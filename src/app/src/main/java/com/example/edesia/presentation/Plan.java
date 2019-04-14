@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,8 @@ public class Plan extends AppCompatActivity {
     String selectedMeal;
     int recipeIDHold;
     Button Add;
+
+    DatabaseHelper myDb = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -64,12 +67,18 @@ public class Plan extends AppCompatActivity {
 
 
 
+
     }
 
     private View.OnClickListener AddListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
+            boolean inserted = myDb.insertPlannedMeal("Steve1", selectedMonth, selectedDay, selectedMeal, recipeIDHold);
+
+            if(inserted == true) {
+                Toast.makeText(getApplicationContext(), "Planned Successfully", Toast.LENGTH_LONG).show();
+            }
         }
     };
 

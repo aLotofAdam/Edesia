@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 //TODO should be able to use fragment, this activity is just a backup
@@ -65,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                     boolean userCheck = myDb.checkUsername(UserName);
 
                     if (fields && passwordsMatch && userCheck) {
-                        boolean inserted = myDb.insertData(Name, UserName, Email, Pass);
+                        boolean inserted = myDb.insertUserData(Name, UserName, Email, Pass);
                         if(inserted == true) {
                             Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
                             openLoginActivity();

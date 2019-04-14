@@ -66,7 +66,7 @@ public class ExpandedDayView extends Fragment implements AdapterView.OnItemSelec
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //inflate layout
-        return inflater.inflate(R.layout.expanded_day_view, container, false);
+        return inflater.inflate(R.layout.plan, container, false);
     }
 
     @Override

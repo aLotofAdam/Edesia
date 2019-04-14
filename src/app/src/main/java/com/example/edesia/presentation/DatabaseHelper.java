@@ -30,6 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         public void onCreate(SQLiteDatabase db) {
 
                 db.execSQL("Create table UserTable(Username text primary key, Password text, Name text, Email text)");
+                db.execSQL("Create table PlannedMeals(Username text, Month text, Day integer, Breakfast integer, Lunch integer, Dinner integer, CONSTRAINT fk_Username FOREIGN KEY (Username) REFERENCES UserTable(Username))");
+                db.execSQL("Create table FavoriteRecipes(Username text, RecipeID integer, CONSTRAINT fk_Username FOREIGN KEY (Username) REFERENCES UserTable(Username))");
         }
 
         @Override
@@ -37,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL("drop table if exists UserTable");
         }
 
-    public boolean insertData(String name, String username, String email, String pass){
+    public boolean insertUserData(String name, String username, String email, String pass){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,6 +50,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("Email", email);
 
         long id = db.insert("UserTable", null , contentValues);
+        if(id == -1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean insertPlannedMeal(String user, String month, int day, String mealTime, int RecipeID){
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+
+            contentValues.put("Username", user);
+            contentValues.put("Month", month);
+            contentValues.put("Day", day);
+
+            if(mealTime.equals("Breakfast")) {
+                contentValues.put("Breakfast", RecipeID);
+            }
+            if(mealTime.equals("Lunch")) {
+                contentValues.put("Lunch", RecipeID);
+            }
+            if(mealTime.equals("Dinner")) {
+            contentValues.put("Dinner", RecipeID);
+
+            }
+
+            long id = db.insert("PlannedMeals", null, contentValues);
+            if(id == -1){
+                return false;
+            }else{
+                return true;
+        }
+    }
+
+    public boolean insertFavoriteRecipe(String user, int RecipeID){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("Username", user);
+        contentValues.put("RecipeID", RecipeID);
+
+        long id = db.insert("FavoriteRecipes", null, contentValues);
         if(id == -1){
             return false;
         }else{

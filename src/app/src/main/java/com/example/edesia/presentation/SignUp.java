@@ -85,7 +85,7 @@ public class SignUp extends Fragment {
             public void onClick(View v) {
                 try {
                     boolean passwordsMatch = confirmPassword(password.toString(), confirmPassword.toString());
-                    boolean inserted = myDb.insertData(name.toString(), username.toString(), email.toString(), password.toString());
+                    boolean inserted = myDb.insertUserData(name.toString(), username.toString(), email.toString(), password.toString());
                     if(inserted && passwordsMatch) {
                         Toast.makeText(context, "Registered Successfully", Toast.LENGTH_SHORT).show();
                     }else {

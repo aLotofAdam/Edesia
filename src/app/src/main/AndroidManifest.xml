@@ -62,9 +62,6 @@
             </intent-filter>
         </activity>
 
-
-
-        <!-- Commented out other activities besides MainActivity
         <activity
             android:name="com.example.edesia.presentation.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -82,13 +79,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.edesia.presentation.UserMenu"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+
         -->
     </application>
 
