@@ -38,8 +38,7 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
         CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener,
-        ExpandedDayView.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
-        GroceryList.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
+        ExpandedDayView.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
         RecipeSearch.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
         Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
         UserMenu.OnFragmentInteractionListener {

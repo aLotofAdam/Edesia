@@ -33,6 +33,8 @@
     <string name="Breakfast">Breakfast</string>
     <string name="Lunch">Lunch</string>
     <string name="Dinner">Dinner</string>
+    <string name="recipePicture">recipePicture</string>
+    <string name="add_recipe">Add Recipe</string>
 
     <string name="title_activity_ocr__vision">OCR_Vision</string>
     <string name="nothing">Nothing</string>

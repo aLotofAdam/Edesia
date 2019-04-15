@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_graphv2"
+    app:startDestination="@id/login">
+
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.edesia.presentation.Login"
+        android:label="login"
+        tools:layout="@layout/login" >
+        <action
+            android:id="@+id/action_login_to_signUp2"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_login_to_home2"
+            app:destination="@id/home" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.edesia.presentation.SignUp"
+        android:label="signUp"
+        tools:layout="@layout/sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_home2"
+            app:destination="@id/home" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.edesia.presentation.Home"
+        android:label="home"
+        tools:layout="@layout/home" />
+
+
+    <fragment
+        android:id="@+id/grocery_list"
+        android:name="com.example.edesia.presentation.GroceryList"
+        android:label="grocery_list"
+        tools:layout="@layout/grocery_list" />
+
+
+    <fragment
+        android:id="@+id/google_vision"
+        android:name="com.example.edesia.presentation.GoogleVision"
+        android:label="@string/Google_Vision"
+        tools:layout="@layout/google_vision" />
+
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.edesia.presentation.Settings"
+        android:label="settings"
+        tools:layout="@layout/settings" />
+
+
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.example.edesia.presentation.Login"
+        android:label="logout"
+        tools:layout="@layout/login" />
+
+
+    <fragment
+        android:id="@+id/upload_recipe"
+        android:name="com.example.edesia.presentation.UploadRecipe"
+        android:label="@string/upload_recipe"
+        tools:layout="@layout/upload_recipe " />
+
+
+    <fragment
+        android:id="@+id/current_meal_plan"
+        android:name="com.example.edesia.presentation.CurrentMealPlan"
+        android:label="@string/Current_Meal_Plan"
+        tools:layout="@layout/current_meal_plan" />
+
+
+    <fragment
+        android:id="@+id/user_menu"
+        android:name="com.example.edesia.presentation.UserMenu"
+        android:label="@string/user_menu"
+        tools:layout="@layout/user_menu" />
+
+</navigation>

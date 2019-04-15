@@ -28,9 +28,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -110,6 +113,37 @@ public class OCR_Vision extends AppCompatActivity {
                         }
                     };
             tts = new TextToSpeech(this.getApplicationContext(), listener);*/
+
+            FloatingActionButton fab = findViewById(R.id.Visionfab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    getList(view);
+                    //CameraSource.this.stop();
+                    //DetectorProcessor.this.receiveDetections();
+                    Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+
+            //FloatingActionButton fab = findViewById(R.id.navi_map);
+            // fab.setOnClickListener(new View.OnClickListener() {
+            //   @Override
+            // public void onClick(View view) {
+            //   Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            //         .setAction("Action", null).show();
+            //Navigation.findNavController().navigate(R.id.nav_host_fragment);
+            //}
+            // });
+
+        }
+
+        public List getList(View view){
+            List list = new ArrayList();
+            //this.view.CameraSource.stop();
+            //view.receiveDetections();
+
+            return list;
         }
 
         /**

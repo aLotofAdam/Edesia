@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.Constraints
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".GroceryList"
+    tools:showIn="@layout/grocery_list">
 
-    <!-- TODO remove this xml file? -->
-
-    <Button
-        android:id="@+id/to_recipe_search"
+    <Spinner
+        android:id="@+id/month_spinner3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Search"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="603dp" />
-</androidx.constraintlayout.widget.Constraints>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="636dp"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:id="@+id/day_spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="638dp"
+        android:spinnerMode="dropdown" />
+</RelativeLayout>

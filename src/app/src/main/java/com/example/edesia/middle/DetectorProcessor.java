@@ -6,12 +6,16 @@ import android.util.SparseArray;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A very simple Processor which gets detected TextBlocks and adds them to the overlay
  * as OcrGraphics.
  */
 public class DetectorProcessor implements Detector.Processor<TextBlock>{
     private GraphicOverlay<OCRGraphic> graphicOverlay;
+    List list = new ArrayList();
 
     public DetectorProcessor(GraphicOverlay<OCRGraphic> ocrGraphicOverlay){
         graphicOverlay = ocrGraphicOverlay;
@@ -31,9 +35,14 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);
             if (item != null && item.getValue() != null) {
-                Log.d("Processor", "Text detected! " + item.getValue());
-                OCRGraphic graphic = new OCRGraphic(graphicOverlay, item);
-                graphicOverlay.add(graphic);
+                final String worst = item.getValue();
+                if(worst.length() > 1 && Character.isUpperCase(worst.charAt(0)) && worst
+                        .matches("[A-Za-z-]+") && worst.charAt(worst.length() - 1) != '-') {
+                    Log.d("Processor", "Text detected! " + worst);
+                    OCRGraphic graphic = new OCRGraphic(graphicOverlay, item);
+                    graphicOverlay.add(graphic);
+                    list.add(item);
+                }
             }
         }
     }
