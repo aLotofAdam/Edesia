@@ -12,17 +12,19 @@ package com.example.edesia.presentation;
 
 public class Home extends AppCompatActivity {
 
-    Button plan;
-    Button randomizer;
-    Button userMenu;
-    Button groceryList;
-    Button recipeSearch;
-    Button googleVision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        Button plan = findViewById(R.id.Plan);
+        Button randomizer = findViewById(R.id.Randomizer);
+        Button userMenu = findViewById(R.id.UserMenu);
+        Button groceryList = findViewById(R.id.GroceryList);
+        Button recipeSearch = findViewById(R.id.RecipeSearch);
+        Button googleVision = findViewById(R.id.OCR);
+
 
         plan.setOnClickListener(new View.OnClickListener(){
             @Override
