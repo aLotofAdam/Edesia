@@ -24,6 +24,7 @@ import com.example.edesia.middle.CameraSourcePreview;
 import com.example.edesia.middle.DetectorProcessor;
 import com.example.edesia.middle.GraphicOverlay;
 import com.example.edesia.middle.OCRGraphic;
+import com.example.edesia.middle.regexMatcher;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.text.TextBlock;
@@ -34,6 +35,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,6 +69,8 @@ public class OCR_Vision extends AppCompatActivity {
         private ScaleGestureDetector scaleGestureDetector;
         private GestureDetector gestureDetector;
 
+        List<String>ingredientList = new ArrayList<>();
+        public Set set;
         /**
          * Initializes the UI and creates the detector pipeline.
          */
@@ -81,6 +85,14 @@ public class OCR_Vision extends AppCompatActivity {
             // Set good defaults for capturing text.
             boolean autoFocus = true;
             boolean useFlash = false;
+
+            //initialize the database
+            Database db = new Database(this);
+            //regexMatcher patternMatch = new regexMatcher();
+
+            ingredientList = db.getIngredients();
+            System.out.println(ingredientList);
+            regexMatcher.PatternMatch(ingredientList, set);
 
             // Check for the camera permission before accessing the camera.  If the
             // permission is not granted yet, request permission.

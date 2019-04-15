@@ -112,29 +112,29 @@ public class Database extends SQLiteAssetHelper {
     }
 
     //function to get all ingredient names
-    public List<String> getIngredients(List<String>ingredientList)
+    public List<String> getIngredients()
     {
         SQLiteDatabase db = this.getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         String select = "Ingredients";
         String order = "ascending";
-        List<String>result = ingredientList;
+        List<String>result = new ArrayList<>();
 
         String[] sqlSelect = {"Ingredients"};
         String tableName = "recipes";  //table name
 
         //all column names with no duplicates in ascending order
         qb.setTables( tableName );
-        Cursor cursor = qb.query(db, sqlSelect,select,null,null,null,null);
-        result = new ArrayList<>(  );
+        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
         if (cursor.moveToFirst())
         {
             do{
+                //recipeModel.setIngredients( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ) );
                 result.add( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ));
             }while (cursor.moveToNext());
 
         }
-        System.out.println(result);
+        //System.out.println(result);
         return result;
     }
 

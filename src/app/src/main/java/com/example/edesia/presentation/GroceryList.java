@@ -25,7 +25,7 @@ public class GroceryList extends AppCompatActivity {
         //initialize the database
         Database db = new Database(this);
 
-       db.getIngredients(ingredientList);
+       ingredientList = db.getIngredients();
        System.out.println(ingredientList);
 
         ArrayAdapter<CharSequence> months;
