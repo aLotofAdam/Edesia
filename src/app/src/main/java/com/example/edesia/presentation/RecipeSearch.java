@@ -5,7 +5,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
-
+import com.example.edesia.presentation.SearchAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,35 +15,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 public class RecipeSearch extends AppCompatActivity {
+
+
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     SearchAdapter adapter;
+
     MaterialSearchBar materialSearchBar;
-    List<String> suggestList = new ArrayList<>();
+    List<String> suggestList = new ArrayList<>(  );
+
     Database database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_recipe_search);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.content_recipe_search );
 
-        recyclerView = findViewById(R.id.recipe_view);
+        //initialize the view
+        recyclerView = findViewById( R.id.mt_recycler_search );
+        layoutManager = new LinearLayoutManager( this );
+        recyclerView.setLayoutManager( layoutManager );
+        recyclerView.setHasFixedSize( true );
 
-        //layoutManager = new LinearLayoutManager(this);
-//messed up here
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        materialSearchBar = findViewById( R.id.search_bar );
 
-        recyclerView.setHasFixedSize(true);
+        //initialize database
+        database = new Database( this );
 
-        materialSearchBar = findViewById(R.id.search_Bar);
-
-        database = new Database(this);
-        materialSearchBar.setHint("Search for Recipe");
-        materialSearchBar.setCardViewElevation(10);
-
-        //loadSuggestList();
-
-        materialSearchBar.addTextChangeListener(new TextWatcher() {
+        //Setup search bar
+        materialSearchBar.setHint( "Search " );
+        materialSearchBar.setCardViewElevation( 10 );
+        loadSuggestList();
+        materialSearchBar.addTextChangeListener( new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -51,59 +55,58 @@ public class RecipeSearch extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                List<String> suggest = new ArrayList<>();
-                for (String search : suggestList) {
-                    if (search.toLowerCase().contains(materialSearchBar.getText().toLowerCase())) {
-                        suggest.add(search);
-
-                    }
-                    materialSearchBar.setLastSuggestions(suggest);
+                List<String> suggest = new ArrayList<>(  );
+                for (String search : suggestList)
+                {
+                    if (search.toLowerCase().contains( materialSearchBar.getText().toLowerCase() ))
+                        suggest.add( search );
                 }
+                materialSearchBar.setLastSuggestions( suggest );
             }
 
             @Override
             public void afterTextChanged(Editable s) {
 
             }
-        });
-
-        materialSearchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
-        @Override
-            public void onSearchStateChanged ( boolean enabled){
-            if (!enabled) {
-                recyclerView.setAdapter(adapter);
+        } );
+        materialSearchBar.setOnSearchActionListener( new MaterialSearchBar.OnSearchActionListener() {
+            @Override
+            public void onSearchStateChanged(boolean enabled) {
+                if (!enabled)
+                {
+                    //if close search, just restore default
+                    adapter = new SearchAdapter( getBaseContext(),database.getRecipeModel());
+                    recyclerView.setAdapter( adapter );
+                }
             }
-        }
 
             @Override
-            public void onSearchConfirmed (CharSequence text){
-            //startSearch(text.toString());
-        }
-
+            public void onSearchConfirmed(CharSequence text) {
+                startSearch( text.toString() );
+            }
 
             @Override
-            public void onButtonClicked ( int buttonCode){
+            public void onButtonClicked(int buttonCode) {
 
-        }
-
-    });
-        //error here adapter is messed up
-        adapter =new SearchAdapter(this,database.getRecipes());
-        //recyclerView.setAdapter(adapter);
-}
+            }
+        } );
 
 
-        private void loadSuggestList () {
-            suggestList = database.getTitles();
-            materialSearchBar.setLastSuggestions(suggestList);
-        }
+        adapter = new SearchAdapter( this, database.getRecipeModel() );
+        recyclerView.setAdapter( adapter );
+    }
 
-        private void startSearch (String text){
-            adapter = new SearchAdapter(this, database.getRecipebyName(text));
-            recyclerView.setAdapter(adapter);
+    private void startSearch(String text) {
 
-        }
-
+        adapter = new SearchAdapter( this,database.getRecipeByName( text ) );
+        recyclerView.setAdapter( adapter );
     }
 
 
+    private void loadSuggestList()
+    {
+        suggestList = database.getTitle();
+        materialSearchBar.setLastSuggestions( suggestList );
+    }
+
+}

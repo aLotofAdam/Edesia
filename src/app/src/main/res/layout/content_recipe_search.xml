@@ -2,28 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:conttext="com.android.example.word"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeSearch">
+    tools:context=".MainActivity">
+
     <com.mancj.materialsearchbar.MaterialSearchBar
-        android:id="@+id/search_Bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_bar"
         android:layout_alignParentTop="true"
-        android:layout_margin="16dp"
-        app:mt_hint="Search"
-        app:mt_speechMode="false" >
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recipe_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:padding="4dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
+        app:mt_speechMode="false"
+        app:mt_hint="Search">
     </com.mancj.materialsearchbar.MaterialSearchBar>
 
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mt_recycler_search"
+        android:layout_below="@id/search_bar">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
