@@ -4,29 +4,14 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GroceryList extends AppCompatActivity {
-    List<String>ingredientList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grocery_list);
-
-        //initialize the database
-        Database db = new Database(this);
-
-       ingredientList = db.getIngredients();
-       System.out.println(ingredientList);
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
@@ -53,70 +38,6 @@ public class GroceryList extends AppCompatActivity {
 
 
     }
-
-    /**
-     * Connect to the test.db database
-     * @return the Connection object
-     */
-    private Connection connect() {
-        // SQLite connection string
-        String url = "databases/recipes.db";
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return conn;
-    }
-
-
-
-    /*//function to get all ingredient names
-    public List<String> getIngredients()
-    {
-        SQLiteDatabase db = this.getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        String select = "MIN(id) AS id, Ingredients";
-        String order = "ascending";
-
-        String[] sqlSelect = {"Ingredients"};
-        String tableName = "recipes";  //table name
-
-        //all column names with no duplicates in ascending order
-        qb.setTables( tableName );
-        Cursor cursor = qb.query(db, sqlSelect,select,null,null,null,order);
-        List<String>result = new ArrayList<>(  );
-        if (cursor.moveToFirst())
-        {
-            do{
-                result.add( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ));
-            }while (cursor.moveToNext());
-
-        }
-        return result;
-    }
-
-    *//**
-     * select all rows in the warehouses table
-     *//*
-    public void selectAll(){
-        String sql = "SELECT id, name, capacity FROM warehouses";
-
-        try (Connection conn = this.connect();
-             Statement stmt  = conn.createStatement();
-             ResultSet rs    = stmt.executeQuery(sql)){
-
-            // loop through the result set
-            while (rs.next()) {
-                System.out.println(rs.getInt("id") +  "\t" +
-                        rs.getString("name") + "\t" +
-                        rs.getDouble("capacity"));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }*/
 }
 
 /*TODO previous life as a fragment below

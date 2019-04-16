@@ -10,12 +10,9 @@ import android.view.SurfaceView;
 import android.view.ViewGroup;
 
 import com.google.android.gms.common.images.Size;
-
 import java.io.IOException;
-
 import androidx.annotation.RequiresPermission;
 
-//public class CameraSourcePreview extends ViewGroup
 public class CameraSourcePreview extends ViewGroup {
     private static final String TAG = "CameraSourcePreview";
 
@@ -31,14 +28,9 @@ public class CameraSourcePreview extends ViewGroup {
         this(context, null);
     }
 
-    /*public CameraSourcePreview(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }*/
-
     public CameraSourcePreview(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
-
 
     public CameraSourcePreview(Context context, AttributeSet attrs) {
         super(context, attrs);

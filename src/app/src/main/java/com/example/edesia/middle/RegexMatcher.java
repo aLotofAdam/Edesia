@@ -5,12 +5,11 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class regexMatcher {
+/**
+ * TODO insert info here
+ */
+public class RegexMatcher {
     static String pattern;
-
-    public regexMatcher() {
-
-    }
 
     public static List<String>PatternMatch(List<String> list, Set set) {
         Pattern replace = Pattern.compile("(tsp.)*(lb.)*(tbsp.)*(c.)*(oz.)*\\d*([,.])*");

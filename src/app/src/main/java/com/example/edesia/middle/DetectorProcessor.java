@@ -7,7 +7,6 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A very simple Processor which gets detected TextBlocks and adds them to the overlay
@@ -15,7 +14,7 @@ import java.util.List;
  */
 public class DetectorProcessor implements Detector.Processor<TextBlock>{
     private GraphicOverlay<OCRGraphic> graphicOverlay;
-    List list = new ArrayList();
+    private ArrayList<String> list = new ArrayList<>();
 
     public DetectorProcessor(GraphicOverlay<OCRGraphic> ocrGraphicOverlay){
         graphicOverlay = ocrGraphicOverlay;
@@ -31,6 +30,7 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
     @Override
     public void receiveDetections(Detector.Detections<TextBlock> detections) {
         graphicOverlay.clear();
+        //TODO finish setting up keywords
         SparseArray<TextBlock> items = detections.getDetectedItems();
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);
@@ -41,7 +41,6 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
                     Log.d("Processor", "Text detected! " + worst);
                     OCRGraphic graphic = new OCRGraphic(graphicOverlay, item);
                     graphicOverlay.add(graphic);
-                    list.add(item);
                 }
             }
         }

@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,10 +62,10 @@ public class Home extends Fragment {
         //Navigation.findNavController(view).navigate(R.id.action_Home_to_grocery_list, savedInstanceState);
         /*view.findViewById(R.id.to_ExpandedDayView).setOnClickListener(Navigation.
                 createNavigateOnClickListener(R.id.action_home_to_expanded_day_view, savedInstanceState));*/
-        view.findViewById(R.id.meal_randomizer).setOnClickListener(Navigation.
-                createNavigateOnClickListener(R.id.action_Home_to_meal_randomizer, savedInstanceState));
-        view.findViewById(R.id.actionbar).setOnClickListener(Navigation.
-                createNavigateOnClickListener(R.id.action_Home_to_recipe_search));
+        /*view.findViewById(R.id.meal_randomizer).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_meal_randomizer, savedInstanceState));*/
+        /*view.findViewById(R.id.actionbar).setOnClickListener(Navigation.
+                createNavigateOnClickListener(R.id.action_Home_to_recipe_search));*/
     }
 
     public interface OnFragmentInteractionListener {

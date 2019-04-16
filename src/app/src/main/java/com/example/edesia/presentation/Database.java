@@ -116,8 +116,6 @@ public class Database extends SQLiteAssetHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        String select = "Ingredients";
-        String order = "ascending";
         List<String>result = new ArrayList<>();
 
         String[] sqlSelect = {"Ingredients"};
@@ -129,12 +127,10 @@ public class Database extends SQLiteAssetHelper {
         if (cursor.moveToFirst())
         {
             do{
-                //recipeModel.setIngredients( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ) );
                 result.add( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ));
             }while (cursor.moveToNext());
 
         }
-        //System.out.println(result);
         return result;
     }
 

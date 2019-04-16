@@ -44,7 +44,6 @@ public class GraphicOverlay<T extends GraphicOverlay.Graphic> extends View {
 
     public GraphicOverlay(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        //super(context, attrs);
     }
 
     public GraphicOverlay(Context context, AttributeSet attrs, int defStyle) {
