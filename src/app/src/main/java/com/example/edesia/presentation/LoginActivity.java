@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     public String currentUser;
 
+
     //TODO take out? Listener for navigation component
     public static void setOnClickListener(View.OnClickListener onClickListener) {
     }
@@ -59,6 +60,14 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void setCurruntUser(String currentUser){
+        this.currentUser = currentUser;
+    }
+
+    public String getCurrentUser(){
+        return currentUser;
     }
 
     public void openSignUpActivity(){
