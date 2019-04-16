@@ -1,19 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_list_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".RecipeSteps"
-    tools:showIn="@layout/recipe_steps">
+>
 
-    <Button
-        android:id="@+id/to_recipe_search"
+
+    <ImageView
+        android:id="@+id/lbl_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/div_center"
+        android:src="@drawable/ic_launcher_background"/>
+
+
+    <TextView
+        android:id="@+id/lbl_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_image"
+        android:padding="16dp"
+        tools:text="Recipe Title" />
+
+    <View
+        android:id="@+id/div_center"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:id="@+id/lbl_Ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_Title"
+        android:padding="16dp"
+        tools:text="Recipe Ingredients"
+        android:text="['1 tbsp.extra-virgin olive oil', '1 small yellow onion, diced', '1 jalapeño, seeded and minced', '2 cloves garlic, minced', ' 1/2tsp.oregano', ' 1/2tsp.ground cumin', '2 (4.5 oz.) cans green chilies', '3 bonelessskinless chicken breasts, cut into thirds', '5 c.low-sodium chicken broth', '2 Kosher salt', '1 1/2c.Freshly ground black pepper', ' 1/2c.(15 oz.) cans white beans, drained and rinsed', ' 1/4c.frozen corn', ' 1/4c.sour cream'] "/>
+    <TextView
+        android:id="@+id/lbl_Instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_Ingredients"
+        android:padding="16dp"
+        tools:text="Recipe Instructions"
+        android:text="['In a large pot, over medium heat, heat oil. Add onion and jalapeño and cook until soft, about 5 minutes. Add garlic, oregano, and cumin and cook until fragrant, 1minute. Add green chilis, chicken, and broth and season with salt and pepper.Bring to a boil, then reduce heat andsimmer, covered, 10 to 12 minutes, until chicken is tender and cooked through. Transfer chicken to a plate and shred with two forks.Return to pot and add white beans and corn. Bring to a simmer and let cook, 10 minutes. Turn off heat and stir in sour cream. Ladle chili into bowls and garnish with cilantro, cheese, andchips before serving.']"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_create_new_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/Search"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        android:layout_marginEnd="16dp"
+
+        android:layout_marginRight="16dp"
+
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/ic_add_black_24dp" />
+</RelativeLayout>

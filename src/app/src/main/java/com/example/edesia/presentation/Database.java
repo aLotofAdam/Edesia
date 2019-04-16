@@ -1,10 +1,11 @@
-package com.example.edesia.presentation;
+package com.example.edesia.Database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
+import com.example.edesia.Model.RecipeModel;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Database extends SQLiteAssetHelper
         super( context, DB_NAME, null, DB_VERSION );
     }
 
-    // function to get all food data
+    // function to get all recipe data
     public List<RecipeModel> getRecipeModel()
     {
         SQLiteDatabase db = getReadableDatabase();
@@ -52,7 +53,7 @@ public class Database extends SQLiteAssetHelper
     }
 
 
-    //fucntion to get all food name
+    //fucntion to get title name
     public List<String> getTitle()
     {
 
@@ -75,6 +76,7 @@ public class Database extends SQLiteAssetHelper
         }
         return result;
     }
+
 
     //function to get food by food name
     public List<RecipeModel> getRecipeByName(String name)
@@ -109,27 +111,6 @@ public class Database extends SQLiteAssetHelper
                 result.add( recipeModel  );
             }while (cursor.moveToNext());
 
-        }
-        return result;
-    }
-
-    //function to get all ingredient names
-    public List<String> getIngredients()
-    {
-        SQLiteDatabase db = this.getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
-        List<String>result = new ArrayList<>();
-
-        String[] sqlSelect = {"Ingredients"};
-        String tableName = "recipes";  //table name
-
-        qb.setTables( tableName );
-        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
-        if (cursor.moveToFirst())
-        {
-            do{
-                result.add( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ));
-            }while (cursor.moveToNext());
         }
         return result;
     }

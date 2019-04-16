@@ -1,0 +1,341 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\683b335fe6edcf24bdc4a58880dcc5ee\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\547e06cc8c215bf056f07eea464f683a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\f6d23132adacd947baf0c2f5dec4f7cb\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\dec4ada30c6c3272b9fa997e0099fb7b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\19b670cdd080e237a2df71e407bfaa2a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\e40886d59d591214e4443b166c4aaaad\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\eda78cf43cddd0e8a7294ec1db7f7273\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\06de299ba4a1e3be4055af8ad6d70ef7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\3851e1b56a18774006e45433530f001d\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\fcbbd703d3bc6a058764463123f44cc1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\df0dbbf2fa03158eb42c00da9dd08d84\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\912551a4a99b161bd4cf436a12aa0fcd\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\a6f3d679f84b279f31de7eefab8f82c0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\0eef1059166b48d98a1721e82ee282df\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\06ab73864fc9f959d9f9e7053a156f8c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\3217c54b03f7aeb16445af7e604eca12\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\8708a0d41348cdf53a4af533de8c3ea7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\a3f59a1a7fa3b296fe7385becd024006\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\8ba11d565544ba4f40af5d4a782fd127\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\571a4ede266027af59f4778c02c36564\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0c876ff36ac2ddcd35ab8edd70651739\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\bff9f1d963b8ccd28ca6a5f2cd14299d\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\e332fc0e7eb77f9e561d0fba3addd32b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\94944cb45958d3fc1d38d5ad5c990db1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\5275792052b7f6f803ff0a79bb324400\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\6d287fe0a9024488cf691b236ea041ae\AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\b25dcda697a93e483d226aa5d8d4084c\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\a106746c0adc8d2d3f86a9ce1e92e407\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\7c3a3137cd4c0e03f1a87259930bf765\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\1dd62a651e371ad9ed25dea45561c760\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\9a759f5139b3023a4a4873a2ba29292c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\a5f49ac4d161ab7e77b0c708e97f2c64\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\553d30ff20c779bd9772ac4e1c2cae83\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\713a4fecc7f9d20a869b12aafeabafdb\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\b3eb9419e8eaab1e9900fbc7dcbd2412\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\1cdec117914c282d2de67b90f15582ea\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\b5a2ea9a211ab2e8bc31aa42635f383d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\533d7a52191292c33198e09c71ed1043\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\b8ed698ef19c61f12dedf61bdf5ad77d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\3c3bf2efe0c3981c1d0139895d7da72b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\bc86e5724594376694fbb7c2205796d1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a900993c4af8ca4ddf2f5a2d325704cc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\0da9a935396519ee5c68e9b0c6bf4d93\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ba7517536f49c9c2126dd754cae5377c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\033f590a8c0ac7d8b76c8e15fb0dbaba\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\355516dab7c714843174b3e11e1afdf8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\bab032bbe0697fdaa559dd7d618a88d1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\fea39ce86c5874e7b7f08fcd35e2b2ee\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4dc702dbce5e5dbfde3604033f0df5ff\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ade603fd8b3365cb6752b13b677022d8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\28ed1a7f0b95c64fb5e4520af70c8f1a\AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3ccb28723fd0ebad3bde0ec7a7e0e4c5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\98ba43c745474143519c0d3c5ee8ef49\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d3cd24192464e848c046d5510ba32d49\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e9a057eb3a8d218042564f4f378ee4ca\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\41a6c82b634d2a64b7e97ab4bba9ac44\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\71854f4b8ac31b9b9fe66b044e88cf79\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7cd88420d5615d2979236914f9998a5a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\7f144c46273f04e689145f6f6ec63788\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\56cfb519011536b08e77bbdab206feec\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\b748a2537da55ed72e112f4371ad93d1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\9d370e6185b4a4b47045b0e89403bad8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\e74bff0d6b27bc1d39f219fea81927c2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4037a1be2a566b806fe5f9c0f0f8cab3\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+	package
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:1-29:12
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:5:5-27:19
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\547e06cc8c215bf056f07eea464f683a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\547e06cc8c215bf056f07eea464f683a\AndroidManifest.xml:22:5-20
+MERGED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\f6d23132adacd947baf0c2f5dec4f7cb\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\f6d23132adacd947baf0c2f5dec4f7cb\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\dec4ada30c6c3272b9fa997e0099fb7b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\dec4ada30c6c3272b9fa997e0099fb7b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\19b670cdd080e237a2df71e407bfaa2a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\19b670cdd080e237a2df71e407bfaa2a\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\e40886d59d591214e4443b166c4aaaad\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\e40886d59d591214e4443b166c4aaaad\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\eda78cf43cddd0e8a7294ec1db7f7273\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\eda78cf43cddd0e8a7294ec1db7f7273\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\06de299ba4a1e3be4055af8ad6d70ef7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\06de299ba4a1e3be4055af8ad6d70ef7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\3851e1b56a18774006e45433530f001d\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\3851e1b56a18774006e45433530f001d\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\fcbbd703d3bc6a058764463123f44cc1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\fcbbd703d3bc6a058764463123f44cc1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\df0dbbf2fa03158eb42c00da9dd08d84\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\df0dbbf2fa03158eb42c00da9dd08d84\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\912551a4a99b161bd4cf436a12aa0fcd\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\912551a4a99b161bd4cf436a12aa0fcd\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\a6f3d679f84b279f31de7eefab8f82c0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\a6f3d679f84b279f31de7eefab8f82c0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\0eef1059166b48d98a1721e82ee282df\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\0eef1059166b48d98a1721e82ee282df\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\06ab73864fc9f959d9f9e7053a156f8c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\06ab73864fc9f959d9f9e7053a156f8c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\3217c54b03f7aeb16445af7e604eca12\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\3217c54b03f7aeb16445af7e604eca12\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\8708a0d41348cdf53a4af533de8c3ea7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\8708a0d41348cdf53a4af533de8c3ea7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\a3f59a1a7fa3b296fe7385becd024006\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\a3f59a1a7fa3b296fe7385becd024006\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\8ba11d565544ba4f40af5d4a782fd127\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\8ba11d565544ba4f40af5d4a782fd127\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\571a4ede266027af59f4778c02c36564\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\571a4ede266027af59f4778c02c36564\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\bff9f1d963b8ccd28ca6a5f2cd14299d\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\bff9f1d963b8ccd28ca6a5f2cd14299d\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\5275792052b7f6f803ff0a79bb324400\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\5275792052b7f6f803ff0a79bb324400\AndroidManifest.xml:22:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\b25dcda697a93e483d226aa5d8d4084c\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\b25dcda697a93e483d226aa5d8d4084c\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\7c3a3137cd4c0e03f1a87259930bf765\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\7c3a3137cd4c0e03f1a87259930bf765\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\1dd62a651e371ad9ed25dea45561c760\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\1dd62a651e371ad9ed25dea45561c760\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\9a759f5139b3023a4a4873a2ba29292c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\9a759f5139b3023a4a4873a2ba29292c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\a5f49ac4d161ab7e77b0c708e97f2c64\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\a5f49ac4d161ab7e77b0c708e97f2c64\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\553d30ff20c779bd9772ac4e1c2cae83\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\553d30ff20c779bd9772ac4e1c2cae83\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\713a4fecc7f9d20a869b12aafeabafdb\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\713a4fecc7f9d20a869b12aafeabafdb\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\b3eb9419e8eaab1e9900fbc7dcbd2412\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\b3eb9419e8eaab1e9900fbc7dcbd2412\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\1cdec117914c282d2de67b90f15582ea\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\1cdec117914c282d2de67b90f15582ea\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\28ed1a7f0b95c64fb5e4520af70c8f1a\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\28ed1a7f0b95c64fb5e4520af70c8f1a\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\9d370e6185b4a4b47045b0e89403bad8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\9d370e6185b4a4b47045b0e89403bad8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\e74bff0d6b27bc1d39f219fea81927c2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\e74bff0d6b27bc1d39f219fea81927c2\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4037a1be2a566b806fe5f9c0f0f8cab3\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4037a1be2a566b806fe5f9c0f0f8cab3\AndroidManifest.xml:22:5-20
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:13:9-41
+	android:supportsRtl
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:10:9-35
+	android:roundIcon
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.example.edesia.RecipeSearch
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:12:19-65
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:16:27-74
+activity#com.example.edesia.RecipeSteps
+ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:19:9-25:20
+	android:name
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml:19:19-64
+uses-sdk
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\683b335fe6edcf24bdc4a58880dcc5ee\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\683b335fe6edcf24bdc4a58880dcc5ee\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\547e06cc8c215bf056f07eea464f683a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\547e06cc8c215bf056f07eea464f683a\AndroidManifest.xml:20:5-44
+MERGED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.mancj:MaterialSearchBar:0.8.2] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\MaterialSearchBar-0.8.2.aar\28be6f091ecb49385ee6c765cce0e556\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\f6d23132adacd947baf0c2f5dec4f7cb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\f6d23132adacd947baf0c2f5dec4f7cb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\dec4ada30c6c3272b9fa997e0099fb7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\dec4ada30c6c3272b9fa997e0099fb7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\19b670cdd080e237a2df71e407bfaa2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\19b670cdd080e237a2df71e407bfaa2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\e40886d59d591214e4443b166c4aaaad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-widget:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-widget-28.0.0-alpha1.aar\e40886d59d591214e4443b166c4aaaad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\eda78cf43cddd0e8a7294ec1db7f7273\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomsheet:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomsheet-28.0.0-alpha1.aar\eda78cf43cddd0e8a7294ec1db7f7273\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\06de299ba4a1e3be4055af8ad6d70ef7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-dialog:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-dialog-28.0.0-alpha1.aar\06de299ba4a1e3be4055af8ad6d70ef7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\3851e1b56a18774006e45433530f001d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-button:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-button-28.0.0-alpha1.aar\3851e1b56a18774006e45433530f001d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\fcbbd703d3bc6a058764463123f44cc1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-card:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-card-28.0.0-alpha1.aar\fcbbd703d3bc6a058764463123f44cc1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\df0dbbf2fa03158eb42c00da9dd08d84\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-chip:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-chip-28.0.0-alpha1.aar\df0dbbf2fa03158eb42c00da9dd08d84\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\912551a4a99b161bd4cf436a12aa0fcd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-internal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-internal-28.0.0-alpha1.aar\912551a4a99b161bd4cf436a12aa0fcd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\a6f3d679f84b279f31de7eefab8f82c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-bottomnavigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-bottomnavigation-28.0.0-alpha1.aar\a6f3d679f84b279f31de7eefab8f82c0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\0eef1059166b48d98a1721e82ee282df\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-floatingactionbutton:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-floatingactionbutton-28.0.0-alpha1.aar\0eef1059166b48d98a1721e82ee282df\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\06ab73864fc9f959d9f9e7053a156f8c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-navigation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-navigation-28.0.0-alpha1.aar\06ab73864fc9f959d9f9e7053a156f8c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\3217c54b03f7aeb16445af7e604eca12\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-resources:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-resources-28.0.0-alpha1.aar\3217c54b03f7aeb16445af7e604eca12\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\8708a0d41348cdf53a4af533de8c3ea7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-tabs:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-tabs-28.0.0-alpha1.aar\8708a0d41348cdf53a4af533de8c3ea7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\a3f59a1a7fa3b296fe7385becd024006\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-textfield:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-textfield-28.0.0-alpha1.aar\a3f59a1a7fa3b296fe7385becd024006\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\8ba11d565544ba4f40af5d4a782fd127\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-typography:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-typography-28.0.0-alpha1.aar\8ba11d565544ba4f40af5d4a782fd127\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\571a4ede266027af59f4778c02c36564\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-shape:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-shape-28.0.0-alpha1.aar\571a4ede266027af59f4778c02c36564\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0c876ff36ac2ddcd35ab8edd70651739\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\0c876ff36ac2ddcd35ab8edd70651739\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\bff9f1d963b8ccd28ca6a5f2cd14299d\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\bff9f1d963b8ccd28ca6a5f2cd14299d\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\e332fc0e7eb77f9e561d0fba3addd32b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\e332fc0e7eb77f9e561d0fba3addd32b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\94944cb45958d3fc1d38d5ad5c990db1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\94944cb45958d3fc1d38d5ad5c990db1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\5275792052b7f6f803ff0a79bb324400\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\5275792052b7f6f803ff0a79bb324400\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\6d287fe0a9024488cf691b236ea041ae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\6d287fe0a9024488cf691b236ea041ae\AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\b25dcda697a93e483d226aa5d8d4084c\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\circleimageview-2.1.0.aar\b25dcda697a93e483d226aa5d8d4084c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\a106746c0adc8d2d3f86a9ce1e92e407\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\a106746c0adc8d2d3f86a9ce1e92e407\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\7c3a3137cd4c0e03f1a87259930bf765\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\7c3a3137cd4c0e03f1a87259930bf765\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\1dd62a651e371ad9ed25dea45561c760\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\1dd62a651e371ad9ed25dea45561c760\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\9a759f5139b3023a4a4873a2ba29292c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\9a759f5139b3023a4a4873a2ba29292c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\a5f49ac4d161ab7e77b0c708e97f2c64\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-circularreveal:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-circularreveal-28.0.0-alpha1.aar\a5f49ac4d161ab7e77b0c708e97f2c64\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\553d30ff20c779bd9772ac4e1c2cae83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-drawable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-drawable-28.0.0-alpha1.aar\553d30ff20c779bd9772ac4e1c2cae83\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\713a4fecc7f9d20a869b12aafeabafdb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\713a4fecc7f9d20a869b12aafeabafdb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\b3eb9419e8eaab1e9900fbc7dcbd2412\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\b3eb9419e8eaab1e9900fbc7dcbd2412\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\1cdec117914c282d2de67b90f15582ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\1cdec117914c282d2de67b90f15582ea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\b5a2ea9a211ab2e8bc31aa42635f383d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\b5a2ea9a211ab2e8bc31aa42635f383d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\533d7a52191292c33198e09c71ed1043\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\533d7a52191292c33198e09c71ed1043\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\b8ed698ef19c61f12dedf61bdf5ad77d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\b8ed698ef19c61f12dedf61bdf5ad77d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\3c3bf2efe0c3981c1d0139895d7da72b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\3c3bf2efe0c3981c1d0139895d7da72b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\bc86e5724594376694fbb7c2205796d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\bc86e5724594376694fbb7c2205796d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a900993c4af8ca4ddf2f5a2d325704cc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\a900993c4af8ca4ddf2f5a2d325704cc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\0da9a935396519ee5c68e9b0c6bf4d93\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\0da9a935396519ee5c68e9b0c6bf4d93\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ba7517536f49c9c2126dd754cae5377c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\ba7517536f49c9c2126dd754cae5377c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\033f590a8c0ac7d8b76c8e15fb0dbaba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\033f590a8c0ac7d8b76c8e15fb0dbaba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\355516dab7c714843174b3e11e1afdf8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\355516dab7c714843174b3e11e1afdf8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\bab032bbe0697fdaa559dd7d618a88d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\bab032bbe0697fdaa559dd7d618a88d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\fea39ce86c5874e7b7f08fcd35e2b2ee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\fea39ce86c5874e7b7f08fcd35e2b2ee\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4dc702dbce5e5dbfde3604033f0df5ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4dc702dbce5e5dbfde3604033f0df5ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ade603fd8b3365cb6752b13b677022d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\ade603fd8b3365cb6752b13b677022d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\4f610c5d4a953615b7481ac8b4565034\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\28ed1a7f0b95c64fb5e4520af70c8f1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\28ed1a7f0b95c64fb5e4520af70c8f1a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3ccb28723fd0ebad3bde0ec7a7e0e4c5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\3ccb28723fd0ebad3bde0ec7a7e0e4c5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\98ba43c745474143519c0d3c5ee8ef49\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\98ba43c745474143519c0d3c5ee8ef49\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d3cd24192464e848c046d5510ba32d49\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\d3cd24192464e848c046d5510ba32d49\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e9a057eb3a8d218042564f4f378ee4ca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\e9a057eb3a8d218042564f4f378ee4ca\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\41a6c82b634d2a64b7e97ab4bba9ac44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\41a6c82b634d2a64b7e97ab4bba9ac44\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\71854f4b8ac31b9b9fe66b044e88cf79\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\71854f4b8ac31b9b9fe66b044e88cf79\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7cd88420d5615d2979236914f9998a5a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\7cd88420d5615d2979236914f9998a5a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\7f144c46273f04e689145f6f6ec63788\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\7f144c46273f04e689145f6f6ec63788\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\56cfb519011536b08e77bbdab206feec\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\56cfb519011536b08e77bbdab206feec\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\b748a2537da55ed72e112f4371ad93d1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\b748a2537da55ed72e112f4371ad93d1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\9d370e6185b4a4b47045b0e89403bad8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-color:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-color-28.0.0-alpha1.aar\9d370e6185b4a4b47045b0e89403bad8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\e74bff0d6b27bc1d39f219fea81927c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-math:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-math-28.0.0-alpha1.aar\e74bff0d6b27bc1d39f219fea81927c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4037a1be2a566b806fe5f9c0f0f8cab3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design-snackbar:28.0.0-alpha1] C:\Users\wingo\.gradle\caches\transforms-1\files-1.1\design-snackbar-28.0.0-alpha1.aar\4037a1be2a566b806fe5f9c0f0f8cab3\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\wingo\Desktop\recipeSearch\app\src\main\AndroidManifest.xml
