@@ -16,7 +16,7 @@
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:context=".MainActivity"
-        tools:elevation="2dp"
+        tools:elevation="8dp"
         tools:openDrawer="start"
         tools:closeDrawer="end">
 
@@ -43,10 +43,9 @@
                     android:layout_width="118dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="256dp"
-                    android:layout_marginLeft="256dp"
                     android:layout_marginTop="12dp"
                     android:background="@color/colorPrimary"
-                    android:contentDescription="Go to Recipe Search"
+                    android:contentDescription="@string/go_to_recipe_search"
                     android:text="@string/Search"
                     android:tint="@color/design_default_color_on_secondary"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -84,40 +83,22 @@
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
         app:defaultNavHost="true"
-        app:layout_anchor="@+id/constraintLayout"
         app:layout_anchorGravity="right|center"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_menu_navi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_menu"
-        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/navi_graph" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_menu_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:foregroundGravity="clip_horizontal"
+        android:visibility="visible"
+        app:itemBackground="@color/colorPrimary"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/bottom_menu_navi"
+        tools:elevation="10dp">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_menu_navi"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:background="@color/colorPrimary"
-            android:foregroundGravity="clip_horizontal"
-            android:visibility="visible"
-            app:itemBackground="@color/colorPrimary"
-            app:itemTextColor="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            tools:elevation="3dp"
-            app:menu="@menu/bottom_menu_navi">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

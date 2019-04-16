@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         public DatabaseHelper(Context context) {
-            super(context, "User.db", null, 1);
+            super(context, DATABASE_NAME, null, DATABASE_Version);
         }
 
         public void onCreate(SQLiteDatabase db) {

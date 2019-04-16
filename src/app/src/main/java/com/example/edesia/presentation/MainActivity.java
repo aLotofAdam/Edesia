@@ -1,6 +1,7 @@
 package com.example.edesia.presentation;
 
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,13 +34,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-//TODO on merge: changed mainActivity to not be an empty constructor, removed implemented home and mealrandomizer
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
-        CurrentMealPlan.OnFragmentInteractionListener, EditMenu.OnFragmentInteractionListener, GoogleVision.OnFragmentInteractionListener,
-        RecipeOverview.OnFragmentInteractionListener, RecipeSteps.OnFragmentInteractionListener,
-        Settings.OnFragmentInteractionListener, UploadRecipe.OnFragmentInteractionListener,
-        UserMenu.OnFragmentInteractionListener {
+        Home.OnFragmentInteractionListener, CurrentMealPlan.OnFragmentInteractionListener,
+        EditMenu.OnFragmentInteractionListener, ExpandedDayView.OnFragmentInteractionListener,
+        GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
+        RecipeSteps.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener,
+        UploadRecipe.OnFragmentInteractionListener, UserMenu.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
     public BottomNavigationView bottomNav;
@@ -55,10 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-        }/*
-        if (actionBar != null) {
+            //TODO on 4/16 merge this was uncommented
             actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
-        }*/
+        }
         final Activity activity = this;
 
         //interface for Navigation drawer
@@ -124,10 +125,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		//TODO dup NavController above, need both? //attach NavController to NavHost
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        //setupDrawerMenu(navController); //broken casting
-
-        //drawer_layout = findViewById(R.id.drawer_layout);
-
 		//sets top level destinations via the navigation graph
         Set<Integer> topLevelDestinations = new HashSet<>();
         topLevelDestinations.add(R.id.navi_map);
@@ -144,12 +141,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 		//method to setup bottom navigation bar
         bottomNav = setupBottomNavMenu(navController);
 
-        //hideBottomNavigationView(bottomNav);
-        //TODO mess with these
-        //hideBottomNavigationView(bottomNav);
-        //showBottomNavigationView(bottomNav);
-        //onResume();
-
 		//creates the listener for navigation on the main activity
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
 			public final void onDestinationChanged(@NonNull NavController navController,
@@ -163,48 +154,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         newDestination = Integer.toString(destination.getId());
                         destinations = newDestination;
                     }
-					//TODO remove Toast message after testing
+					/*//Test navigation toast message
                     Toast.makeText(MainActivity.this, ("Navigated to " + destinations), Toast.LENGTH_LONG).show();
-                    Log.d("NavigationActivity", "Navigated to " + destinations);
+                    Log.d("NavigationActivity", "Navigated to " + destinations);*/
             }
         });
-
-        //TODO start activity stuff
-        /*ArrayAdapter<CharSequence> months;
-        ArrayAdapter<CharSequence> days;
-        String[] monthArr = {"January", "February", "March", "April", "May", "June", "July",
-                "August", "September", "October", "November", "December"};
-        String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
-                "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31",};
-
-        Spinner s1 = (Spinner)findViewById(R.id.month_spinner1);
-        Spinner s2 = (Spinner)findViewById(R.id.day_spinner1);
-
-        months = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
-                monthArr);
-        months.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s1.setAdapter(months);
-
-
-
-        days = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
-                dayArr);
-        days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s2.setAdapter(days);*/
-
-    }
-
-    //broken casting
-    private void setupDrawerMenu(NavController navController) {
-        DrawerLayout drawer_menu = this.findViewById(R.id.drawer_layout);
-        if (drawer_menu != null) {
-            NavigationUI.setupActionBarWithNavController(this, navController, drawer_menu);
-        }
     }
 
     public NavController getNavController() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return navController;
+        return Navigation.findNavController(this, R.id.nav_host_fragment);
     }
 
     //method to attach navController to bottom navigation menu
@@ -228,18 +186,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfig);
     }
 
-	//TODO change this from navi view, method to setup the overflow menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //boolean retValue = super.onCreateOptionsMenu(menu);
-        //menu = findViewById(R.menu.actionbar_menu;
         //Add items to inflate the menu if there isn't a navigationView;
         //this adds items to the action bar if it is present.
-        //if (menu == null){
-            getMenuInflater().inflate(R.menu.actionbar_menu, menu);
-            return true;
-        //}
-        //return retValue;
+        getMenuInflater().inflate(R.menu.actionbar_menu, menu);
+        return true;
     }
 
 	//method to attach navController to navigation drawer
