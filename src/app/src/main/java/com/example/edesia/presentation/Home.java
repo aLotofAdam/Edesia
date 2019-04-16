@@ -16,20 +16,12 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        Button plan = findViewById(R.id.Plan);
         Button randomizer = findViewById(R.id.Randomizer);
         Button userMenu = findViewById(R.id.UserMenu);
         Button groceryList = findViewById(R.id.GroceryList);
         Button recipeSearch = findViewById(R.id.RecipeSearch);
         Button googleVision = findViewById(R.id.OCR);
 
-
-        plan.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                openMealPlanner();
-            }
-        });
 
         randomizer.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -76,12 +68,6 @@ public class Home extends AppCompatActivity {
 
     public void openRecipeSearch(){
         Intent intent = new Intent(this, RecipeSearch.class);
-        startActivity(intent);
-    }
-
-
-    public void openMealPlanner(){
-        Intent intent = new Intent(this, Plan.class);
         startActivity(intent);
     }
 
