@@ -8,6 +8,7 @@
     <item
         android:id="@id/recipe_search"
         android:title="@string/Search"
+        android:icon="@drawable/ic_search_black_24dp"
         app:showAsAction="always" />
 
 </menu>

@@ -1,17 +1,78 @@
 package com.example.edesia.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GroceryList extends AppCompatActivity {
+    private ListView mShoppingList;
+    private EditText mItemEdit;
+    private Button mAddButton;
+    private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grocery_list);
+
+        // Construct an Intent object for groceryList
+        final Intent intent = new Intent(this, OCR_Vision.class);
+        final ArrayList<String> gList = new ArrayList<>();
+        intent.putStringArrayListExtra("gList",gList);
+        // Start the OCR_Vision
+        //startActivity(intent);
+
+        mShoppingList = (ListView) findViewById(R.id.shopping_listView);
+        mItemEdit = (EditText) findViewById(R.id.item_editText);
+        mAddButton = (Button) findViewById(R.id.add_button);
+
+        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1);
+        mShoppingList.setAdapter(mAdapter);
+
+        mAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = mItemEdit.getText().toString();
+                mAdapter.add(item);
+                mAdapter.notifyDataSetChanged();
+                mItemEdit.setText("");
+
+                Snackbar.make(v, "Item add to List!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        Button glistbutton = findViewById(R.id.glistbutton);
+        glistbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Snackbar.make(view, "Camera Started", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                //final ArrayList<String> gList = getList();
+
+                intent.putStringArrayListExtra("gList",gList);
+                // Start the groceryList
+                startActivity(intent);
+            }
+        });
+
+        // Output the array
+        for(String item:gList){
+            Log.i("GroceryList", String.valueOf(item));
+        }
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;

@@ -19,7 +19,7 @@ public class Home extends AppCompatActivity {
         Button plan = findViewById(R.id.Plan);
         Button randomizer = findViewById(R.id.Randomizer);
         Button userMenu = findViewById(R.id.UserMenu);
-        Button groceryList = findViewById(R.id.GroceryList);
+        //Button groceryList = findViewById(R.id.GroceryList);
         Button recipeSearch = findViewById(R.id.RecipeSearch);
         Button googleVision = findViewById(R.id.OCR);
 
@@ -45,12 +45,12 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        groceryList.setOnClickListener(new View.OnClickListener(){
+       /* groceryList.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 openGroceryList();
             }
-        });
+        });*/
 
         recipeSearch.setOnClickListener(new View.OnClickListener(){
             @Override
