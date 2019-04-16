@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class
+DatabaseHelper extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "User.db";
         private static final String TABLE_NAME = "UserTable";
         private static final int DATABASE_Version = 1;
@@ -83,6 +84,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }else{
                 return true;
         }
+    }
+
+    public boolean insertRandom(String user, String month, int day, int Breakfast, int Lunch, int Dinner){
+            SQLiteDatabase db = this.getReadableDatabase();
+            ContentValues contentValues = new ContentValues();
+
+            contentValues.put("Username", user);
+            contentValues.put("Month", month);
+            contentValues.put("Day", day);
+            contentValues.put("Breakfast", Breakfast);
+            contentValues.put("Lunch", Lunch);
+            contentValues.put("Dinner", Dinner);
+
+        long id = db.insert("PlannedMeals", null, contentValues);
+        if(id == -1){
+            return false;
+        }else{
+            return true;
+        }
+
     }
 
     public boolean insertFavoriteRecipe(String user, int RecipeID){

@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ public class MealRandomizer extends AppCompatActivity {
     String selectedMonth;
     int selectedDay;
 
+    DatabaseHelper myDbRandom = new DatabaseHelper(this);
 
 
 
@@ -68,14 +71,18 @@ public class MealRandomizer extends AppCompatActivity {
 
 
     }
-
-
     private View.OnClickListener RandomListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
+            boolean inserted = myDbRandom.insertRandom("Steve1", selectedMonth, selectedDay, BreakfastID, LunchID, DinnerID);
+
+            if(inserted == true) {
+                Toast.makeText(getApplicationContext(), "Planned Successfully", Toast.LENGTH_LONG).show();
+            }
         }
     };
+
 
 }
 
