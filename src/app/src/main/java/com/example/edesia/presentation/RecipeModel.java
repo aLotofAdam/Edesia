@@ -1,6 +1,5 @@
-package com.example.edesia.presentation;
+package com.example.edesia.Model;
 
-import java.util.List;
 public class RecipeModel {
     int ID;
     String URL, Title, PrepTime, TotalTime, Ingredients, Instructions, Picture;
@@ -83,5 +82,5 @@ public class RecipeModel {
     public String getPicture() {
         return Picture;
     }
-}
 
+}
