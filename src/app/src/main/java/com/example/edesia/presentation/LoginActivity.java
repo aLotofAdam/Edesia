@@ -18,6 +18,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText Username;
     EditText Password;
     DatabaseHelper myDb;
+    public String currentUser;
+
 
     //TODO take out? Listener for navigation component
     public static void setOnClickListener(View.OnClickListener onClickListener) {
@@ -50,8 +52,9 @@ public class LoginActivity extends AppCompatActivity {
                 boolean checkLogin = myDb.checkLogin(user, pass);
 
                 if (checkLogin == true) {
+                    currentUser = (user);
                     Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                    openUserMenuActivity();
+                    openHomeActivity();
                 } else {
                     Toast.makeText(getApplicationContext(), "Username/Password Incorrect", Toast.LENGTH_SHORT).show();
                 }
@@ -59,12 +62,20 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    public void setCurruntUser(String currentUser){
+        this.currentUser = currentUser;
+    }
+
+    public String getCurrentUser(){
+        return currentUser;
+    }
+
     public void openSignUpActivity(){
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 
-    public void openUserMenuActivity(){
+    public void openHomeActivity(){
         Intent intent = new Intent(this, UserMenu.class);
         startActivity(intent);
     }

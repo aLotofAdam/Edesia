@@ -1,5 +1,6 @@
 package com.example.edesia.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,9 @@ public class Plan extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_plan);
+
+        Button home = findViewById(R.id.HomeButton);
+        Button search = findViewById(R.id.SearchButton);
 
 
         ArrayAdapter<CharSequence> months;
@@ -66,6 +70,19 @@ public class Plan extends AppCompatActivity {
         selectedMeal = s3.getSelectedItem().toString();
 
 
+        home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                backToHome();
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openRecipeSearch();
+            }
+        });
 
 
     }
@@ -81,6 +98,16 @@ public class Plan extends AppCompatActivity {
             }
         }
     };
+
+    public void backToHome(){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
+    public void openRecipeSearch(){
+        Intent intent = new Intent(this, Recipe.class);
+        startActivity(intent);
+    }
 
 }
 

@@ -4,105 +4,111 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
-/*TODO why comment out?
+
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database extends SQLiteAssetHelper {
-    //TODO private static final String DB_NAME = "recipes.db";
-    private static final String DB_NAME = "recipe_db.db";
+public class Database extends SQLiteAssetHelper
+{
+    private static final String DB_NAME = "recipes.db";
     private static final int DB_VERSION = 1;
 
-
-    public Database(Context context) {
-        super(context, DB_NAME, null, DB_VERSION);
+    public Database(Context context)
+    {
+        super( context, DB_NAME, null, DB_VERSION );
     }
 
-    public List<Recipe> getRecipes() {
-
+    // function to get all food data
+    public List<RecipeModel> getRecipeModel()
+    {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
-        String table_name = "output";
-        qb.setTables(table_name);
-        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
-        List<Recipe> result = new ArrayList<>();
-        if (cursor.moveToFirst()) {
-            do {
-                Recipe recipe = new Recipe();
-                recipe.setURL(cursor.getString(cursor.getColumnIndex("URL")));
-                recipe.setTitle(cursor.getString(cursor.getColumnIndex("Title")));
-                recipe.setPrepTime(cursor.getString(cursor.getColumnIndex("PrepTime")));
-                recipe.setTotalTime(cursor.getString(cursor.getColumnIndex("TotalTime")));
-                recipe.setIngredients(cursor.getString(cursor.getColumnIndex("Ingredients")));
-                recipe.setInstructions(cursor.getString(cursor.getColumnIndex("Instructions")));
+        //all column names
+        String[] sqlSelect = {"ID","URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions","Picture"};
+        String tableName = "recipes";
 
-                result.add(recipe);
-            } while (cursor.moveToNext());
+        qb.setTables( tableName );
+        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
+        List<RecipeModel>result = new ArrayList<>(  );
+        if (cursor.moveToFirst())
+        {
+            do {
+                RecipeModel recipeModel = new RecipeModel(  );
+                recipeModel.setID( cursor.getInt( cursor.getColumnIndex( "ID" ) ) );
+                recipeModel.setTitle( cursor.getString( cursor.getColumnIndex( "Title" ) ) );
+                recipeModel.setPrepTime( cursor.getString( cursor.getColumnIndex( "PrepTime" ) ) );
+                recipeModel.setTotalTime( cursor.getString( cursor.getColumnIndex( "TotalTime" ) ) );
+                recipeModel.setIngredients( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ) );
+                recipeModel.setInstructions( cursor.getString( cursor.getColumnIndex( "Instructions" ) ) );
+                recipeModel.setPicture( cursor.getString( cursor.getColumnIndex( "Picture" ) ) );
+                result.add( recipeModel  );
+            }while (cursor.moveToNext());
+
         }
         return result;
     }
-    public List<String> getTitles(){
+
+
+    //fucntion to get all food name
+    public List<String> getTitle()
+    {
+
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
+        //all column names
         String[] sqlSelect = {"Title"};
-        String table_name = "output";
-        qb.setTables(table_name);
-        //will query like select from where %patterm%
-        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
-        List<String> result = new ArrayList<>();
-        if (cursor.moveToFirst()) {
-            do {
-                result.add(cursor.getString(cursor.getColumnIndex("Title")));
+        String tableName = "recipes";  //table name
 
-            } while (cursor.moveToNext());
+        qb.setTables( tableName );
+        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
+        List<String>result = new ArrayList<>(  );
+        if (cursor.moveToFirst())
+        {
+            do{
+                result.add( cursor.getString( cursor.getColumnIndex( "Title" ) ));
+            }while (cursor.moveToNext());
+
         }
         return result;
     }
 
-
-    public List<String> getURL(String URL) {
+    //function to get food by food name
+    public List<RecipeModel> getRecipeByName(String name)
+    {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"URL"};
-        String table_name = "output";
-        qb.setTables(table_name);
-        Cursor cursor = qb.query(db, sqlSelect, null, null, null, null, null);
-        List<String> result = new ArrayList<>();
-        if (cursor.moveToFirst()) {
-           do {
-                result.add(cursor.getString(cursor.getColumnIndex("URL")));
-            } while (cursor.moveToNext());
-        }
-        return result;
-    }
+        //all column names
+        String[] sqlSelect = {"ID","URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions","Picture"};
+        String tableName = "recipes";  //table name
 
-    public List<Recipe> getRecipebyName(String Title) {
-        SQLiteDatabase db = getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        qb.setTables( tableName );
 
-        String[] sqlSelect = {"URL", "Title", "PrepTime", "TotalTime", "Ingredients", "Instructions"};
-        String table_name = "output";
-        qb.setTables(table_name);
-        //will query like select from where %patterm%
-        Cursor cursor = qb.query(db, sqlSelect, "Title LIKE ?", new String[]{"%" + Title + "%"}, null, null, null);
-        List<Recipe> result = new ArrayList<>();
-        if (cursor.moveToFirst()) {
+        //this will be like a query, Select * from foodmodel where Name LIKE %example%
+        //exact name,remove the % sign and + sign,
+        //Cursor cursor = qb.query(db, sqlSelect,"Food Name LIKE ?", new String[]{name}, null,null,null);
+
+        //Cursor cursor = qb.query(db, sqlSelect," food_name LIKE ?", new String[]{"%" + name + "%"}, null,null,null);
+        Cursor cursor = qb.query( db,sqlSelect,"Title LIKE ?",new String[]{"%"+name+"%"},null,null,null );
+        List<RecipeModel>result = new ArrayList<>(  );
+        if (cursor.moveToFirst())
+        {
             do {
-                Recipe recipe = new Recipe();
-                recipe.setURL(cursor.getString(cursor.getColumnIndex("URL")));
-                recipe.setTitle(cursor.getString(cursor.getColumnIndex("Title")));
-                recipe.setPrepTime(cursor.getString(cursor.getColumnIndex("PrepTime")));
-                recipe.setTotalTime(cursor.getString(cursor.getColumnIndex("TotalTime")));
-                recipe.setIngredients(cursor.getString(cursor.getColumnIndex("Ingredients")));
-                recipe.setInstructions(cursor.getString(cursor.getColumnIndex("Instructions")));
-                result.add(recipe);
-            } while (cursor.moveToNext());
+                RecipeModel recipeModel = new RecipeModel(  );
+                recipeModel.setID( cursor.getInt( cursor.getColumnIndex( "ID" ) ) );
+                recipeModel.setTitle( cursor.getString( cursor.getColumnIndex( "Title" ) ) );
+                recipeModel.setPrepTime( cursor.getString( cursor.getColumnIndex( "PrepTime" ) ) );
+                recipeModel.setTotalTime( cursor.getString( cursor.getColumnIndex( "TotalTime" ) ) );
+                recipeModel.setIngredients( cursor.getString( cursor.getColumnIndex( "Ingredients" ) ) );
+                recipeModel.setInstructions( cursor.getString( cursor.getColumnIndex( "Instructions" ) ) );
+                recipeModel.setPicture( cursor.getString( cursor.getColumnIndex( "Picture" ) ) );
+                result.add( recipeModel  );
+            }while (cursor.moveToNext());
+
         }
         return result;
     }
@@ -127,4 +133,4 @@ public class Database extends SQLiteAssetHelper {
         }
         return result;
     }
-}*/
+}

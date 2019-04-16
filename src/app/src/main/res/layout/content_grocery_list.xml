@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="231dp"
-        android:layout_marginBottom="636dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="613dp"
         android:spinnerMode="dropdown" />
 
     <Spinner
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="638dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="612dp"
         android:spinnerMode="dropdown" />
 </RelativeLayout>

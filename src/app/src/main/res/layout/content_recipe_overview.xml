@@ -1,21 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".RecipeOverview"
-    tools:showIn="@layout/recipe_overview">
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <android.support.v7.widget.CardView android:layout_margin="8dp" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout android:layout_margin="8dp" android:layout_height="134dp" android:layout_width="match_parent" android:orientation="vertical" android:background="@android:color/white">
+
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/picture"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:text="Recipe Name"
+        android:gravity="center_vertical|start"
+        android:layout_toEndOf="@+id/picture"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="42dp"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/prepTime"
+        android:textStyle="italic"
+        android:textAllCaps="true"
+        android:text="PrepTime"
+        android:gravity="center_vertical|start"
+        android:layout_marginBottom="17dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/totalTime"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:text="Total Time"
+        android:gravity="center_vertical|start"
+        android:layout_centerInParent="true"/>
 
     <Button
-        android:id="@+id/recipe_search"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="@string/Search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="109dp"
+        android:id="@+id/addbutton"
+        android:text="+"
+        android:layout_marginTop="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="42dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="24sp"
+        android:layout_marginRight="0dp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -13,6 +13,7 @@
     <string name="Login">Login</string>
     <string name="Back">Back</string>
     <string name="randomizer">Randomizer</string>
+    <string name="recipe_search">Recipe Search</string>
     <string name="Search">Search</string>
     <string name="grocery_list">Grocery List</string>
     <string name="home">Home</string>
