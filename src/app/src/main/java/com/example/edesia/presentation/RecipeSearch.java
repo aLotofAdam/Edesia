@@ -35,7 +35,7 @@ public class RecipeSearch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.content_recipe_search);
+        setContentView( R.layout.recipe_search);
 
         //initialize the view
         recyclerView = findViewById( R.id.mt_recycler_search );

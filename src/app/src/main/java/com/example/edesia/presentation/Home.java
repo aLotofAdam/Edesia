@@ -1,13 +1,11 @@
 package com.example.edesia.presentation;
 
         import android.content.Intent;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.ArrayAdapter;
-        import android.widget.Button;
-        import android.widget.Spinner;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-        import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Home extends AppCompatActivity {
@@ -23,7 +21,7 @@ public class Home extends AppCompatActivity {
         Button userMenu = findViewById(R.id.UserMenu);
         Button groceryList = findViewById(R.id.GroceryList);
         Button recipeSearch = findViewById(R.id.RecipeSearch);
-        Button googleVision = findViewById(R.id.google_vision);
+        Button googleVision = findViewById(R.id.OCR);
 
 
         plan.setOnClickListener(new View.OnClickListener(){
@@ -77,7 +75,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void openRecipeSearch(){
-        Intent intent = new Intent(this, Recipe.class);
+        Intent intent = new Intent(this, RecipeSearch.class);
         startActivity(intent);
     }
 
@@ -101,7 +99,7 @@ public class Home extends AppCompatActivity {
 
 
     public void openGoogleVision(){
-        Intent intent = new Intent(this, GoogleVision.class);
+        Intent intent = new Intent(this, OCR_Vision.class);
         startActivity(intent);
     }
 }

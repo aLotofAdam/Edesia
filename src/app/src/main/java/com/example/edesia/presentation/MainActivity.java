@@ -1,18 +1,14 @@
 package com.example.edesia.presentation;
 
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -36,7 +32,7 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
-        Home.OnFragmentInteractionListener, CurrentMealPlan.OnFragmentInteractionListener,
+        CurrentMealPlan.OnFragmentInteractionListener,
         EditMenu.OnFragmentInteractionListener, ExpandedDayView.OnFragmentInteractionListener,
         GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
         RecipeSteps.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener,
