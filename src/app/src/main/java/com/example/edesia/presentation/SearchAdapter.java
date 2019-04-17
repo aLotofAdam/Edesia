@@ -17,12 +17,12 @@ import com.example.edesia.RecipeSteps;
 import com.example.hp.edesia.R;
 
 import java.util.List;
-class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+class SearchViewHolder extends RecyclerView.ViewHolder
+{
 
     public TextView title,prepTime,totalTime, ingredients,instructions;
     public ImageView picture;
     public Button addbutton;
-
     public SearchViewHolder(@NonNull View itemView)
     {
         super( itemView );
@@ -33,18 +33,17 @@ class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         picture = itemView.findViewById(R.id.picture);
         addbutton = (Button)itemView.findViewById(R.id.addbutton);
 
-    }
-
-    @Override
-    public void onClick(View v) {
 
     }
 }
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
 
+
+
     private Context context;
     private List<RecipeModel> recipeModels;
+    private View.OnClickListener mOnItemClickListener;
 
 
     public SearchAdapter(Context context, List<RecipeModel>recipeModels)
@@ -58,12 +57,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
     @Override
     public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from( parent.getContext() );
-        View itemView = inflater.inflate(R.layout.content_recipe_overview, parent, false);
-        return new SearchViewHolder(itemView);
+        View itemView = inflater.inflate( R.layout.content_recipe_overview, parent, false );
+        return new SearchViewHolder( itemView );
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SearchViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
 
         holder.title.setText(recipeModels.get(position).getTitle());
         //holder.ingredients.setText( recipeModels.get( position ).getIngredients() );
@@ -73,25 +72,31 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
             @Override
             // works
             public void onClick(View v) {
-                Intent intent = new Intent(context,RecipeSteps.class);
+                Intent intent = new Intent(context, RecipeSteps.class);
                 String title = recipeModels.get(position).getTitle();
                 intent.putExtra("title", title );
                 context.startActivity(intent);
             }
         });
-        /* image creation
+       /*
         Glide.with(context)
                 .asBitmap()
                 .load(holder.picture)
                 .into(holder.picture);
         holder.SearchViewHolder.setOnClickListener(new View.OnClickListener(){
-*/
+
+            public void onClick (View view){
+                Intent intent = new Intent(context, GalleryActivity.class);
+                intent.putExtra("image_url", mImages.get(position));
+                intent.putExtra("image_name", mImageNames.get(position));
+                mContext.startActivity(intent);
+            }
+        }*/
     }
+
     @Override
     public int getItemCount() {
         return recipeModels.size();
     }
 
-
 }
-
