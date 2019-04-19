@@ -1,11 +1,14 @@
 package com.example.edesia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.edesia.Adapter.SearchAdapter;
 import com.example.edesia.Database.Database;
@@ -15,7 +18,7 @@ import com.mancj.materialsearchbar.MaterialSearchBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecipeSearch extends AppCompatActivity {
+public class RecipeSearch extends AppCompatActivity{
 
 
     RecyclerView recyclerView;
@@ -26,6 +29,7 @@ public class RecipeSearch extends AppCompatActivity {
     List<String> suggestList = new ArrayList<>(  );
 
     Database database;
+    Button addbutton;
 
 
     @Override
@@ -36,13 +40,14 @@ public class RecipeSearch extends AppCompatActivity {
         //initialize the view
         recyclerView = findViewById( R.id.mt_recycler_search );
         layoutManager = new LinearLayoutManager( this );
-        recyclerView.setLayoutManager( layoutManager );
-        recyclerView.setHasFixedSize( true );
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
 
-        materialSearchBar = findViewById( R.id.search_bar );
+
+        materialSearchBar = findViewById(R.id.search_bar);
 
         //initialize database
-        database = new Database( this );
+        database = new Database(this);
 
         //Setup search bar
         materialSearchBar.setHint("Search");
@@ -77,13 +82,13 @@ public class RecipeSearch extends AppCompatActivity {
                 {
                     //if close search, just restore default
                     adapter = new SearchAdapter( getBaseContext(),database.getRecipeModel());
-                    recyclerView.setAdapter( adapter );
+                    recyclerView.setAdapter(adapter);
                 }
             }
 
             @Override
             public void onSearchConfirmed(CharSequence text) {
-                startSearch( text.toString() );
+                startSearch(text.toString());
             }
 
             @Override
@@ -93,21 +98,25 @@ public class RecipeSearch extends AppCompatActivity {
         } );
 
 
+
         adapter = new SearchAdapter( this, database.getRecipeModel() );
-        recyclerView.setAdapter( adapter );
+        recyclerView.setAdapter(adapter);
+
+
     }
 
     private void startSearch(String text) {
 
-        adapter = new SearchAdapter( this,database.getRecipeByName( text ) );
-        recyclerView.setAdapter( adapter );
+        adapter = new SearchAdapter( this,database.getRecipeByName(text));
+        recyclerView.setAdapter(adapter);
     }
 
 
     private void loadSuggestList()
     {
         suggestList = database.getTitle();
-        materialSearchBar.setLastSuggestions( suggestList );
+        materialSearchBar.setLastSuggestions(suggestList);
     }
+
 
 }
