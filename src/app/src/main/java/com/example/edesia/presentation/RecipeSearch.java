@@ -96,17 +96,12 @@ public class RecipeSearch extends AppCompatActivity{
 
             }
         } );
-
-
-
         adapter = new SearchAdapter( this, database.getRecipeModel() );
         recyclerView.setAdapter(adapter);
-
-
     }
 
-    private void startSearch(String text) {
-
+    private void startSearch(String text)
+    {
         adapter = new SearchAdapter( this,database.getRecipeByName(text));
         recyclerView.setAdapter(adapter);
     }

@@ -2,6 +2,7 @@ package com.example.edesia.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,19 +11,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.edesia.Model.RecipeModel;
-
 import com.example.edesia.RecipeSteps;
 import com.example.hp.edesia.R;
 
 import java.util.List;
-class SearchViewHolder extends RecyclerView.ViewHolder
-{
+class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView title,prepTime,totalTime, ingredients,instructions;
     public ImageView picture;
-    public Button addbutton;
+    public Button addbutton,favorite;
+
+
     public SearchViewHolder(@NonNull View itemView)
     {
         super( itemView );
@@ -34,16 +34,19 @@ class SearchViewHolder extends RecyclerView.ViewHolder
         addbutton = (Button)itemView.findViewById(R.id.addbutton);
 
 
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
 
-
-
     private Context context;
     private List<RecipeModel> recipeModels;
-    private View.OnClickListener mOnItemClickListener;
 
 
     public SearchAdapter(Context context, List<RecipeModel>recipeModels)
@@ -57,46 +60,50 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
     @Override
     public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from( parent.getContext() );
-        View itemView = inflater.inflate( R.layout.content_recipe_overview, parent, false );
-        return new SearchViewHolder( itemView );
+        View itemView = inflater.inflate(R.layout.content_recipe_overview, parent, false);
+        return new SearchViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SearchViewHolder holder, final int position) {
 
         holder.title.setText(recipeModels.get(position).getTitle());
-        //holder.ingredients.setText( recipeModels.get( position ).getIngredients() );
+
         holder.prepTime.setText(recipeModels.get(position).getPrepTime());
         holder.totalTime.setText(recipeModels.get(position).getTotalTime());
+
         holder.addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
-            // works
+
             public void onClick(View v) {
-                Intent intent = new Intent(context, RecipeSteps.class);
+                Intent intent = new Intent(context,RecipeSteps.class);
                 String title = recipeModels.get(position).getTitle();
+                int id = recipeModels.get(position).getID();
+                String ingredients = recipeModels.get(position).getIngredients();
+                String instructions = recipeModels.get(position).getInstructions();
+                String url = recipeModels.get(position).getPicture();
+
                 intent.putExtra("title", title );
+                intent.putExtra("id", id);
+                intent.putExtra("ingredients", ingredients );
+                intent.putExtra("instructions", instructions);
                 context.startActivity(intent);
             }
         });
-       /*
+
+        /* image creation
         Glide.with(context)
                 .asBitmap()
                 .load(holder.picture)
                 .into(holder.picture);
         holder.SearchViewHolder.setOnClickListener(new View.OnClickListener(){
-
-            public void onClick (View view){
-                Intent intent = new Intent(context, GalleryActivity.class);
-                intent.putExtra("image_url", mImages.get(position));
-                intent.putExtra("image_name", mImageNames.get(position));
-                mContext.startActivity(intent);
-            }
-        }*/
+*/
     }
-
     @Override
     public int getItemCount() {
         return recipeModels.size();
     }
 
+
 }
+

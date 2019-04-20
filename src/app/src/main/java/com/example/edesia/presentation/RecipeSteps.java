@@ -1,17 +1,14 @@
 package com.example.edesia;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.edesia.Adapter.SearchAdapter;
-
 import com.example.edesia.Database.Database;
 
 import com.bumptech.glide.Glide;
@@ -27,24 +24,19 @@ public class RecipeSteps extends AppCompatActivity {
     String intentInstructions = "instructions";
     String intentID = "id";
     TextView ingredients, instructions, title;
-    Button add;
-    Button favorite;
-
+    //FloatingActionButton add;
+    //Button favorite;
     ImageView image;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_recipe_steps);
-        //get title from the search activity
+        //get information from intent sent from recipe page
         Intent i = getIntent();
         String Title = i.getStringExtra(intentTitle);
         String Instructions = i.getStringExtra(intentInstructions);
         String Ingredients = i.getStringExtra(intentIngredients);
         String id = i.getStringExtra(intentID);
-
-
         final RecipeModel recipe;
         Database database;
         database = new Database(this);
@@ -52,19 +44,21 @@ public class RecipeSteps extends AppCompatActivity {
         //init view and query for results
         title = findViewById(R.id.lbl_Title);
         title.setText(Title);
-
         ingredients = findViewById(R.id.lbl_Ingredients);
         ingredients.setText(Ingredients);
         instructions = findViewById(R.id.lbl_Instructions);
         instructions.setText(Instructions);
-        add = (Button) findViewById(R.id.addbutton);
-        favorite = (Button) findViewById((R.id.add_to_favorite));
+        //image = findViewById(R.id.lbl_image);
+
+        FloatingActionButton add = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
+        //favorite = (Button) findViewById((R.id.add_to_favorite));
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //change to johns class
                 String id_pass = intentID;
+                //change class to johns class
                 Intent intent = new Intent(RecipeSteps.this, RecipeSearch.class);
                 intent.putExtra("id", id_pass);
                 startActivity(intent);
@@ -72,44 +66,23 @@ public class RecipeSteps extends AppCompatActivity {
             }
         });
 
+/* send id to add to favorites
+        FloatingActionButton favorite = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
+        //favorite = (Button) findViewById((R.id.add_to_favorite));
 
-        //need to uncomment to send the data to the favorites
-        /*
-         favorite.setOnClickListener(new View.OnClickListener() {
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //change to johns class
-                    String id_pass = intentID;
-                    Intent intent = new Intent(RecipeSteps.this, Favorites.class);
-                    intent.putExtra("id", id_pass);
-                    startActivity(intent);
+                //change to johns class
+                String id_pass = intentID;
+                //change class to johns class
+                Intent intent = new Intent(RecipeSteps.this, RecipeSearch.class);
+                intent.putExtra("id", id_pass);
+                startActivity(intent);
 
             }
         });
 
-
-
-
-        //ingredients= findViewById(R.id.lbl_Ingredients);
-        //ingredients.setText(database.getIngredients());
-        //instructions = findViewById(R.id.lbl_Ingredients);
-       // image = findViewById(R.id.lbl_image);
-
-
-    }
-
-
-
-  /*  private void setImage(String imageURL, String imageName){
-        // useglide library to set image
-        TextView name = findViewById(R.id.lbl_image);
-        name.setText(imageName);
-
-        ImageView image = findViewById(R.id.image);
-        Glide.with(this)
-                .asBitmap()
-                .load(imageUrl)
-                .into(image);
-    }*/
+*/
     }
 }
