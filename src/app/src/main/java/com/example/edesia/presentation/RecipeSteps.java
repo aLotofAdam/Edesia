@@ -15,6 +15,8 @@ public class RecipeSteps extends AppCompatActivity {
     String intentIngredients = "ingredients";
     String intentInstructions = "instructions";
     String intentID = "id";
+    DatabaseHelper myDb;
+    LoginActivity currentUser;
     TextView ingredients, instructions, title;
     //FloatingActionButton add;
     //Button favorite;
@@ -51,7 +53,7 @@ public class RecipeSteps extends AppCompatActivity {
                 //change to johns class
                 String id_pass = intentID;
                 //change class to johns class
-                Intent intent = new Intent(RecipeSteps.this, RecipeSearch.class);
+                Intent intent = new Intent(RecipeSteps.this, Plan.class);
                 intent.putExtra("id", id_pass);
                 startActivity(intent);
 
@@ -65,16 +67,8 @@ public class RecipeSteps extends AppCompatActivity {
         favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //change to send to stephens database
-                String id_pass = intentID;
-                //change class to johns class
-                Intent intent = new Intent(RecipeSteps.this, RecipeSearch.class);
-                intent.putExtra("id", id_pass);
-                startActivity(intent);
-
+                 myDb.insertFavoriteRecipe(currentUser.getCurrentUser(), Integer.parseInt(intentID));
             }
         });
-
-
     }
 }

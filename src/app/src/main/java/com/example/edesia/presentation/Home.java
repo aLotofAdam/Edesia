@@ -12,14 +12,13 @@ public class Home extends AppCompatActivity {
 
     LoginActivity user = new LoginActivity();
 
-    Button plan, randomizer, userMenu, groceryList, recipeSearch, googleVision, logout;
+    Button randomizer, userMenu, groceryList, recipeSearch, googleVision, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_home);
 
-        plan = (Button)findViewById(R.id.Plan);
         randomizer = (Button)findViewById(R.id.Randomizer);
         userMenu = (Button)findViewById(R.id.UserMenu);
         groceryList = (Button)findViewById(R.id.GroceryList);
@@ -27,13 +26,6 @@ public class Home extends AppCompatActivity {
         googleVision = (Button)findViewById(R.id.OCR);
         logout = (Button)findViewById(R.id.LogOut);
 
-
-        plan.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                openMealPlanner();
-            }
-        });
 
         randomizer.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -87,12 +79,6 @@ public class Home extends AppCompatActivity {
 
     public void openRecipeSearch(){
         Intent intent = new Intent(this, RecipeSearch.class);
-        startActivity(intent);
-    }
-
-
-    public void openMealPlanner(){
-        Intent intent = new Intent(this, Plan.class);
         startActivity(intent);
     }
 
