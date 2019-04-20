@@ -9,6 +9,25 @@
     tools:context=".MealRandomizer"
     tools:showIn="@layout/meal_randomizer">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="600dp"
+        android:fontFamily="cursive"
+        android:text="Randomizer"
+        android:textAlignment="center"
+        android:textSize="35dp" />
+
 
     <TextView
         android:id="@+id/month_pick2"
@@ -19,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="271dp"
         android:layout_marginRight="271dp"
-        android:layout_marginBottom="620dp"
+        android:layout_marginBottom="500dp"
         android:text="@string/Month"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +56,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="188dp"
         android:layout_marginRight="188dp"
-        android:layout_marginBottom="572dp"
+        android:layout_marginBottom="450dp"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +74,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="86dp"
         android:layout_marginRight="86dp"
-        android:layout_marginBottom="572dp"
+        android:layout_marginBottom="450dp"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +92,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
-        android:layout_marginBottom="620dp"
+        android:layout_marginBottom="500dp"
         android:text="@string/Day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +111,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
-        android:layout_marginBottom="424dp"
+        android:layout_marginBottom="300dp"
         android:text="@string/Randomize" />
 
 </RelativeLayout>
