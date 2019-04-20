@@ -17,7 +17,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_home);
+        setContentView(R.layout.home);
 
         randomizer = (Button)findViewById(R.id.Randomizer);
         userMenu = (Button)findViewById(R.id.UserMenu);

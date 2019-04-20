@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,12 +29,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
-        Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
-        CurrentMealPlan.OnFragmentInteractionListener,
-        EditMenu.OnFragmentInteractionListener, ExpandedDayView.OnFragmentInteractionListener,
-        GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener,
-        UploadRecipe.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
     public BottomNavigationView bottomNav;
@@ -217,10 +211,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     //listener for handling events on navigation items
-    @Override
+    /*@Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return false;
-    }
+    }*/
 
     public void hideBottomNavigationView(BottomNavigationView view) {
         view.clearAnimation();
@@ -276,10 +270,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (bottomNav.isShown() && !visible){
             bottomNav.setVisibility(View.VISIBLE);
         }
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

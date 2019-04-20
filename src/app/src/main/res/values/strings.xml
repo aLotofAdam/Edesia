@@ -37,6 +37,7 @@
     <string name="Add">Add</string>
     <string name="recipePicture">recipePicture</string>
     <string name="add_recipe">Add Recipe</string>
+    <string name="plan_meals">Plan Meal</string>
 
     <string name="title_activity_ocr__vision">OCR_Vision</string>
     <string name="nothing">Nothing</string>
