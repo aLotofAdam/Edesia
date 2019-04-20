@@ -1,4 +1,4 @@
-package com.example.edesia.Model;
+package com.example.edesia.presentation;
 
 public class RecipeModel {
     int ID;

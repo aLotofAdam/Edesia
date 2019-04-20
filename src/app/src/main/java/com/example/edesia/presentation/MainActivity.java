@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Login.OnFragmentInteractionListener, SignUp.OnFragmentInteractionListener,
         CurrentMealPlan.OnFragmentInteractionListener,
         EditMenu.OnFragmentInteractionListener, ExpandedDayView.OnFragmentInteractionListener,
-        GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener,
-        RecipeSteps.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener,
-        UploadRecipe.OnFragmentInteractionListener, UserMenu.OnFragmentInteractionListener {
+        GoogleVision.OnFragmentInteractionListener, RecipeOverview.OnFragmentInteractionListener, Settings.OnFragmentInteractionListener,
+        UploadRecipe.OnFragmentInteractionListener {
     private AppBarConfiguration appBarConfiguration;
     private DrawerLayout drawer_layout;
     public BottomNavigationView bottomNav;

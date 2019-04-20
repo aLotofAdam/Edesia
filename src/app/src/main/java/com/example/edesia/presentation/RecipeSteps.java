@@ -1,22 +1,14 @@
-package com.example.edesia;
+package com.example.edesia.presentation;
+
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.support.design.widget.FloatingActionButton;
-
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.edesia.Database.Database;
 
-import com.bumptech.glide.Glide;
-import com.example.edesia.Database.Database;
-import com.example.edesia.Model.RecipeModel;
-import com.example.hp.edesia.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class RecipeSteps extends AppCompatActivity {
     String intentTitle = "title";

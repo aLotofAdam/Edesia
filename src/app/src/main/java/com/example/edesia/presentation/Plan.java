@@ -105,7 +105,7 @@ public class Plan extends AppCompatActivity {
     }
 
     public void openRecipeSearch(){
-        Intent intent = new Intent(this, Recipe.class);
+        Intent intent = new Intent(this, RecipeSearch.class);
         startActivity(intent);
     }
 

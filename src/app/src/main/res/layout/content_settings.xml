@@ -1,26 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login_2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/settings">
-
-    <!-- TODO Delete whole layout? Just use settings_menu and content_settings_menu -->
+    tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/recipe_search"
+        android:id="@+id/UpdateSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="323dp"
-        android:layout_marginLeft="323dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginBottom="576dp"
-        android:text="@string/Search"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginBottom="463dp"
+        android:text="Update Profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:layout_editor_absoluteY="617dp" />
+
+    <Button
+        android:id="@+id/UpdateFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:layout_marginBottom="356dp"
+        android:text="Update Favorites"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="617dp" />
+    <Button
+        android:id="@+id/settingsBackButton"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginEnd="299dp"
+        android:layout_marginRight="299dp"
+        android:layout_marginBottom="28dp"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="617dp" />
+
+    <TextView
+        android:id="@+id/textViewSettings"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="570dp"
+        android:fontFamily="cursive"
+        android:text="Settings"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+</RelativeLayout>

@@ -1,21 +1,19 @@
-package com.example.edesia.Adapter;
+package com.example.edesia.presentation;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.edesia.Model.RecipeModel;
-import com.example.edesia.RecipeSteps;
-import com.example.hp.edesia.R;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView title,prepTime,totalTime, ingredients,instructions;

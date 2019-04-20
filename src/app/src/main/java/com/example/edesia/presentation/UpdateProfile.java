@@ -10,9 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//TODO should be able to use fragment, this activity is just a backup
-public class SignUpActivity extends AppCompatActivity {
-
+public class UpdateProfile extends AppCompatActivity {
     DatabaseHelper myDb;
     static Context context;
 
@@ -23,34 +21,34 @@ public class SignUpActivity extends AppCompatActivity {
     EditText password;
     EditText confirmPassword;
     Button backButton;
-    Button registerButton;
+    Button updateProfile;
 
     String getUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_sign_up);
+        setContentView(R.layout.update_profile);
         //   SignUpActivity.context = getApplicationContext();
 
         myDb = new DatabaseHelper(this);
 
-        name = (EditText)findViewById(R.id.editTextName);
-        username = (EditText)findViewById(R.id.editTextUsername);
-        email = (EditText)findViewById(R.id.editTextEmail);
-        password = (EditText)findViewById(R.id.editTextPassword);
-        confirmPassword = (EditText)findViewById(R.id.editTextConfirmPassword);
-        backButton = findViewById(R.id.signUpBackButton);
-        registerButton = findViewById(R.id.RegisterButton);
+        name = (EditText)findViewById(R.id.updateTextName);
+        username = (EditText)findViewById(R.id.updateTextUsername);
+        email = (EditText)findViewById(R.id.updateTextEmail);
+        password = (EditText)findViewById(R.id.updateTextPassword);
+        confirmPassword = (EditText)findViewById(R.id.updateTextConfirmPassword);
+        backButton = findViewById(R.id.updateBackButton);
+        updateProfile = findViewById(R.id.updateProfileButton);
 
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openLoginActivity();
+                openUserMenuActivity();
             }
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        updateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String UserName = username.getText().toString();
@@ -69,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
                     boolean inserted = myDb.insertUserData(Name, UserName, Email, Pass);
                     if(inserted == true) {
                         Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
-                        openLoginActivity();
+                        openHomeActivity();
                     }
 
                 } else if (!userCheck) {
@@ -99,9 +97,13 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    public void openLoginActivity(){
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void openHomeActivity(){
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 
+    public void openUserMenuActivity(){
+        Intent intent = new Intent(this, UserMenu.class);
+        startActivity(intent);
+    }
 }

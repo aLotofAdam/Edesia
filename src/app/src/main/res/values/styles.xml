@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/design_default_color_primary</item>
@@ -20,7 +20,7 @@
     <style name="AppTheme.PopupOverlay">
     </style>
 
-    <style name="Login" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="Login" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="editTextColor">@color/textColor</item>
@@ -29,7 +29,7 @@
         <item name="android:textColorHint">@android:color/tertiary_text_light</item>
     </style>
 
-    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="NoActionBar" parent="Theme.AppCompat.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

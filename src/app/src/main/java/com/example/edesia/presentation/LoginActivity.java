@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText Password;
     DatabaseHelper myDb;
     public String currentUser;
+
 
 
     //TODO take out? Listener for navigation component
@@ -52,21 +51,23 @@ public class LoginActivity extends AppCompatActivity {
                 boolean checkLogin = myDb.checkLogin(user, pass);
 
                 if (checkLogin == true) {
-                    currentUser = (user);
-                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
+                    setCurrentUser(user);
+                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
                     openHomeActivity();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Username/Password Incorrect", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Username/Password Incorrect", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
-
-    public void setCurruntUser(String currentUser){
-        this.currentUser = currentUser;
+    public LoginActivity() {
+        getCurrentUser();
+    }
+    public void setCurrentUser(String user){
+        currentUser = user;
     }
 
-    public String getCurrentUser(){
+    public String getCurrentUser() {
         return currentUser;
     }
 
@@ -75,8 +76,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openHomeActivity(){
-        Intent intent = new Intent(this, UserMenu.class);
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 }
