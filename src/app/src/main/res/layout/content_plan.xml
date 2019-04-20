@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.edesia.presentation.MainActivity">
-    tools:context=".ExpandedDayView"
-    tools:showIn="@layout/expanded_day_view">
-    <!--TODO on Jon merge: take out search button?-->
+    tools:context="com.example.edesia.presentation.MainActivity"
+    android:background="@drawable/background_login_2"
+    >
+
 
     <Spinner
         android:id="@+id/month_spinner1"
