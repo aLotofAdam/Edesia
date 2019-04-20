@@ -18,6 +18,22 @@
         app:rippleColor="@color/colorAccent"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
+    <Spinner
+        android:id="@+id/month_spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="344dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <Spinner
+        android:id="@+id/day_spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="100dp" />
+
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -94,11 +110,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/add_button_text" />
             </LinearLayout>
-
-            <include
-                layout="@layout/content_grocery_list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
