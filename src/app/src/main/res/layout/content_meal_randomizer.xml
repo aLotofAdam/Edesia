@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@drawable/background_login_2"
     tools:context=".MealRandomizer"
     tools:showIn="@layout/meal_randomizer">
 
-    <!-- TODO on Jon merge: converted contraint layout to Relative-->
 
     <TextView
         android:id="@+id/month_pick2"

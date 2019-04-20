@@ -52,7 +52,7 @@ public class Database extends SQLiteAssetHelper
     }
 
 
-    //fucntion to get all food name
+    //function to get all food name
     public List<String> getTitle()
     {
 
