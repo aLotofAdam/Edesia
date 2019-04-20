@@ -51,7 +51,7 @@ public class RecipeSteps extends AppCompatActivity {
         //image = findViewById(R.id.lbl_image);
 
         FloatingActionButton add = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
-        //favorite = (Button) findViewById((R.id.add_to_favorite));
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,14 +66,14 @@ public class RecipeSteps extends AppCompatActivity {
             }
         });
 
-/* send id to add to favorites
-        FloatingActionButton favorite = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
-        //favorite = (Button) findViewById((R.id.add_to_favorite));
 
-        add.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton favorite = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item2);
+
+
+        favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //change to johns class
+                //change to send to stephens database
                 String id_pass = intentID;
                 //change class to johns class
                 Intent intent = new Intent(RecipeSteps.this, RecipeSearch.class);
@@ -83,6 +83,6 @@ public class RecipeSteps extends AppCompatActivity {
             }
         });
 
-*/
+
     }
 }
