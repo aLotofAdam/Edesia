@@ -3,7 +3,7 @@ package com.example.edesia.presentation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,19 +12,19 @@ public class Home extends AppCompatActivity {
 
     LoginActivity user = new LoginActivity();
 
-    Button randomizer, userMenu, groceryList, recipeSearch, googleVision, logout;
+    ImageButton randomizer, userMenu, groceryList, recipeSearch, googleVision, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        randomizer = (Button)findViewById(R.id.Randomizer);
-        userMenu = (Button)findViewById(R.id.UserMenu);
-        groceryList = (Button)findViewById(R.id.GroceryList);
-        recipeSearch = (Button)findViewById(R.id.RecipeSearch);
-        googleVision = (Button)findViewById(R.id.OCR);
-        logout = (Button)findViewById(R.id.LogOut);
+        randomizer = findViewById(R.id.Randomizer);
+        userMenu = findViewById(R.id.UserMenu);
+        groceryList = findViewById(R.id.GroceryList);
+        recipeSearch = findViewById(R.id.RecipeSearch);
+        googleVision = findViewById(R.id.OCR);
+        logout = findViewById(R.id.LogOut);
 
 
         randomizer.setOnClickListener(new View.OnClickListener(){

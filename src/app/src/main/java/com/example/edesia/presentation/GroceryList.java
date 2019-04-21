@@ -1,17 +1,59 @@
 package com.example.edesia.presentation;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GroceryList extends AppCompatActivity {
+    private EditText mItemEdit;
+    private ArrayAdapter<String> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grocery_list);
+
+        ListView mShoppingList = findViewById(R.id.listView);
+        mItemEdit = findViewById(R.id.editText);
+        Button mAddButton = findViewById(R.id.addButton);
+        Button getList = findViewById(R.id.getListButton);
+
+        mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1);
+        mShoppingList.setAdapter(mAdapter);
+
+        //adds item to grocery list
+        mAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = mItemEdit.getText().toString();
+                mAdapter.add(item);
+                mAdapter.notifyDataSetChanged();
+                mItemEdit.setText("");
+            }
+        });
+
+        //deletes item from grocery list
+        mShoppingList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //mAdapter.remove();
+            }
+        });
+
+        getList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO add date from spinners, look at johns randmizer
+            }
+        });
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;

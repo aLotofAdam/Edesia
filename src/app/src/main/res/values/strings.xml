@@ -56,6 +56,9 @@
     <string name="ocr_success">Text read successfully</string>
     <string name="ocr_failure">No text captured</string>
     <string name="ocr_error">"Error reading text: %1$s"</string>
+    <string name="img">img</string>
+    <string name="find_list">Find List</string>
+    <string name="home_page">Home Page</string>
 
     <string-array name="months">
         <item>January</item>

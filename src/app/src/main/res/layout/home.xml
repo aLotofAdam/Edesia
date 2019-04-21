@@ -5,100 +5,249 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <!--<TextView
+    <TextView
         android:id="@+id/textHomePage"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
-        android:layout_marginBottom="603dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
         android:fontFamily="cursive"
-        android:text="Home Page"
+        android:text="@string/home_page"
         android:textAlignment="center"
-        android:textSize="35dp" />-->
-
-
+        android:textColor="@color/white"
+        android:textSize="40sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:orientation="horizontal"
-        android:layout_weight="1" >
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/Randomizer"
-            android:layout_width="0dip"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/holo_blue_bright"
-            android:text="@string/randomizer"
-            app:rippleColor="@color/colorAccent"
-            app:srcCompat="@drawable/icons8_shuffle_22" />
+            android:layout_gravity="start"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/GroceryList"
-            android:layout_width="0dip"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado1"
+                android:fontFamily="cursive"
+                android:text="@string/randomizer"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/Randomizer"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:adjustViewBounds="true"
+                android:background="@color/avocado1"
+                android:contentDescription="@string/img"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:padding="50dp"
+                android:scaleType="fitCenter"
+                android:text="@string/randomizer"
+                android:tint="@color/colorPrimaryDark"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/icons8_shuffle_22" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/holo_green_light"
-            android:text="@string/grocery_list"
-            app:srcCompat="@drawable/shopping_cart24px" />
+            android:layout_gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado2"
+                android:fontFamily="cursive"
+                android:text="@string/grocery_list"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/GroceryList"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:adjustViewBounds="true"
+                android:background="@color/avocado2"
+                android:contentDescription="@string/img"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:padding="50dp"
+                android:scaleType="fitCenter"
+                android:text="@string/grocery_list"
+                android:tint="@color/colorPrimary"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/shopping_cart24px" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:orientation="horizontal"
-        android:layout_weight="1" >
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/RecipeSearch"
-            android:layout_width="0dip"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_green_dark"
-            android:icon="@drawable/ic_search_black_24dp"
-            android:text="@string/plan_meals" />
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/UserMenu"
-            android:layout_width="0dip"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado2"
+                android:fontFamily="cursive"
+                android:text="@string/Google_Vision"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/OCR"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+
+                android:background="@color/avocado2"
+                android:contentDescription="@string/img"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:padding="50dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:icon="@drawable/book24px"
-            android:text="@string/user_menu" />
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado1"
+                android:fontFamily="cursive"
+                android:text="@string/recipe_search"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/RecipeSearch"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+
+                android:adjustViewBounds="true"
+                android:background="@color/avocado1"
+                android:contentDescription="@string/img"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:padding="50dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimaryDark"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
+        </LinearLayout>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:orientation="horizontal"
-        android:layout_weight="1" >
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/OCR"
-            android:layout_width="0dip"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/design_default_color_primary"
-            android:icon="@drawable/vision_icon"
-            android:text="@string/Google_Vision" />
+            android:layout_gravity="start"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/LogOut"
-            android:layout_width="0dip"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado1"
+                android:fontFamily="cursive"
+                android:gravity="clip_vertical|start"
+                android:text="@string/user_menu"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/UserMenu"
+                android:layout_width="215dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+
+                android:adjustViewBounds="true"
+                android:background="@color/avocado1"
+                android:contentDescription="@string/img"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:padding="50dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimaryDark"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/book24px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimary"
-            android:icon="@drawable/contacts24px"
-            android:text="@string/Logout" />
+            android:layout_gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/avocado2"
+                android:elevation="8dp"
+                android:fontFamily="cursive"
+                android:text="@string/Logout"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/LogOut"
+                style="@android:style/Widget.ImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@color/avocado2"
+                android:contentDescription="@string/img"
+                android:elevation="1dp"
+                android:maxWidth="100dp"
+
+                android:maxHeight="100dp"
+                android:padding="55dp"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPrimary"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/contacts24px" />
+
+        </LinearLayout>
     </LinearLayout>
+
 </LinearLayout>
