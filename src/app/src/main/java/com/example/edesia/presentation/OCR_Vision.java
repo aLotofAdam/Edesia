@@ -24,7 +24,6 @@ import com.example.edesia.middle.CameraSourcePreview;
 import com.example.edesia.middle.DetectorProcessor;
 import com.example.edesia.middle.GraphicOverlay;
 import com.example.edesia.middle.OCRGraphic;
-import com.example.edesia.middle.RegexMatcher;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.vision.text.TextBlock;
@@ -34,12 +33,15 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
+import static com.example.edesia.middle.CameraSource.Builder;
+import static com.example.edesia.middle.CameraSource.CAMERA_FACING_BACK;
 
 /**
  * Activity for the Ocr Detecting app.  This app detects text and displays the value with the
@@ -69,8 +71,50 @@ public class OCR_Vision extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     private GestureDetector gestureDetector;
 
-    List<String>ingredientList = new ArrayList<>();
-    public Set set;
+    List<String>ingredientList = new ArrayList<>(
+            Arrays.asList("bread","rye bread","mustard","relish","deli corned beef","sauerkraut",
+                    "berries","whole,cloves","coriander seeds","extra-virgin olive oil",
+                    "large white onion","clove of garlic","tomato paste","ground beef","chili powder",
+                    "ground cumin","dried oregano","paprika","cayenne pepper","Kosher salt",
+                    "Freshly ground black pepper","yellow onion","white onion","paprika",
+                    "pickling spice","Crescent Rolls","cabbage leaves","Italian bread crumbs",
+                    "red wine","corned beef","low-sodium beef broth","dried thyme","Swiss cheese",
+                    "ketchup","large carrots","stalks celery","baby potatoes","corned beef brisket",
+                    "kosher salt","bay leaves","thyme","sprigs thyme","russet potatoes","Kosher salt",
+                    "butter","milk","sour cream","beef chuck stew meat","extra-virgin olive oil",
+                    "large onion","provolone","rolls","boneless ribeye steaks","carrots",
+                    "garlic powder","fresh thyme","ground beef","frozen peas","all-purpose flour",
+                    "extra-virgin olive oil","yellow onion","jalapeño","cloves garlic","oregano",
+                    "Cooking spray","grits","ground cumin","green lentils",
+                    "boneless skinless chicken breasts","low-sodium chicken broth","Kosher salt",
+                    "Freshly ground black pepper","can of white beans","sour cream","butter","onion",
+                    "red bell pepper","shrimp","garlic cloves","Cajun seasoning","lemon juice",
+                    "Worstershire sauce","Kosher salt","cream cheese","sour cream",
+                    "shredded mozzarella","shredded Parmesan","butter","extra-virgin olive oil",
+                    "shrimp","lemon","cloves garlic","crushed red pepper flakes","Kosher salt",
+                    "Kosher salt","cooked shrimp","limes","oranges","red onion","jalapeños",
+                    "cucumber","cherry tomatoes","cilantro","mayonnaise","butter","all-purpose flour",
+                    "yellow onion","green bell pepper","celery ribs","cloves garlic","andouille sausage",
+                    "cajun seasoning","kosher salt","Freshly ground black pepper","bay leaf",
+                    "fire-roasted diced tomatoes","chicken broth","extra-virgin olive oil",
+                    "bell peppers","onion","Kosher salt","black pepper",
+                    "boneless skinless chicken breasts","chili powder","ground cumin","dried oregano",
+                    "flour tortillas","shredded Monterey jack","shredded cheddar","avocado","fettucine",
+                    "butter divided","shrimp","kosher salt","ground black pepper","clove garlic",
+                    "all-purpose flour","heavy cream","whole milk","egg","cabbage","rice noodles",
+                    "lime juice","brown sugar","fish sauce","low-sodium soy sauce","cayenne pepper",
+                    "vegetable oil","bell pepper","garlic cloves","eggs","shrimp","black pepper",
+                    "extra-virgin olive oil","onion","bell peppers","Kosher salt",
+                    "ground black pepper","boneless chicken breasts","oregano","sausage",
+                    "cloves garlic","tomatoes","low-sodium chicken stock","crushed tomatoes",
+                    "rice","Old Bay seasoning","vegetable oil","garlic","carrots","green bell pepper",
+                    "white rice","peas","soy sauce","sesame oil","egg","sriracha","panko bread crumbs",
+                    "extra-virgin olive oil","garlic powder","Kosher salt","ground black pepper",
+                    "large eggs","flour","raw shrimp","Fresh cilantro","mayonnaise","olive oil",
+                    "onion","cloves garlic","bell pepper","shrimp","Cajun seasoning","kosher salt",
+                    "Freshly ground black pepper","extra-virgin olive oil","large onion","ground beef",
+                    "garlic cloves","kosher salt","refried beans","water","tortilla chips",
+                    "shredded cheddar","Shredded Monterey jack","jalapeños","black beans","avocado"));
 
     /**
      * Initializes the UI and creates the detector pipeline.
@@ -80,6 +124,14 @@ public class OCR_Vision extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.google_vision);
 
+        // Construct an Intent object for groceryList
+        final Intent intent = new Intent(this, GroceryList.class);
+        //ArrayList<String> gList = new ArrayList<>();
+
+
+        // Get array list from OCR_Vision
+        final ArrayList<String>gList = getIntent().getStringArrayListExtra("gList");
+
         preview = findViewById(R.id.preview);
         graphicOverlay = findViewById(R.id.graphicOverlay);
 
@@ -88,11 +140,11 @@ public class OCR_Vision extends AppCompatActivity {
         boolean useFlash = false;
 
         //initialize the database
-        Database db = new Database(this);
+        //Database db = new Database(this);
         //Query for ingredients
-        ingredientList = db.getIngredients();
+        //ingredientList = db.getIngredients();
         //Gets individual ingredients from query result
-        RegexMatcher.PatternMatch(ingredientList, set);
+        //RegexMatcher.PatternMatch(ingredientList);
 
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
@@ -130,21 +182,74 @@ public class OCR_Vision extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getList(view);
-                //CameraSource.this.stop();
-                //DetectorProcessor.this.receiveDetections();
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+
+                stop();
+                receiveDetections();
+                Snackbar.make(view, "Camera stopped", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                //final ArrayList<String> gList =
+
+                intent.putStringArrayListExtra("gList",gList);
+                // Start the groceryList
+                startActivity(intent);
+
+            }
+
+            private void receiveDetections() {
+            }
+
+            private void stop() {
             }
         });
     }
     //TODO handle this
-    public List getList(View view){
-        List list = new ArrayList();
-        //this.view.CameraSource.stop();
-        //view.receiveDetections();
+    public static ArrayList<String> getList(){
 
-        return list;
+        return new ArrayList<>(
+                Arrays.asList("bread","rye bread","mustard","relish","deli corned beef","sauerkraut",
+                        "berries","whole,cloves","coriander seeds","extra-virgin olive oil",
+                        "large white onion","clove of garlic","tomato paste","ground beef","chili powder",
+                        "ground cumin","dried oregano","paprika","cayenne pepper","Kosher salt",
+                        "Freshly ground black pepper","yellow onion","white onion","paprika",
+                        "pickling spice","Crescent Rolls","cabbage leaves","Italian bread crumbs",
+                        "red wine","corned beef","low-sodium beef broth","dried thyme","Swiss cheese",
+                        "ketchup","large carrots","stalks celery","baby potatoes","corned beef brisket",
+                        "kosher salt","bay leaves","thyme","sprigs thyme","russet potatoes","Kosher salt",
+                        "butter","milk","sour cream","beef chuck stew meat","extra-virgin olive oil",
+                        "large onion","provolone","rolls","boneless ribeye steaks","carrots",
+                        "garlic powder","fresh thyme","ground beef","frozen peas","all-purpose flour",
+                        "extra-virgin olive oil","yellow onion","jalapeño","cloves garlic","oregano",
+                        "Cooking spray","grits","ground cumin","green lentils",
+                        "boneless skinless chicken breasts","low-sodium chicken broth","Kosher salt",
+                        "Freshly ground black pepper","can of white beans","sour cream","butter","onion",
+                        "red bell pepper","shrimp","garlic cloves","Cajun seasoning","lemon juice",
+                        "Worstershire sauce","Kosher salt","cream cheese","sour cream",
+                        "shredded mozzarella","shredded Parmesan","butter","extra-virgin olive oil",
+                        "shrimp","lemon","cloves garlic","crushed red pepper flakes","Kosher salt",
+                        "Kosher salt","cooked shrimp","limes","oranges","red onion","jalapeños",
+                        "cucumber","cherry tomatoes","cilantro","mayonnaise","butter","all-purpose flour",
+                        "yellow onion","green bell pepper","celery ribs","cloves garlic","andouille sausage",
+                        "cajun seasoning","kosher salt","Freshly ground black pepper","bay leaf",
+                        "fire-roasted diced tomatoes","chicken broth","extra-virgin olive oil",
+                        "bell peppers","onion","Kosher salt","black pepper",
+                        "boneless skinless chicken breasts","chili powder","ground cumin","dried oregano",
+                        "flour tortillas","shredded Monterey jack","shredded cheddar","avocado","fettucine",
+                        "butter divided","shrimp","kosher salt","ground black pepper","clove garlic",
+                        "all-purpose flour","heavy cream","whole milk","egg","cabbage","rice noodles",
+                        "lime juice","brown sugar","fish sauce","low-sodium soy sauce","cayenne pepper",
+                        "vegetable oil","bell pepper","garlic cloves","eggs","shrimp","black pepper",
+                        "extra-virgin olive oil","onion","bell peppers","Kosher salt",
+                        "ground black pepper","boneless chicken breasts","oregano","sausage",
+                        "cloves garlic","tomatoes","low-sodium chicken stock","crushed tomatoes",
+                        "rice","Old Bay seasoning","vegetable oil","garlic","carrots","green bell pepper",
+                        "white rice","peas","soy sauce","sesame oil","egg","sriracha","panko bread crumbs",
+                        "extra-virgin olive oil","garlic powder","Kosher salt","ground black pepper",
+                        "large eggs","flour","raw shrimp","Fresh cilantro","mayonnaise","olive oil",
+                        "onion","cloves garlic","bell pepper","shrimp","Cajun seasoning","kosher salt",
+                        "Freshly ground black pepper","extra-virgin olive oil","large onion","ground beef",
+                        "garlic cloves","kosher salt","refried beans","water","tortilla chips",
+                        "shredded cheddar","Shredded Monterey jack","jalapeños","black beans","avocado"));
+
     }
 
     /**
@@ -222,8 +327,8 @@ public class OCR_Vision extends AppCompatActivity {
         }
 
         //Create the mCameraSource using the TextRecognizer.
-        cameraSource = new CameraSource.Builder(getApplicationContext(),
-                textRecognizer).setFacing(CameraSource.CAMERA_FACING_BACK)
+        cameraSource = new Builder(getApplicationContext(),
+                textRecognizer).setFacing(CAMERA_FACING_BACK)
                 //High resolution is set to get smaller text. Can adjust if needed
                 .setRequestedPreviewSize(1280, 1024).setRequestedFps(2.0f)
                 .setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)

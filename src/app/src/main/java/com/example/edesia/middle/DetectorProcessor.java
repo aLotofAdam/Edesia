@@ -3,10 +3,12 @@ package com.example.edesia.middle;
 import android.util.Log;
 import android.util.SparseArray;
 
+import com.example.edesia.presentation.OCR_Vision;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.text.TextBlock;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A very simple Processor which gets detected TextBlocks and adds them to the overlay
@@ -20,6 +22,11 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
         graphicOverlay = ocrGraphicOverlay;
     }
 
+    public List<String> updateList(List<String>gList) {
+        System.out.println(gList);
+        return gList;
+    }
+
     /**
      * Called by the detector to deliver detection results.
      * If your application called for it, this could be a place to check for
@@ -29,21 +36,28 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
      */
     @Override
     public void receiveDetections(Detector.Detections<TextBlock> detections) {
+        List<String>gList = new ArrayList<>();
+                List<String>list = OCR_Vision.getList();
+
         graphicOverlay.clear();
         //TODO finish setting up keywords
         SparseArray<TextBlock> items = detections.getDetectedItems();
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);
             if (item != null && item.getValue() != null) {
-                final String worst = item.getValue();
-                if(worst.length() > 1 && Character.isUpperCase(worst.charAt(0)) && worst
-                        .matches("[A-Za-z-]+") && worst.charAt(worst.length() - 1) != '-') {
-                    Log.d("Processor", "Text detected! " + worst);
-                    OCRGraphic graphic = new OCRGraphic(graphicOverlay, item);
-                    graphicOverlay.add(graphic);
+                final String word = item.getValue();
+
+                for (int j = 0; j < list.size(); j++){
+                    if(word.matches(list.get(j))){
+                        gList.add(word);
+                    }
                 }
+                Log.d("Processor", "Text detected! " + word);
+                OCRGraphic graphic = new OCRGraphic(graphicOverlay, item);
+                graphicOverlay.add(graphic);
             }
         }
+        updateList(gList);
     }
 
     //frees resources used by detection processor

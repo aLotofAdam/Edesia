@@ -31,6 +31,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
 
+import com.example.edesia.presentation.OCR_Vision;
 import com.google.android.gms.common.images.Size;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Frame;
@@ -72,7 +73,7 @@ import androidx.annotation.StringDef;
  * </ul>
  */
 @SuppressWarnings("deprecation")
-public class CameraSource {
+public class CameraSource extends OCR_Vision {
     @SuppressLint("InlinedApi")
     public static final int CAMERA_FACING_BACK = CameraInfo.CAMERA_FACING_BACK;
     @SuppressLint("InlinedApi")

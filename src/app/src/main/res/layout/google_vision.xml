@@ -19,7 +19,7 @@
         <com.example.edesia.middle.CameraSourcePreview
             android:id="@+id/preview"
             android:layout_width="wrap_content"
-            android:layout_height="604dp"
+            android:layout_height="665dp"
             android:layout_marginTop="8dp"
             android:paddingStart="8dp"
             android:paddingTop="8dp"
@@ -33,7 +33,7 @@
 
         </com.example.edesia.middle.CameraSourcePreview>
 
-        <TextView
+        <!--<TextView
             android:id="@+id/text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             android:layout_marginEnd="8dp"
             android:text="@string/nothing"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="20sp" />-->
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/Visionfab"

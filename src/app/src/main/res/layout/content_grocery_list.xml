@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -10,21 +11,17 @@
 
     <Spinner
         android:id="@+id/month_spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="216dp"
-        android:layout_marginBottom="613dp"
-        android:spinnerMode="dropdown" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="344dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <Spinner
         android:id="@+id/day_spinner3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="612dp"
-        android:spinnerMode="dropdown" />
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:spinnerMode="dropdown"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="0dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

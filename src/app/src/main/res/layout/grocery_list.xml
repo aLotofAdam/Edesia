@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp"
     android:orientation="vertical">
 
@@ -57,5 +58,16 @@
             android:layout_height="wrap_content"
             android:text="@string/find_list" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/glistbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:text="@string/Google_Vision"
+        app:layout_anchor="@+id/drawer_layout"
+        app:layout_anchorGravity="right|center"
+        app:rippleColor="@color/colorAccent"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
 </LinearLayout>

@@ -1,13 +1,19 @@
 package com.example.edesia.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +30,11 @@ public class GroceryList extends AppCompatActivity {
         mItemEdit = findViewById(R.id.editText);
         Button mAddButton = findViewById(R.id.addButton);
         Button getList = findViewById(R.id.getListButton);
+
+        // Construct an Intent object for groceryList
+        final Intent intent = new Intent(this, OCR_Vision.class);
+        final ArrayList<String> gList = new ArrayList<>();
+        intent.putStringArrayListExtra("gList",gList);
 
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1);
         mShoppingList.setAdapter(mAdapter);
@@ -54,6 +65,26 @@ public class GroceryList extends AppCompatActivity {
                 //TODO add date from spinners, look at johns randmizer
             }
         });
+
+        Button glistbutton = findViewById(R.id.glistbutton);
+        glistbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Snackbar.make(view, "Camera Started", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                //final ArrayList<String> gList = getList();
+
+                intent.putStringArrayListExtra("gList",gList);
+                // Start the groceryList
+                startActivity(intent);
+            }
+        });
+
+        // Output the array, not sure if need this
+        for(String item:gList){
+            Log.i("GroceryList", String.valueOf(item));
+        }
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;

@@ -38,6 +38,7 @@
     <string name="recipePicture">recipePicture</string>
     <string name="add_recipe">Add Recipe</string>
     <string name="plan_meals">Plan Meal</string>
+    <string name="item_editText_hint">Write a new item</string>
 
     <string name="title_activity_ocr__vision">OCR_Vision</string>
     <string name="nothing">Nothing</string>
@@ -59,6 +60,7 @@
     <string name="img">img</string>
     <string name="find_list">Find List</string>
     <string name="home_page">Home Page</string>
+    <string name="add_button_text">add item</string>
 
     <string-array name="months">
         <item>January</item>
