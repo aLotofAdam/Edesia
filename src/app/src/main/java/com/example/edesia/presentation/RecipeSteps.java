@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +18,7 @@ public class RecipeSteps extends AppCompatActivity {
     String intentIngredients = "ingredients";
     String intentInstructions = "instructions";
     String intentID = "id";
+    String intentUrl = "url";
     DatabaseHelper myDb;
     LoginActivity currentUser;
     TextView ingredients, instructions, title;
@@ -31,6 +35,8 @@ public class RecipeSteps extends AppCompatActivity {
         String Instructions = i.getStringExtra(intentInstructions);
         String Ingredients = i.getStringExtra(intentIngredients);
         String id = i.getStringExtra(intentID);
+        String url = i.getStringExtra(intentUrl);
+
         final RecipeModel recipe;
         Database database;
         database = new Database(this);
@@ -42,7 +48,8 @@ public class RecipeSteps extends AppCompatActivity {
         ingredients.setText(Ingredients);
         instructions = findViewById(R.id.lbl_Instructions);
         instructions.setText(Instructions);
-        //image = findViewById(R.id.lbl_image);
+        image = findViewById(R.id.lbl_image);
+        Glide.with(this).load(url).into(image);
 
         FloatingActionButton add = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
 

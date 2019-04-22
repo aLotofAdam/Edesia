@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-//import com.bumptech.glide.Glide;
+
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.Glide;
@@ -94,6 +94,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
                 intent.putExtra("id", id);
                 intent.putExtra("ingredients", ingredients );
                 intent.putExtra("instructions", instructions);
+                intent.putExtra("url",url);
                 context.startActivity(intent);
             }
         });
