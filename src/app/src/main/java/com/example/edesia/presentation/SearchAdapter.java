@@ -31,7 +31,6 @@ class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     {
         super( itemView );
         title = itemView.findViewById( R.id.title );
-        //ingredients = itemView.findViewById( R.id.foodIngredientsTv );
         prepTime = itemView.findViewById( R.id.prepTime );
         totalTime = itemView.findViewById( R.id.totalTime);
         picture = (ImageView)itemView.findViewById(R.id.picture);
@@ -72,7 +71,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
     public void onBindViewHolder(@NonNull SearchViewHolder holder, final int position) {
 
         holder.title.setText(recipeModels.get(position).getTitle());
-
         holder.prepTime.setText(recipeModels.get(position).getPrepTime());
         holder.totalTime.setText(recipeModels.get(position).getTotalTime());
         String url = recipeModels.get(position).getPicture();
