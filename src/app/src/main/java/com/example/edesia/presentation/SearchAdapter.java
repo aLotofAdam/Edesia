@@ -1,7 +1,6 @@
 package com.example.edesia.presentation;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+//import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -31,7 +34,7 @@ class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         //ingredients = itemView.findViewById( R.id.foodIngredientsTv );
         prepTime = itemView.findViewById( R.id.prepTime );
         totalTime = itemView.findViewById( R.id.totalTime);
-        picture = itemView.findViewById(R.id.picture);
+        picture = (ImageView)itemView.findViewById(R.id.picture);
         addbutton = (Button)itemView.findViewById(R.id.addbutton);
 
 
@@ -72,6 +75,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
 
         holder.prepTime.setText(recipeModels.get(position).getPrepTime());
         holder.totalTime.setText(recipeModels.get(position).getTotalTime());
+        String url = recipeModels.get(position).getPicture();
+        //not working properly
+
+        Glide.with(context).load(url).into(holder.picture);
+
 
         holder.addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
