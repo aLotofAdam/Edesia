@@ -15,6 +15,9 @@ public class Plan extends AppCompatActivity {
     int selectedDay;
     String selectedMeal;
     int recipeIDHold;
+    //this will be set to the id from the recipesteps
+    String id = "id";
+    String stringplaceholder;
     Button Add;
 
     DatabaseHelper myDb = new DatabaseHelper(this);
@@ -27,7 +30,12 @@ public class Plan extends AppCompatActivity {
         Button home = findViewById(R.id.HomeButton);
         Button search = findViewById(R.id.SearchButton);
 
-
+        //added to get intent recipe ID
+        Intent i = getIntent();
+        //get the intent id
+        stringplaceholder = i.getStringExtra(id);
+        //store it as an int to sent to the database
+        recipeIDHold = Integer.parseInt(stringplaceholder);
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
         ArrayAdapter<CharSequence> choice;

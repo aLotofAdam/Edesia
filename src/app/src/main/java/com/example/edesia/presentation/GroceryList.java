@@ -21,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class GroceryList extends AppCompatActivity {
     private EditText mItemEdit;
     private ArrayAdapter<String> mAdapter;
+    String selectedMonth;
+    int selectedDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -110,6 +112,9 @@ public class GroceryList extends AppCompatActivity {
         days.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s7.setAdapter(days);
 
+
+        selectedMonth = s6.getSelectedItem().toString();
+        selectedDay = Integer.parseInt(s7.getSelectedItem().toString());
 
     }
 }
