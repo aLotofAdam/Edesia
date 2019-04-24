@@ -3,71 +3,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listView"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:itemTextColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/actionbar_menu">
+
+            <TextView
+                android:id="@+id/textHomePage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:fontFamily="cursive"
+                android:text="@string/grocery_list"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <ImageButton
+                android:id="@+id/recipe_search"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="top|end"
+                android:layout_marginStart="256dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorPrimary"
+                android:contentDescription="@string/go_to_recipe_search"
+                android:text="@string/recipe_search"
+                android:tint="@color/avocado2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@android:drawable/ic_menu_search"
+                tools:elevation="8dp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight=".8"
+        android:padding="8dp"
+        android:orientation="vertical">
 
-    </ListView>
+        <ListView
+            android:id="@+id/listView"
+            style="@android:style/Widget.DeviceDefault.ExpandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        </ListView>
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/Add"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/Add"/>
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Add"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Add"/>
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/day_spinner3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Day"
+                android:spinnerMode="dialog" />
+
+            <Spinner
+                android:id="@+id/month_spinner3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Month"
+                android:spinnerMode="dialog" />
+
+            <Button
+                android:id="@+id/getListButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/find_list" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/day_spinner3"
-            android:layout_width="wrap_content"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/glist_menu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Day"
-            android:spinnerMode="dialog" />
-
-        <Spinner
-            android:id="@+id/month_spinner3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Month"
-            android:spinnerMode="dialog" />
-
-        <Button
-            android:id="@+id/getListButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/find_list" />
+            android:background="@color/colorPrimary"
+            android:visibility="visible"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/avocado2"
+            app:itemTextColor="@android:color/white"
+            app:menu="@menu/glist_menu"
+            tools:elevation="3dp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/glistbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:text="@string/Google_Vision"
-        app:layout_anchor="@+id/drawer_layout"
-        app:layout_anchorGravity="right|center"
-        app:rippleColor="@color/colorAccent"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
-
 </LinearLayout>

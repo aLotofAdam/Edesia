@@ -33,17 +33,6 @@
 
         </com.example.edesia.middle.CameraSourcePreview>
 
-        <!--<TextView
-            android:id="@+id/text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/nothing"
-            android:textColor="@color/textColor"
-            android:textSize="20sp" />-->
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/Visionfab"
             android:layout_width="wrap_content"

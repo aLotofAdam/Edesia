@@ -20,12 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
@@ -40,9 +41,9 @@
 
             <ImageButton
                 android:id="@+id/Randomizer"
-                android:layout_width="215dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="start"
+
                 android:adjustViewBounds="true"
                 android:background="@color/avocado1"
                 android:contentDescription="@string/img"
@@ -58,9 +59,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
@@ -75,9 +76,9 @@
 
             <ImageButton
                 android:id="@+id/GroceryList"
-                android:layout_width="215dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="end"
+
                 android:adjustViewBounds="true"
                 android:background="@color/avocado2"
                 android:contentDescription="@string/img"
@@ -100,10 +101,9 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:gravity="start"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
@@ -118,7 +118,7 @@
 
             <ImageButton
                 android:id="@+id/OCR"
-                android:layout_width="215dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
 
@@ -135,9 +135,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="end"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
@@ -152,12 +152,11 @@
 
             <ImageButton
                 android:id="@+id/RecipeSearch"
-                style="@android:style/Widget.ImageButton"
-                android:layout_width="215dp"
-                android:layout_height="match_parent"
 
-                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@color/avocado1"
+                android:adjustViewBounds="true"
                 android:contentDescription="@string/img"
                 android:maxWidth="100dp"
                 android:maxHeight="100dp"
@@ -178,9 +177,9 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
@@ -196,12 +195,11 @@
 
             <ImageButton
                 android:id="@+id/UserMenu"
-                android:layout_width="215dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="start"
 
-                android:adjustViewBounds="true"
                 android:background="@color/avocado1"
+                android:adjustViewBounds="true"
                 android:contentDescription="@string/img"
                 android:maxWidth="100dp"
                 android:maxHeight="100dp"
@@ -213,16 +211,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
+            android:layout_weight=".5"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/avocado2"
-                android:elevation="8dp"
+
                 android:fontFamily="cursive"
                 android:text="@string/Logout"
                 android:textAlignment="center"
@@ -231,13 +229,13 @@
 
             <ImageButton
                 android:id="@+id/LogOut"
-                style="@android:style/Widget.ImageButton"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:background="@color/avocado2"
                 android:contentDescription="@string/img"
-                android:elevation="1dp"
+
                 android:maxWidth="100dp"
 
                 android:maxHeight="100dp"

@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="avocado1">#cdff00</color>
-    <color name="avocado2">#bceb00</color>
+    <color name="avocado1">#C2C6C6</color>
+    <color name="avocado2">#F8F7ED</color>
     <color name="avocado3">#9ec400</color>
     <color name="avocado4">#8eb001</color>
     <color name="avocado5">#7e9d01</color>
