@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -29,7 +30,7 @@ public class GroceryList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grocery_list);
 
-        ListView mShoppingList = findViewById(R.id.listView);
+        final ListView mShoppingList = findViewById(R.id.listView);
         mItemEdit = findViewById(R.id.editText);
         Button mAddButton = findViewById(R.id.addButton);
         Button getList = findViewById(R.id.getListButton);
@@ -57,10 +58,13 @@ public class GroceryList extends AppCompatActivity {
         mShoppingList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                //mAdapter.remove();
+                String item = mAdapter.getItem(position);
+                mAdapter.remove(mAdapter.getItem(position));
+                mAdapter.notifyDataSetChanged();
+                Toast.makeText(GroceryList.this, "Got: " + item, Toast.LENGTH_SHORT).show();
             }
         });
+
 
         getList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +73,8 @@ public class GroceryList extends AppCompatActivity {
             }
         });
 
-        ImageButton recipeButton = findViewById(R.id.recipe_search);
-        recipeButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton googleVisionButton = findViewById(R.id.google_vision);
+        googleVisionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -81,6 +85,14 @@ public class GroceryList extends AppCompatActivity {
                 intent.putStringArrayListExtra("gList",gList);
                 // Start the groceryList
                 startActivity(intent);
+            }
+        });
+
+        ImageButton home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openHomeActivity();
             }
         });
 
@@ -117,40 +129,10 @@ public class GroceryList extends AppCompatActivity {
         selectedDay = Integer.parseInt(s7.getSelectedItem().toString());
 
     }
+
+    public void openHomeActivity(){
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
 }
-
-/*TODO previous life as a fragment below
-public class GroceryList extends Fragment {
-    private OnFragmentInteractionListener mListener;
-
-    public GroceryList() {
-        // Required empty public constructor
-    }
-
-    public static void setOnClickListener(View.OnClickListener onClickListener) {
-    }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        //inflate layout
-        return inflater.inflate(R.layout.grocery_list, container, false);
-    }
-
-   *//* @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-       // Button button = view.findViewById(R.id.gl_to_home);
-        //button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.gl_to_home, null));
-        //uses navigationController to use the action gl_to_home button to navigate
-        //Navigation.findNavController(view).navigate(R.id.action_grocery_list_to_home);
-
-        view.findViewById(R.id.grocery_list).setOnClickListener(Navigation.
-                createNavigateOnClickListener(R.id.action_grocery_list_to_home, savedInstanceState));
-    }*//*
-
-    //allows communication between fragment and activity
-    public interface OnFragmentInteractionListener {
-    }
-}*/

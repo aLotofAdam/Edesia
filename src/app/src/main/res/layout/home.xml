@@ -155,8 +155,8 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/avocado1"
                 android:adjustViewBounds="true"
+                android:background="@color/avocado1"
                 android:contentDescription="@string/img"
                 android:maxWidth="100dp"
                 android:maxHeight="100dp"
