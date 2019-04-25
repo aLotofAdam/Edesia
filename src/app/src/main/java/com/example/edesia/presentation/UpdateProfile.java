@@ -23,13 +23,12 @@ public class UpdateProfile extends AppCompatActivity {
     Button backButton;
     Button updateProfile;
 
-    String getUser;
+    LoginActivity currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_profile);
-        //   SignUpActivity.context = getApplicationContext();
 
         myDb = new DatabaseHelper(this);
 
@@ -41,6 +40,7 @@ public class UpdateProfile extends AppCompatActivity {
         backButton = findViewById(R.id.updateBackButton);
         updateProfile = findViewById(R.id.updateProfileButton);
 
+
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -51,11 +51,15 @@ public class UpdateProfile extends AppCompatActivity {
         updateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 String UserName = username.getText().toString();
                 String Name = name.getText().toString();
                 String Email = email.getText().toString();
                 String Pass = password.getText().toString();
                 String cPass = confirmPassword.getText().toString();
+                ;
 
                 boolean fields = fieldsComplete(Name, UserName, Email, Pass, cPass);
                 boolean passwordsMatch = confirmPassword(Pass, cPass);
@@ -66,7 +70,7 @@ public class UpdateProfile extends AppCompatActivity {
                 if (fields && passwordsMatch && userCheck) {
                     boolean inserted = myDb.insertUserData(Name, UserName, Email, Pass);
                     if(inserted == true) {
-                        Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
                         openHomeActivity();
                     }
 

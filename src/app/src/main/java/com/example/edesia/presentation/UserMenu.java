@@ -30,7 +30,21 @@ public class UserMenu extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openSettingsActivity();
+                openUpdateProfileActivity();
+            }
+        });
+
+        favs.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openFavoritesActivity();
+            }
+        });
+
+        planned.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openPlannedActivity();
             }
         });
 
@@ -41,8 +55,18 @@ public class UserMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openSettingsActivity(){
-        Intent intent = new Intent(this, Settings.class);
+    public void openUpdateProfileActivity(){
+        Intent intent = new Intent(this, UpdateProfile.class);
+        startActivity(intent);
+    }
+
+    public void openFavoritesActivity(){
+        Intent intent = new Intent(this, Favorites.class);
+        startActivity(intent);
+    }
+
+    public void openPlannedActivity(){
+        Intent intent = new Intent(this, Planned.class);
         startActivity(intent);
     }
 }
