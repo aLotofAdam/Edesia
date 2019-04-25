@@ -50,6 +50,8 @@ public class RecipeSteps extends AppCompatActivity {
         instructions.setText(Instructions);
         image = findViewById(R.id.lbl_image);
         Glide.with(this).load(url).into(image);
+        final String Id= id;
+
 
         FloatingActionButton add = (FloatingActionButton)this.findViewById(R.id.fab_create_new_item);
 
@@ -57,11 +59,10 @@ public class RecipeSteps extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //change to johns class
-                String id_pass = intentID;
+                
                 //change class to johns class
-                Intent intent = new Intent(RecipeSteps.this, Plan.class);
-                intent.putExtra("id", id_pass);
+                Intent intent = new Intent(getApplicationContext(), Plan.class);
+                intent.putExtra("id", Id);
                 startActivity(intent);
 
             }

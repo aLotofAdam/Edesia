@@ -37,7 +37,6 @@ class SearchViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
         addbutton = (Button)itemView.findViewById(R.id.addbutton);
 
 
-
     }
 
     @Override
@@ -73,8 +72,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
         holder.title.setText(recipeModels.get(position).getTitle());
         holder.prepTime.setText(recipeModels.get(position).getPrepTime());
         holder.totalTime.setText(recipeModels.get(position).getTotalTime());
+
         String url = recipeModels.get(position).getPicture();
+        int id = recipeModels.get(position).getID();
         //not working properly
+
 
         Glide.with(context).load(url).into(holder.picture);
 
@@ -99,13 +101,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
             }
         });
 
-        /* image creation
-        Glide.with(context)
-                .asBitmap()
-                .load(holder.picture)
-                .into(holder.picture);
-        holder.SearchViewHolder.setOnClickListener(new View.OnClickListener(){
-*/
     }
     @Override
     public int getItemCount() {
