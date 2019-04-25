@@ -37,7 +37,7 @@ public class Plan extends AppCompatActivity {
         stringplaceholder =  se.getString(id);
         //stringplaceholder = i.getStringExtra(id);
         //store it as an int to sent to the database
-        //recipeIDHold = Integer.parseInt(stringplaceholder);
+        recipeIDHold = Integer.parseInt(stringplaceholder);
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;
         ArrayAdapter<CharSequence> choice;
