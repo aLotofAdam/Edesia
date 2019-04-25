@@ -87,13 +87,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(context,RecipeSteps.class);
                 String title = recipeModels.get(position).getTitle();
-                int id = recipeModels.get(position).getID();
+                int id1 = recipeModels.get(position).getID();
+                String id2 = Integer.toString(id1);
                 String ingredients = recipeModels.get(position).getIngredients();
                 String instructions = recipeModels.get(position).getInstructions();
                 String url = recipeModels.get(position).getPicture();
 
                 intent.putExtra("title", title );
-                intent.putExtra("id", id);
+                intent.putExtra("id", id2);
                 intent.putExtra("ingredients", ingredients );
                 intent.putExtra("instructions", instructions);
                 intent.putExtra("url",url);

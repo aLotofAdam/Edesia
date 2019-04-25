@@ -59,7 +59,7 @@ public class RecipeSteps extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 //change class to johns class
                 Intent intent = new Intent(getApplicationContext(), Plan.class);
                 intent.putExtra("id", Id);
