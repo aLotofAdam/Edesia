@@ -115,7 +115,6 @@ public class CurrentMealPlan extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: on merge: commented next line out
         void onFragmentInteraction(Uri uri);
     }
 }

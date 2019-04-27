@@ -38,7 +38,6 @@ public class SignUp extends Fragment {
     //need it?
     private OnFragmentInteractionListener mListener;
 
-    //TODO make Bundle androidx?
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
     }
@@ -132,7 +131,7 @@ public class SignUp extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+
         void onFragmentInteraction(Uri uri);
 
         //void onOpen();

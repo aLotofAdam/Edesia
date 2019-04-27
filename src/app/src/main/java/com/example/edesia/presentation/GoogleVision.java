@@ -45,10 +45,6 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class GoogleVision extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     private static final String TAG = "OcrCaptureActivity";
 
@@ -90,31 +86,10 @@ public class GoogleVision extends Fragment {
         // permission is not granted yet, request permission.
         int rc = ActivityCompat.checkSelfPermission(Objects.requireNonNull(getContext()), Manifest.permission.CAMERA);
         if (rc == PackageManager.PERMISSION_GRANTED) {
-            //createCameraSource(true, false);
+            createCameraSource(true, false);
         } else {
             requestCameraPermission();
         }
-
-      //  gestureDetector = new GestureDetector(this, new GoogleVision.CaptureGestureListener());
-       // scaleGestureDetector = new ScaleGestureDetector(this, new MainActivity.OcrCaptureActivity.ScaleListener());
-
-        /*Snackbar.make(graphicOverlay, "Tap to make list. Pinch/Stretch to zoom",
-                Snackbar.LENGTH_LONG).show();*/
-
-        // Set up the Text To Speech engine.
-           /* TextToSpeech.OnInitListener listener =
-                    new TextToSpeech.OnInitListener() {
-                        @Override
-                        public void onInit(final int status) {
-                            if (status == TextToSpeech.SUCCESS) {
-                                Log.d("OnInitListener", "Text to speech engine started successfully.");
-                                tts.setLanguage(Locale.US);
-                            } else {
-                                Log.d("OnInitListener", "Error starting the text to speech engine.");
-                            }
-                        }
-                    };
-            tts = new TextToSpeech(this.getApplicationContext(), listener);*/
     }
 
     /**
@@ -171,12 +146,12 @@ public class GoogleVision extends Fragment {
         // is set to receive the text recognition results, track the text, and maintain
         // graphics for each text block on screen.  The factory is used by the multi-processor to
         // create a separate tracker instance for each text block.
-        // TODO: Create the TextRecognizer
+        //Create the TextRecognizer
         TextRecognizer textRecognizer = new TextRecognizer.Builder(context).build();
-        // TODO: Set the TextRecognizer's Processor.
+        //Set the TextRecognizer's Processor.
         textRecognizer.setProcessor(new DetectorProcessor(graphicOverlay));
 
-        // TODO: Check if the TextRecognizer is operational.
+        //Check if the TextRecognizer is operational.
         if (!textRecognizer.isOperational()) {
             // Note: The first time that an app using a Vision API is installed on a
             // device, GMS will download a native libraries to the device in order to do detection.
@@ -202,14 +177,12 @@ public class GoogleVision extends Fragment {
 
         // Creates and starts the camera.  Note that this uses a higher resolution in comparison
         // to other detection examples to enable the text recognizer to detect small pieces of text.
-        // TODO: Create the mCameraSource using the TextRecognizer.
+        //Create the mCameraSource using the TextRecognizer.
         CameraSource cameraSource;
         cameraSource = new CameraSource.Builder(context.getApplicationContext(),
                 textRecognizer).setFacing(CameraSource.CAMERA_FACING_BACK)
                 .setRequestedPreviewSize(1280, 1024).setRequestedFps(2.0f)
                 .setAutoFocusEnabled(autoFocus).build();
-        //setFocusMode(autoFocus ? Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO : null).build();
-        //setFlashMode(useFlash ? Camera.Parameters.FLASH_MODE_TORCH : null)
     }
 
     /**
@@ -332,15 +305,13 @@ public class GoogleVision extends Fragment {
      * @return true if the tap was on a TextBlock
      */
     private boolean onTap(float rawX, float rawY) {
-        // TODO: Send text to Grocery List when the user taps on screen.
+        //Send text to Grocery List when the user taps on screen.
         OCRGraphic graphic = graphicOverlay.getGraphicAtLocation(rawX, rawY);
         TextBlock text = null;
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
                 Log.d(TAG, "text data is being sent to Grocery List " + text.getValue());
-                // TODO: Handle passing the data
-                //tts.speak(text.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
             } else {
                 Log.d(TAG, "text data is null");
             }
@@ -414,10 +385,6 @@ public class GoogleVision extends Fragment {
         }
     }
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
     public GoogleVision() {
@@ -432,12 +399,9 @@ public class GoogleVision extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment GoogleVision.
      */
-    // TODO: Rename and change types and number of parameters
-    public static GoogleVision newInstance(String param1, String param2) {
+    private static GoogleVision newInstance(String param1, String param2) {
         GoogleVision fragment = new GoogleVision();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -457,13 +421,6 @@ public class GoogleVision extends Fragment {
         //inflate layout
         return inflater.inflate(R.layout.google_vision, container, false);
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    /*public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }*/
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -493,7 +450,6 @@ public class GoogleVision extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
        // void onFragmentInteraction(Uri uri);
     }
 }

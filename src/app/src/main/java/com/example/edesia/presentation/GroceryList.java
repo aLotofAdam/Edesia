@@ -2,7 +2,6 @@ package com.example.edesia.presentation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,8 +14,6 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ArrayList;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GroceryList extends AppCompatActivity {
@@ -24,6 +21,8 @@ public class GroceryList extends AppCompatActivity {
     private ArrayAdapter<String> mAdapter;
     String selectedMonth;
     int selectedDay;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -37,11 +36,27 @@ public class GroceryList extends AppCompatActivity {
 
         // Construct an Intent object for groceryList
         final Intent intent = new Intent(this, OCR_Vision.class);
-        final ArrayList<String> gList = new ArrayList<>();
-        intent.putStringArrayListExtra("gList",gList);
 
         mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1);
         mShoppingList.setAdapter(mAdapter);
+
+        //get list from OCR
+        Bundle b = this.getIntent().getExtras();
+        String gList[] = new String[10];
+        if (b != null) {
+            gList = b.getStringArray("gList");
+        }
+
+        if ((gList != null ? gList[0] : null) != null) {
+
+            for (String aGList : gList) {
+                System.out.println("Obtained " + aGList);
+                if (aGList != null) {
+                    mAdapter.add(aGList);
+                    mAdapter.notifyDataSetChanged();
+                }
+            }
+        }
 
         //adds item to grocery list
         mAddButton.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +80,10 @@ public class GroceryList extends AppCompatActivity {
             }
         });
 
-
         getList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO add date from spinners, look at johns randmizer
+                //TODO add date from spinners after queries are fixed
             }
         });
 
@@ -80,10 +94,7 @@ public class GroceryList extends AppCompatActivity {
 
                 Snackbar.make(view, "Camera Started", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                //final ArrayList<String> gList = getList();
 
-                intent.putStringArrayListExtra("gList",gList);
-                // Start the groceryList
                 startActivity(intent);
             }
         });
@@ -95,11 +106,6 @@ public class GroceryList extends AppCompatActivity {
                 openHomeActivity();
             }
         });
-
-        // Output the array, not sure if need this
-        for(String item:gList){
-            Log.i("GroceryList", String.valueOf(item));
-        }
 
         ArrayAdapter<CharSequence> months;
         ArrayAdapter<CharSequence> days;

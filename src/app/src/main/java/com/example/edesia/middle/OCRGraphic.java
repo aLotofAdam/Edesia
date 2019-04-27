@@ -60,7 +60,7 @@ public class OCRGraphic extends GraphicOverlay.Graphic{
     //Draws the text block annotations for position, size, and raw value on the supplied canvas.
     @Override
     public void draw(Canvas canvas) {
-        // TODO: Draw the text onto the canvas.
+        //Draw the text onto the canvas.
         if (textBlock == null) {
             return;
         }

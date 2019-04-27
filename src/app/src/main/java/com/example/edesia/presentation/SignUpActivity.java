@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//TODO should be able to use fragment, this activity is just a backup
 public class SignUpActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;

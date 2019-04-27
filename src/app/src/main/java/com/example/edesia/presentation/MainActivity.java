@@ -40,13 +40,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TODO might need to change to main_menu
+        //setup Action bar
         Toolbar toolbar = findViewById(R.id.actionbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-            //TODO on 4/16 merge this was uncommented
             actionBar.setHomeAsUpIndicator(R.drawable.menu24px);
         }
         final Activity activity = this;
@@ -100,18 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-		//TODO maybe add fab?
-        //FloatingActionButton fab = findViewById(R.id.navi_map);
-       // fab.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-           // public void onClick(View view) {
-             //   Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-               //         .setAction("Action", null).show();
-                //Navigation.findNavController().navigate(R.id.nav_host_fragment);
-            //}
-       // });
-
-		//TODO dup NavController above, need both? //attach NavController to NavHost
+		//attach NavController to NavHost
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 		//sets top level destinations via the navigation graph
@@ -120,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         topLevelDestinations.add(R.id.actionbar);
         appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).
                 setDrawerLayout(drawer_layout).build();
-
-       // appBarConfiguration = new AppBarConfiguration();
 
         //sets up action bar with navController and top level destinations and passes to method for handling
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -164,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public BottomNavigationView getBottomNav() {
-        //BottomNavigationView bottomNav;
         bottomNav = this.findViewById(R.id.bottom_menu_navi);
         return bottomNav;
     }
@@ -191,16 +176,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-
-        //navigation UI looks for action matching the menu item and navigates there if found.
-        //otherwise, this will bubble up to parent
-        //NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        //boolean navigated = false;
-        //if (item != null) {
-            //navigated = NavigationUI.onNavDestinationSelected(item, navController);
-        //}
-        //if (navigated) return true;
-        //else return super.onOptionsItemSelected(item);
     }
 
 	//method to add up navigation support if no drawer is present
@@ -209,12 +184,6 @@ public class MainActivity extends AppCompatActivity {
         //navigation UI will support up navigation, or drawer menu
         return Navigation.findNavController(this, R.id.nav_host_fragment).navigateUp();
     }
-
-    //listener for handling events on navigation items
-    /*@Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
-    }*/
 
     public void hideBottomNavigationView(BottomNavigationView view) {
         view.clearAnimation();

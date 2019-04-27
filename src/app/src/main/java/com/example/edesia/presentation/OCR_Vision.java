@@ -71,6 +71,9 @@ public class OCR_Vision extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     private GestureDetector gestureDetector;
 
+    public String[] gList = new String[10];
+    public int j = 0;
+
     List<String>ingredientList = new ArrayList<>(
             Arrays.asList("bread","rye bread","mustard","relish","deli corned beef","sauerkraut",
                     "berries","whole,cloves","coriander seeds","extra-virgin olive oil",
@@ -120,17 +123,9 @@ public class OCR_Vision extends AppCompatActivity {
      * Initializes the UI and creates the detector pipeline.
      */
     @Override
-    public void onCreate(Bundle bundle) {
+    public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.google_vision);
-
-        // Construct an Intent object for groceryList
-        final Intent intent = new Intent(this, GroceryList.class);
-        //ArrayList<String> gList = new ArrayList<>();
-
-
-        // Get array list from OCR_Vision
-        final ArrayList<String>gList = getIntent().getStringArrayListExtra("gList");
 
         preview = findViewById(R.id.preview);
         graphicOverlay = findViewById(R.id.graphicOverlay);
@@ -138,13 +133,6 @@ public class OCR_Vision extends AppCompatActivity {
         //Set good defaults for capturing text.
         boolean autoFocus = true;
         boolean useFlash = false;
-
-        //initialize the database
-        //Database db = new Database(this);
-        //Query for ingredients
-        //ingredientList = db.getIngredients();
-        //Gets individual ingredients from query result
-        //RegexMatcher.PatternMatch(ingredientList);
 
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
@@ -162,37 +150,24 @@ public class OCR_Vision extends AppCompatActivity {
         Snackbar.make(graphicOverlay, "Pinch/Stretch to zoom",
                 Snackbar.LENGTH_LONG).show();
 
-
-        // Set up the Text To Speech engine.
-           /* TextToSpeech.OnInitListener listener =
-                    new TextToSpeech.OnInitListener() {
-                        @Override
-                        public void onInit(final int status) {
-                            if (status == TextToSpeech.SUCCESS) {
-                                Log.d("OnInitListener", "Text to speech engine started successfully.");
-                                tts.setLanguage(Locale.US);
-                            } else {
-                                Log.d("OnInitListener", "Error starting the text to speech engine.");
-                            }
-                        }
-                    };
-            tts = new TextToSpeech(this.getApplicationContext(), listener);*/
-
         FloatingActionButton fab = findViewById(R.id.Visionfab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                stop();
+               // stop();
                 receiveDetections();
                 Snackbar.make(view, "Camera stopped", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                //final ArrayList<String> gList =
+                //setup intent
+                Intent intent = new Intent(getApplicationContext(), GroceryList.class);
+                Bundle b = new Bundle();
 
-                intent.putStringArrayListExtra("gList",gList);
-                // Start the groceryList
+                //pass array of scanned ingredients to Grocery List
+                System.out.println(Arrays.toString(gList));
+                b.putStringArray("gList", gList);
+                intent.putExtras(b);
                 startActivity(intent);
-
             }
 
             private void receiveDetections() {
@@ -202,7 +177,8 @@ public class OCR_Vision extends AppCompatActivity {
             }
         });
     }
-    //TODO handle this
+
+    //valid ingredients to check for
     public static ArrayList<String> getList(){
 
         return new ArrayList<>(
@@ -452,15 +428,16 @@ public class OCR_Vision extends AppCompatActivity {
      * @return true if the tap was on a TextBlock
      */
     private boolean onTap(float rawX, float rawY) {
-        // TODO: Send text to Grocery List when the user taps on screen.
+        //Send text to Grocery List when the user taps on screen.
         OCRGraphic graphic = graphicOverlay.getGraphicAtLocation(rawX, rawY);
         TextBlock text = null;
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
                 Log.d(TAG, "text data is being sent to Grocery List " + text.getValue());
-                // TODO: Handle passing the data
-                //tts.speak(text.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+
+                addToGList(text.getValue());
+
             } else {
                 Log.d(TAG, "text data is null");
             }
@@ -468,6 +445,24 @@ public class OCR_Vision extends AppCompatActivity {
             Log.d(TAG, "no text detected");
         }
         return text != null;
+    }
+
+    //adds ingredient to the array
+    private void addToGList(String value) {
+
+        for (int i = 0; i < ingredientList.size(); i++){
+            if (ingredientList.get(i).equals(value)){
+                gList[j] = value;
+                j++;
+                System.out.println("ADDED " + value);
+            }
+        }
+    }
+
+    //getter method for array of ingredients
+    public String[] getGList(){
+        System.out.println("got list");
+        return gList;
     }
 
     private class CaptureGestureListener extends GestureDetector.SimpleOnGestureListener {

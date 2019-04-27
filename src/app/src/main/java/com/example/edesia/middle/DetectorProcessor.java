@@ -40,7 +40,7 @@ public class DetectorProcessor implements Detector.Processor<TextBlock>{
                 List<String>list = OCR_Vision.getList();
 
         graphicOverlay.clear();
-        //TODO finish setting up keywords
+
         SparseArray<TextBlock> items = detections.getDetectedItems();
         for (int i = 0; i < items.size(); ++i) {
             TextBlock item = items.valueAt(i);

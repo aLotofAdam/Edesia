@@ -5,7 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * TODO insert info here
+ * Reformats the ingredients to be used with the OCR in order to compare the text detected to what
+ * is actually in the database
  */
 public class RegexMatcher {
     static String pattern;
@@ -17,7 +18,7 @@ public class RegexMatcher {
         Pattern dups = Pattern.compile("\"\\\\b(\\\\w+)(\\\\s+\\\\1\\\\b)+\";");
         pattern = "(\\btsp)(\\blb)(\\btbsp)(\\bc)(\\boz)(\\d)([\\.,])";
         dupsPattern = ("\"\\\\b(\\\\w+)(\\\\s+\\\\1\\\\b)+\";");
-        //\b(\w+)\s+\1\b
+
         String blank = "";
         StringBuilder sbList = new StringBuilder();
         for (String sList : list)
