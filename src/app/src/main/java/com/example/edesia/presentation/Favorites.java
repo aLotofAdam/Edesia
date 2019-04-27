@@ -1,12 +1,8 @@
 package com.example.edesia.presentation;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteQueryBuilder;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.Button;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
@@ -33,10 +29,11 @@ public class Favorites extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.favorites);
+        //changed from favorites
+        setContentView(R.layout.plan);
 
         //initialize the view
-        recyclerView = findViewById(R.id.mt_recycler_search_Favorites);
+        //recyclerView = findViewById(R.id.mt_recycler_search_Favorites);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

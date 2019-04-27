@@ -3,7 +3,6 @@ package com.example.edesia.presentation;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.Button;
 
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
@@ -28,10 +27,11 @@ public class Planned extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.prev_planned);
+        //changed from prev_planned because it doesn't exist
+        setContentView(R.layout.plan);
 
         //initialize the view
-        recyclerView = findViewById(R.id.mt_recycler_search_Planned);
+        //recyclerView = findViewById(R.id.mt_recycler_search_Planned);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
