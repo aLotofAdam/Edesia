@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class
@@ -142,25 +146,46 @@ DatabaseHelper extends SQLiteOpenHelper {
                 return false;
             }
     }
-/*
+
+    public List<String> getIdFavorites()
+    {
+
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        //all column names
+        String[] sqlSelect = {"RecipeID"};
+        String tableName = "FavoriteRecipes";  //table name
+
+        qb.setTables( tableName );
+        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
+        List<String>result = new ArrayList<>(  );
+        if (cursor.moveToFirst())
+        {
+            do{
+                result.add( cursor.getString( cursor.getColumnIndex( "RecipeID" ) ));
+            }while (cursor.moveToNext());
+        }
+        return result;
+    }
+
     public String getData() {
 
-        SQLiteDatabase db = DbHelper.getWritableDatabase();
-        String[] columns = {dbHelper.USER_ID, dbHelper.NAME, dbHelper.USER_NAME, dbHelper.EMAIL, dbHelper.PASSWORD};
-        Cursor cursor = db.query(dbHelper.TABLE_NAME,columns,null,null,null,null,null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"Name", "Username", "Email", "Password"};
+        Cursor cursor = db.query("UserTable",columns,null,null,null,null,null);
         StringBuffer buffer= new StringBuffer();
         while (cursor.moveToNext())
         {
-            int uid = cursor.getInt(cursor.getColumnIndex(dbHelper.USER_ID));
-            String name =cursor.getString(cursor.getColumnIndex(dbHelper.NAME));
-            String username =cursor.getString(cursor.getColumnIndex(dbHelper.USER_NAME));
-            String email =cursor.getString(cursor.getColumnIndex(dbHelper.EMAIL));
-            String  password =cursor.getString(cursor.getColumnIndex(dbHelper.PASSWORD));
-            buffer.append(uid+ "   " + name + "   " + username + "   " + email + "   " + password +" \n");
+            String name =cursor.getString(cursor.getColumnIndex("Name"));
+            String username =cursor.getString(cursor.getColumnIndex("Username"));
+            String email =cursor.getString(cursor.getColumnIndex("Email"));
+            String  password =cursor.getString(cursor.getColumnIndex("Password"));
+            buffer.append(name + "   " + username + "   " + email + "   " + password +" \n");
         }
         return buffer.toString();
     }
-*/
+
     public int updateUsername(String old , String newName) {
 
         SQLiteDatabase db = this.getWritableDatabase();

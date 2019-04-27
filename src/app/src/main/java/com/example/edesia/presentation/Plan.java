@@ -20,6 +20,7 @@ public class Plan extends AppCompatActivity {
     String stringplaceholder;
     Button Add;
 
+    LoginActivity currUser;
     DatabaseHelper myDb = new DatabaseHelper(this);
 
     @Override
@@ -48,7 +49,7 @@ public class Plan extends AppCompatActivity {
         String[] dayArr = {"1", "2", "3", "4", "5", "6", "7","8","9","10","11","12","13","14","15",
                 "16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
 
-        String[] mealChoice = {"Breakfast", "Lunch", "Dinner", stringplaceholder};
+        String[] mealChoice = {"Breakfast", "Lunch", "Dinner"};
 
         Spinner s1 = findViewById(R.id.month_spinner1);
         Spinner s2 = findViewById(R.id.day_spinner1);
@@ -101,7 +102,8 @@ public class Plan extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            boolean inserted = myDb.insertPlannedMeal("Steve1", selectedMonth, selectedDay, selectedMeal, recipeIDHold);
+            boolean inserted = myDb.insertPlannedMeal(currUser.getCurrentUser()
+                    , selectedMonth, selectedDay, selectedMeal, recipeIDHold);
 
             if(inserted == true) {
                 Toast.makeText(getApplicationContext(), "Planned Successfully", Toast.LENGTH_LONG).show();

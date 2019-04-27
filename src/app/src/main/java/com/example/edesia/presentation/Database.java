@@ -76,6 +76,29 @@ public class Database extends SQLiteAssetHelper
         return result;
     }
 
+    public List<String> getTitleByID()
+    {
+
+        SQLiteDatabase db = getReadableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        //all column names
+        String[] sqlSelect = {"Title"};
+        String tableName = "recipes";  //table name
+
+        qb.setTables( tableName );
+        Cursor cursor = qb.query(db, sqlSelect,null,null,null,null,null);
+        List<String>result = new ArrayList<>(  );
+        if (cursor.moveToFirst())
+        {
+            do{
+                result.add( cursor.getString( cursor.getColumnIndex( "Title" ) ));
+            }while (cursor.moveToNext());
+
+        }
+        return result;
+    }
+
     //function to get food by food name
     public List<RecipeModel> getRecipeByName(String name)
     {
